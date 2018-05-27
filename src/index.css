@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.logNav {
+  padding: 0px;
+}
+.footer {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+}
+.factionLogo {
+  margin-left: 1em; margin-right: 1em;
+  background-color: white;
+  border-radius: 50%;
+  max-width: 3em;
+  max-height: 3em;
+}
+.copyright {
+  color: white;
+}
