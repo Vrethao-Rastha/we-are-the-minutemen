@@ -21,3 +21,13 @@ body {
 .copyright {
   color: white;
 }
+.navLinks {
+  color: white;
+  background-color: #2E3338;
+  margin-right: .5em;
+}
+.navLinks:hover {
+  color: white;
+  background-color: #2E3338;
+  text-decoration: none;
+}

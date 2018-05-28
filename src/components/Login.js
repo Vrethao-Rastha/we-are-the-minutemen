@@ -19,7 +19,7 @@ let picStyle = {
   backgroundImage: `url(${background})`,
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
-  marginTop: "5em",
+  marginTop: "2em",
   marginBottom: "1.5em",
   border: "1px solid black"
 }
@@ -60,7 +60,7 @@ let picStyle = {
 
         </Col>
       </Container>
-        <Navbar className="foot" color="dark">
+        <Navbar className="logNav" color="dark">
           <NavbarBrand className="font-face" style={{color: "white"}}>&copy; 2018 Red Rocket Productions <i style={{color:"red"}} className="fa fa-rocket fa-2x"> </i>
 
 
