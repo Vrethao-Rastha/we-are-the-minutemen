@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import MainNav from '../Reactstrap/MainNav'
 import Footer from '../Reactstrap/Footer'
+import PiperStory from './PiperStory'
 import {
   Container,
   Col,
@@ -28,10 +29,13 @@ class PipersPage extends Component {
   }
   render(){
 
+    let piperStory = this.props.piper.map(piper => <PiperStory key={ piper.id } piper={ piper } />)
+
     return(
       <div>
       <MainNav/>
       <div>Pipers Page</div>
+      <div>{ piperStory }</div>
       <Footer/>
     </div>
     )
@@ -44,7 +48,7 @@ const mapDispatchToProps = dispatch =>
   }, dispatch)
 
   const mapStateToProps = state => ({
-
+    piper: state.piper
   })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PipersPage)

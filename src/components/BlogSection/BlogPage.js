@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import MainNav from '../Reactstrap/MainNav'
 import Footer from '../Reactstrap/Footer'
+import BlogIndividual from './BlogIndividual'
 import {
   Container,
   Col,
@@ -28,10 +29,13 @@ class BlogPage extends Component {
   }
   render(){
 
+    let blogPosts = this.props.blog.map(blog => <BlogIndividual key={ blog.id } blog={ blog } />)
+
     return(
       <div>
       <MainNav/>
       <div>Blog Page</div>
+      <div>{ blogPosts }</div>
       <Footer/>
     </div>
     )
@@ -44,7 +48,7 @@ const mapDispatchToProps = dispatch =>
   }, dispatch)
 
   const mapStateToProps = state => ({
-
+    blog: state.blog
   })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BlogPage)

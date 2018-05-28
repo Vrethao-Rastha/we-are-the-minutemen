@@ -30,7 +30,7 @@ let picStyle = {
         <LoginNav/>
         <Container>
           <Col>
-          <Row md="4">
+          <Row md="8">
           <Label className="btns" style={{marginRight: "2em", marginLeft: "10em"}} for="name-field">Name</Label>
           <Form>
               <Input style={{marginRight: "1em"}}
