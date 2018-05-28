@@ -8,8 +8,12 @@ body {
 }
 .footer {
   position: absolute;
+  padding: 0;
   bottom: 0%;
   width: 100%;
+}
+.navFooter {
+  margin-left: 1em;
 }
 .factionLogo {
   margin-left: 1em; margin-right: 1em;
@@ -19,6 +23,8 @@ body {
   max-height: 3em;
 }
 .copyright {
+  margin-left: 1em;
+  bottom: 0;
   color: white;
 }
 .navLinks {

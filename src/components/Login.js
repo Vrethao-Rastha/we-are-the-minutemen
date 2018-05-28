@@ -14,7 +14,7 @@ import background from './images/minutemen.jpg'
 
 
 let picStyle = {
-  height: "700px",
+  height: "500px",
   maxWidth: "100%",
   backgroundImage: `url(${background})`,
   backgroundRepeat: "no-repeat",
@@ -61,7 +61,7 @@ let picStyle = {
         </Col>
       </Container>
         <Navbar className="logNav" color="dark">
-          <NavbarBrand className="font-face" style={{color: "white"}}>&copy; 2018 Red Rocket Productions <i style={{color:"red"}} className="fa fa-rocket fa-2x"> </i>
+          <NavbarBrand className="navFooter" style={{color: "white"}}>&copy; 2018 Red Rocket Productions <i style={{color:"red"}} className="fa fa-rocket fa-2x"> </i>
 
 
           </NavbarBrand>
