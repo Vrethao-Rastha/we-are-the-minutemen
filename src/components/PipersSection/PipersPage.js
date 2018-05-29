@@ -34,8 +34,17 @@ class PipersPage extends Component {
     return(
       <div>
       <MainNav/>
-      <div>Pipers Page</div>
-      <div>{ piperStory }</div>
+      <container>
+        <Row>
+          <Col md={{size:8, offset:2}}>
+            <h1 className="text-center">Pipers Page</h1>
+            <div>{ piperStory }</div>
+          </Col>
+            </Row>
+
+
+      </container>
+      <div style={{height:"1000px"}} className="parallaxTwo"></div>
       <Footer/>
     </div>
     )

@@ -22,7 +22,7 @@ import logo from '../images/Icon_Minutemen_quest.png'
           <img src={logo} style={{maxHeight: "1.5em"}}/> Radio Freedom
         </NavbarBrand>
         <UncontrolledDropdown className="navLinks">
-        <DropdownToggle className="navLinks" caret>
+        <DropdownToggle style={{borderRadius:"25px"}} className="navLinks" caret>
                   More Places
                 </DropdownToggle>
         <DropdownMenu right className="navLinks">

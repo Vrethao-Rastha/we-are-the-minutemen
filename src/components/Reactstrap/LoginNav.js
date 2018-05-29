@@ -21,7 +21,7 @@ import logo from '../images/Icon_Minutemen_quest.png'
         <Input style={{color: 'white'}} className="col-md-1" placeholder="Check it out"  />
         <p style={{color:"white", marginTop:"1em", marginRight: "1em", marginLeft: "1em"}}>Password</p>
         <Input style={{color: 'white', marginLeft:"0em"}} className="col-md-1" placeholder="Check it out" />
-        <Link style={{marginLeft: "3em", marginRight: "3em", border: "1px solid white"}}
+        <Link style={{marginLeft: "3em", marginRight: "3em", border: "1px solid white", borderRadius:"10px"}}
           className="btn btn-secondary"
 
            to="/NewsMain">Login</Link>

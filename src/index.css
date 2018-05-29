@@ -40,7 +40,7 @@ body {
   text-decoration: none;
 }
 .phantom {
-  height: 50px;
+  height: 3em;
 }
 .container-fluid {
   width: 100%;
@@ -51,4 +51,43 @@ body {
   padding: 0;
   bottom: 0%;
   width: 100%;
+}
+.parallax {
+  background-image: url("../src/components/images/heather near goodneighbor.jpg");
+  height: 200px;
+  border-radius: 35px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallaxB {
+  background-image: url("../src/components/images/heather near goodneighbor.jpg");
+  height: 200px;
+  margin-left:calc(-50vw + 200px);
+  margin-right:calc(-50vw + 200px);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallaxTwo {
+  background-image: url("../src/components/images/crossing.jpg");
+  height: 200px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.headline {
+  height: 25em;
+}
+.publikCard{
+  border-radius: 15px;
+}
+.diamondCard {
+  border-radius: 15px;
+}
+.mainCard {
+  border-radius: 15px;
 }

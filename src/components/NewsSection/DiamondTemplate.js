@@ -24,17 +24,22 @@ import {
 const DiamondCityTemplate = ({ dcr }) => {
   return(
   <div>
+    <div style={{marginTop:"7.25em"}}></div>
+
     <Col>
-      <Card>
-         <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+      <Card className="diamondCard">
+        <CardTitle style={{marginTop:".5em"}} className="text-center">{ dcr.title }</CardTitle>
+         <CardImg className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
             <CardBody>
-              <CardTitle>{ dcr.title }</CardTitle>
 
               <CardText>{ dcr.body }</CardText>
-              <Button>Read More</Button>
+              <Button style={{borderRadius:"15px"}}>Read More</Button>
             </CardBody>
           </Card>
-          <br/>
+          <div style={{marginBottom:"6em"}}></div>
+          <div className="parallax"></div>
+          <div style={{marginBottom:"18em"}}></div>
+
 
   </Col>
   </div>
