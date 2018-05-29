@@ -19,7 +19,7 @@ let picStyle = {
   backgroundImage: `url(${background})`,
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
-  marginTop: "2em",
+  marginTop: "10em",
   marginBottom: "1.5em",
   border: "1px solid black"
 }
@@ -29,39 +29,15 @@ let picStyle = {
       <div>
         <LoginNav/>
         <Container>
-          <Col>
-          <Row md="8">
-          <Label className="btns" style={{marginRight: "2em", marginLeft: "10em"}} for="name-field">Name</Label>
-          <Form>
-              <Input style={{marginRight: "1em"}}
-                type="text"
-                name="name"
-                id="name-field"
-              />
-            </Form>
 
-            <Label className="btns" style={{marginRight: "1.5em", marginLeft: "1.5em"}} for="password-field">Password</Label>
-              <Form>
-              <Input
-                type="password"
-                name="password"
-                id="password-field"
-              />
-          </Form>
-          <Link style={{marginLeft: "2em", border: "1px solid white"}}
-            className="btn btn-secondary"
-
-             to="/NewsMain">Login</Link>
-        </Row>
-       </Col>
 
         <Col className="clearfix" style={ picStyle } md="12">
           <h1 style={{color: "white", textShadow: "-1px 0 black, 0 1px black, 0px 0 black, 0 -2px black"}} className="text-center">We Are the Minutemen</h1>
 
         </Col>
       </Container>
-        <Navbar className="logNav" color="dark">
-          <NavbarBrand className="navFooter" style={{color: "white"}}>&copy; 2018 Red Rocket Productions <i style={{color:"red"}} className="fa fa-rocket fa-2x"> </i>
+        <Navbar className="logFoot" color="dark">
+          <NavbarBrand className="navFooter" style={{color: "white"}}>&copy; 2018 Red Rocket Productions <i style={{color:"red", marginLeft:".5em"}} className="fa fa-rocket fa-2x"> </i>
 
 
           </NavbarBrand>

@@ -7,7 +7,12 @@ body {
   padding: 0px;
 }
 .footer {
+  margin-top: -50px;
   flex-shrink: 0;
+  /*position: absolute;
+  padding: 0;
+  bottom: 0%;
+  width: 100%;*/
 }
 .navFooter {
   margin-left: 1em;
@@ -33,4 +38,17 @@ body {
   color: white;
   background-color: #2E3338;
   text-decoration: none;
+}
+.phantom {
+  height: 50px;
+}
+.container-fluid {
+  width: 100%;
+
+}
+.logFoot {
+  position: absolute;
+  padding: 0;
+  bottom: 0%;
+  width: 100%;
 }

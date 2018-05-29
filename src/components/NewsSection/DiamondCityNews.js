@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
+import DiamondTemplate from './DiamondTemplate'
 import {
   Container,
   Col,
@@ -26,9 +27,10 @@ import {
     }
 
     render() {
+      let dcrPosts = this.props.dcr.map(dcr => <DiamondTemplate key={ dcr.id } dcr={ dcr } />)
 
       return(
-        <div>Test</div>
+        <div>{ dcrPosts }</div>
 
       )
     }
@@ -40,7 +42,8 @@ import {
       }, dispatch)
 
     const mapStateToProps = state => ({
-
+      dcr: state.dcr,
+      publik: state.publik
     })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DiamondCityNews)

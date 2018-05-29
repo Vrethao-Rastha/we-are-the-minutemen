@@ -11,6 +11,9 @@ import {
   Col,
   Card,
   CardText,
+  CardImg,
+  CardBody,
+  CardTitle,
   ListGroup,
   Row,
   FormGroup,
@@ -33,8 +36,26 @@ class NewsMain extends Component {
     return(
       <div>
       <MainNav/>
-      <div>News Page</div>
+      <container className="container-fluid">
+
+          <h1 className="text-center">News Page</h1>
+          <Row>
+            <Col md={{size:3, offset: 2}}>
+          <PublikOccurrences/>
+          </Col>
+
+
+
+
+          <Col  md={{size:3, offset:2}}>
+          <DiamondCityNews/>
+          </Col>
+        </Row>
+        <Button className="col-md-2 offset-md-5">Archived Stories</Button>
+          </container>
+          <div className="phantom"></div>
       <Footer/>
+
     </div>
     )
   }
@@ -46,7 +67,8 @@ const mapDispatchToProps = dispatch =>
   }, dispatch)
 
   const mapStateToProps = state => ({
-
+    publik: state.publik,
+    dcr: state.dcr
   })
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewsMain)

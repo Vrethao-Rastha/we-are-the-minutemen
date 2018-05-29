@@ -16,6 +16,8 @@ import brotherhoodFlag from '../images/flagBrotherhood.jpg'
 
 const Footer = () => {
   return(
+    <div>
+      <div className="phantom"></div>
     <Navbar className="footer" color="dark">
         <div className="copyright">
             Copyright © 2287 Minutemen of the Commonwealth
@@ -27,6 +29,7 @@ const Footer = () => {
           <img className="factionLogo" src={instituteFlag} alt=""/>
         </div>
       </Navbar>
+      </div>
   )
 }
 

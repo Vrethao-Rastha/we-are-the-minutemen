@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
+import PublikTemplate from './PublikTemplate'
 import {
   Container,
   Col,
@@ -26,9 +27,10 @@ import {
     }
 
     render() {
+      let publikPosts = this.props.publik.map(publik => <PublikTemplate key={ publik.id } publik={ publik } />)
 
       return(
-        <div>Test</div>
+        <div>{ publikPosts }</div>
 
       )
     }
@@ -40,7 +42,7 @@ import {
       }, dispatch)
 
     const mapStateToProps = state => ({
-
+      publik: state.publik
     })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PublikOccurrences)
