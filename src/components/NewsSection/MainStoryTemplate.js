@@ -21,19 +21,18 @@ import {
 } from 'reactstrap'
 
 
-const PublikTemplate = ({ publik }) => {
+const MainStoryTemplate = ({ main }) => {
   return(
   <div>
 
-<div style={{marginTop:"7.25em"}}></div>
+{/* <div style={{marginTop:"7.25em"}}></div> */}
     <Col>
-      <Card className="publikCard">
-        <CardTitle style={{marginTop:".5em"}} className="text-center">{ publik.title }</CardTitle>
-
-         <CardImg className="publikCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+      <Card className="mainCard">
+        <CardTitle style={{marginTop:".5em"}} style={{marginTop:".5em"}} className="text-center">{ main.title }</CardTitle>
+         <CardImg className="headline mainCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
             <CardBody>
 
-              <CardText>{ publik.body.slice(0,25).concat("...") }</CardText>
+              <CardText>{ main.picture }</CardText>
               <Button style={{borderRadius:"15px"}}>Read More</Button>
             </CardBody>
           </Card>
@@ -47,4 +46,4 @@ const PublikTemplate = ({ publik }) => {
   )
 };
 
-export default PublikTemplate;
+export default MainStoryTemplate;

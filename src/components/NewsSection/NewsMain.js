@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux'
 import Footer from '../Reactstrap/Footer'
 import DiamondCityNews from './DiamondCityNews'
 import PublikOccurrences from './PublikOccurrences'
+import MainStory from './MainStory'
 import MainNav from '../Reactstrap/MainNav'
 import {
   Container,
@@ -50,8 +51,11 @@ class NewsMain extends Component {
           <PublikOccurrences/>
           </Col>
 
-          <Col>
-            <Card className="mainCard">
+          <Col md={{size:6}}>
+            <MainStory/>
+          </Col>
+
+            {/* <Card className="mainCard">
               <CardTitle style={{marginTop:".5em"}} style={{marginTop:".5em"}} className="text-center">test data</CardTitle>
                <CardImg className="headline mainCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
                   <CardBody>
@@ -59,13 +63,13 @@ class NewsMain extends Component {
                     <CardText>test data</CardText>
                     <Button style={{borderRadius:"15px"}}>Read More</Button>
                   </CardBody>
-                </Card>
+                </Card> */}
 
-                <div className="phantom"></div>
+                {/* <div className="phantom"></div>
                 <div className="parallax"></div>
-                <div className="phantom"></div>
+                <div className="phantom"></div> */}
 
-          <Card className="mainCard">
+          {/* <Card className="mainCard">
             <CardTitle style={{marginTop:".5em"}} className="text-center">test data 2</CardTitle>
              <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
                 <CardBody>
@@ -73,13 +77,13 @@ class NewsMain extends Component {
                   <CardText>test data 2</CardText>
                   <Button style={{borderRadius:"15px"}}>Read More</Button>
                 </CardBody>
-              </Card>
-
+              </Card> */}
+{/*
               <div className="phantom"></div>
               <div className="parallax"></div>
-              <div className="phantom"></div>
+              <div className="phantom"></div> */}
 
-        <Card className="mainCard">
+        {/* <Card className="mainCard">
           <CardText className="text-center">test data 3</CardText>
            <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
               <CardBody>
@@ -87,13 +91,13 @@ class NewsMain extends Component {
 
                 <Button style={{borderRadius:"15px"}}>Read More</Button>
               </CardBody>
-            </Card>
+            </Card> */}
 
-            <div className="phantom"></div>
+            {/* <div className="phantom"></div>
             <div className="parallax"></div>
-            <div className="phantom"></div>
+            <div className="phantom"></div> */}
 
-      <Card className="mainCard">
+      {/* <Card className="mainCard">
         <CardTitle style={{marginTop:".5em"}} className="text-center">test data 4</CardTitle>
          <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
             <CardBody>
@@ -101,13 +105,13 @@ class NewsMain extends Component {
               <CardText>test data 4</CardText>
               <Button style={{borderRadius:"15px"}}>Read More</Button>
             </CardBody>
-          </Card>
-
+          </Card> */}
+{/*
           <div className="phantom"></div>
           <div className="parallax"></div>
-          <div className="phantom"></div>
+          <div className="phantom"></div> */}
 
-          <Card className="mainCard">
+          {/* <Card className="mainCard">
             <CardTitle style={{marginTop:".5em"}} style={{marginTop:".5em"}} className="text-center">test data</CardTitle>
              <CardImg className="headline mainCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
                 <CardBody>
@@ -115,11 +119,11 @@ class NewsMain extends Component {
                   <CardText>test data</CardText>
                   <Button style={{borderRadius:"15px"}}>Read More</Button>
                 </CardBody>
-              </Card>
-              <div className="phantom"></div>
+              </Card> */}
+              {/* <div className="phantom"></div> */}
 
 
-        <Card className="mainCard">
+        {/* <Card className="mainCard">
           <CardTitle style={{marginTop:".5em"}} style={{marginTop:".5em"}} className="text-center">test data</CardTitle>
            <CardImg className="headline mainCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
               <CardBody>
@@ -127,12 +131,10 @@ class NewsMain extends Component {
                 <CardText>test data</CardText>
                 <Button style={{borderRadius:"15px"}}>Read More</Button>
               </CardBody>
-            </Card>
+            </Card> */}
 
 
-          <div className="phantom"></div>
-          <div className="phantom"></div>
-          </Col>
+
 
           <Col  md={{size:3}}>
           <DiamondCityNews/>
@@ -160,7 +162,8 @@ const mapDispatchToProps = dispatch =>
 
   const mapStateToProps = state => ({
     publik: state.publik,
-    dcr: state.dcr
+    dcr: state.dcr,
+    main: state.main
   })
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewsMain)

@@ -22,6 +22,7 @@ import {
 
 
 const DiamondCityTemplate = ({ dcr }) => {
+  console.log("props in dcr", this.props)
   return(
   <div>
     <div style={{marginTop:"7.25em"}}></div>
@@ -32,7 +33,7 @@ const DiamondCityTemplate = ({ dcr }) => {
          <CardImg className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
             <CardBody>
 
-              <CardText>{ dcr.body }</CardText>
+              <CardText>{ dcr.body.slice(0,25).concat("...") }</CardText>
               <Button style={{borderRadius:"15px"}}>Read More</Button>
             </CardBody>
           </Card>

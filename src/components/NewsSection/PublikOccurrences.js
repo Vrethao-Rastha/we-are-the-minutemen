@@ -42,7 +42,9 @@ import {
       }, dispatch)
 
     const mapStateToProps = state => ({
-      publik: state.publik
+      publik: state.publik,
+      main: state.main,
+      dcr: state.dcr
     })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PublikOccurrences)

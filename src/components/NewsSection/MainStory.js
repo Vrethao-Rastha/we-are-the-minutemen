@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
-import DiamondTemplate from './DiamondTemplate'
+import MainStoryTemplate from './MainStoryTemplate'
 import {
   Container,
   Col,
@@ -21,16 +21,17 @@ import {
   NavbarBrand
 } from 'reactstrap'
 
-  class DiamondCityNews extends Component {
+  class MainStory extends Component {
     state = {
 
     }
 
     render() {
-      let dcrPosts = this.props.dcr.map(dcr => <DiamondTemplate key={ dcr.id } dcr={ dcr } />)
+      console.log('')
+      let mainPosts = this.props.main.map(main => <MainStoryTemplate key={ main.id } main={ main } />)
 
       return(
-        <div>{ dcrPosts }</div>
+        <div>{ mainPosts }</div>
 
       )
     }
@@ -42,9 +43,9 @@ import {
       }, dispatch)
 
     const mapStateToProps = state => ({
-      dcr: state.dcr,
+      main: state.main,
       publik: state.publik,
-      main: state.main
+      dcr: state.dcr
     })
 
-export default connect(mapStateToProps, mapDispatchToProps)(DiamondCityNews)
+export default connect(mapStateToProps, mapDispatchToProps)(MainStory)

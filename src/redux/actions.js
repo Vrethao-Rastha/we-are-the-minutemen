@@ -26,6 +26,16 @@ export const DELETE_PIPER_STORIES_FAILED = 'DELETE_PIPER_STORIES_FAILED'
 export const DELETE_PIPER_STORIES_SUCCESS = 'DELETE_PIPER_STORIES_SUCCESS'
 export const PUT_PIPER_STORIES_FAILED = 'PUT_PIPER_STORIES_FAILED'
 export const PUT_PIPER_STORIES_SUCCESS = 'PUT_PIPER_STORIES_SUCCESS'
+//MAIN STORIES
+export const FETCH_MAIN_STORY_FAILED = 'FETCH_MAIN_STORY_FAILED'
+export const FETCH_MAIN_STORY_SUCCESS = 'FETCH_MAIN_STORY_SUCCESS'
+export const ADD_MAIN_STORY_FAILED = 'ADD_MAIN_STORY_FAILED'
+export const ADD_MAIN_STORY_SUCCESS = 'ADD_MAIN_STORY_SUCCESS'
+export const DELETE_MAIN_STORY_FAILED = 'DELETE_MAIN_STORY_FAILED'
+export const DELETE_MAIN_STORY_SUCCESS = 'DELETE_MAIN_STORY_SUCCESS'
+export const PUT_MAIN_STORY_FAILED = 'PUT_MAIN_STORY_FAILED'
+export const PUT_MAIN_STORY_SUCCESS = 'PUT_MAIN_STORY_SUCCESS'
+
 //BLOG OF THE GENERAL
 export const FETCH_BLOG_STORIES_FAILED = 'FETCH_BLOG_STORIES_FAILED'
 export const FETCH_BLOG_STORIES_SUCCESS = 'FETCH_BLOG_STORIES_SUCCESS'
@@ -121,6 +131,20 @@ export const FETCH_ABOUT_FAILED = 'FETCH_ABOUT_FAILED'
       }))
       .catch(err => dispatch({
         type: FETCH_BLOG_STORIES_FAILED,
+        payload: err
+      }))
+    }
+  }
+
+  export const fetchMainStory = () => {
+    return dispatch => {
+      axios.get('http://localhost:3000/api/v1/main_story/')
+      .then(res => dispatch({
+        type: FETCH_MAIN_STORY_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: FETCH_MAIN_STORY_FAILED,
         payload: err
       }))
     }
