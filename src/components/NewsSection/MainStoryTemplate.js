@@ -28,7 +28,7 @@ const MainStoryTemplate = ({ main }) => {
 {/* <div style={{marginTop:"7.25em"}}></div> */}
     <Col>
       <Card className="mainCard">
-        <CardTitle style={{marginTop:".5em"}} style={{marginTop:".5em"}} className="text-center">{ main.title }</CardTitle>
+        <CardTitle style={{marginTop:".5em"}}  className="text-center">{ main.title }</CardTitle>
          <CardImg className="headline mainCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
             <CardBody>
 
@@ -37,9 +37,9 @@ const MainStoryTemplate = ({ main }) => {
             </CardBody>
           </Card>
 
-          <div style={{marginBottom:"6em"}}></div>
+          <div style={{marginBottom:"5em"}}></div>
           <div className="parallax"></div>
-          <div style={{marginBottom:"18em"}}></div>
+          <div style={{marginBottom:"8em"}}></div>
 
   </Col>
   </div>

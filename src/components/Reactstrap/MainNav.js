@@ -35,6 +35,9 @@ import logo from '../images/Icon_Minutemen_quest.png'
                 <DropdownItem className="navLinks">
                   <Link className="navLinks" to="/BlogPage">Blog of the General</Link>
                 </DropdownItem>
+                <DropdownItem className="navLinks">
+                  <Link className="navLinks" to="/Erios">Erios </Link>
+                </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem className="navLinks">
                   <Link className="navLinks" to="/">Logout</Link>
