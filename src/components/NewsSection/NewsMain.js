@@ -39,7 +39,7 @@ class NewsMain extends Component {
     return(
       <div>
       <MainNav/>
-      <container className="container-fluid">
+      <div className="container-fluid">
 
 
           <h1 style={{marginBottom:"1em"}} className="text-center">Latest news from Diamond City Radio and Publik Occurrences</h1>
@@ -55,17 +55,12 @@ class NewsMain extends Component {
             <MainStory/>
           </Col>
 
-            
-
-
-
-
           <Col  md={{size:3}}>
           <DiamondCityNews/>
           </Col>
         </Row>
         <Button className="col-md-2 offset-md-5">Archived Stories</Button>
-          </container>
+      </div>
 
           <div className="phantom"></div>
 

@@ -22,7 +22,6 @@ import {
 
 
 const DiamondCityTemplate = ({ dcr }) => {
-  console.log("props in dcr", this.props)
   return(
   <div>
     <div style={{marginTop:"7.25em"}}></div>

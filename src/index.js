@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 import './index.css';
 import App from './App';
-import { fetchUser, fetchAbout, fetchDcrStories, fetchPublikStories, fetchPiperStories, fetchBlogStories, fetchMainStory } from './redux/actions'
+import { fetchUser, fetchAbout, fetchDcrStories, fetchPublikStories, fetchPiperStories, fetchBlogStories, fetchMainStory, fetchErios } from './redux/actions'
 
 let newStore = store()
 //newStore.dispatch(fetchUser())
@@ -16,6 +16,7 @@ newStore.dispatch(fetchPublikStories())
 newStore.dispatch(fetchPiperStories())
 newStore.dispatch(fetchBlogStories())
 newStore.dispatch(fetchMainStory())
+newStore.dispatch(fetchErios())
 
 ReactDOM.render(
   <Provider store={newStore}>

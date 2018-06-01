@@ -52,6 +52,23 @@ export const FETCH_USER_FAILED = 'FETCH_USER_FAILED'
 export const FETCH_ABOUT_SUCCESS = 'FETCH_ABOUT_SUCCESS'
 export const FETCH_ABOUT_FAILED = 'FETCH_ABOUT_FAILED'
 
+export const FETCH_ERIOS_SUCCESS = 'FETCH_ERIOS_SUCCESS'
+export const FETCH_ERIOS_FAILED = 'FETCH_ERIOS_FAILED'
+
+export const fetchErios = () => {
+  return dispatch => {
+    axios.get('http://localhost:1701')
+    .then(res => dispatch({
+      type: FETCH_ERIOS_SUCCESS,
+      payload: res.data.data
+    }))
+    .catch(err => dispatch({
+      type: FETCH_ERIOS_FAILED,
+      payload: err
+    }))
+  }
+}
+
   export const fetchUser = () => {
     return dispatch => {
       axios.get('http://localhost:3000/api/v1/users')

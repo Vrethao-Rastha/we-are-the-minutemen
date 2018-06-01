@@ -14,7 +14,8 @@
     "reactstrap": "^6.0.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "watson-developer-cloud": "^3.4.2"
   },
   "scripts": {
     "start": "PORT=1313 react-scripts start",

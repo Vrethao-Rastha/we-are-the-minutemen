@@ -27,7 +27,6 @@ import {
     }
 
     render() {
-      console.log('')
       let mainPosts = this.props.main.map(main => <MainStoryTemplate key={ main.id } main={ main } />)
 
       return(

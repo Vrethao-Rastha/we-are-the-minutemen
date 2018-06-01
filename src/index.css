@@ -55,7 +55,7 @@ body {
 .parallax {
   background-image: url("../src/components/images/heather near goodneighbor.jpg");
   height: 200px;
-  border-radius: 35px;
+  /*border-radius: 35px;*/
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -64,6 +64,8 @@ body {
 .parallaxB {
   background-image: url("../src/components/images/heather near goodneighbor.jpg");
   height: 200px;
+  padding-left: 2em;
+  padding-right: 2em;
   margin-left:calc(-50vw + 200px);
   margin-right:calc(-50vw + 200px);
   background-attachment: fixed;
@@ -74,6 +76,8 @@ body {
 .parallaxTwo {
   background-image: url("../src/components/images/crossing.jpg");
   height: 200px;
+  margin-left:calc(-50vw + 200px);
+  margin-right:calc(-50vw + 200px);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -91,3 +95,6 @@ body {
 .mainCard {
   border-radius: 15px;
 }
+/*Erios Area*/
+
+/* Styling for the chat bot */
