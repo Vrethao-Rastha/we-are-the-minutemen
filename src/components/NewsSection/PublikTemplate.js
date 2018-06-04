@@ -1,23 +1,14 @@
 import React from 'react';
+import ScrollerPic15 from '../Scrollers/ScrollerPic15'
+import ScrollerPic33 from '../Scrollers/ScrollerPic33'
 import {
-  Container,
+  Button,
   Col,
   Card,
   CardText,
   CardImg,
   CardBody,
   CardTitle,
-  ListGroup,
-  Row,
-  FormGroup,
-  Form,
-  Label,
-  Input,
-  Button,
-  NavItem,
-  NavLink,
-  Navbar,
-  NavbarBrand
 } from 'reactstrap'
 
 
@@ -25,7 +16,15 @@ const PublikTemplate = ({ publik }) => {
   return(
   <div>
 
-<div style={{marginTop:"7.25em"}}></div>
+<div style={{marginTop:"3em"}}></div>
+
+
+
+  <ScrollerPic15 />
+
+  <div className="phantom"></div>
+
+
     <Col>
       <Card className="publikCard">
         <CardTitle style={{marginTop:".5em"}} className="text-center">{ publik.title }</CardTitle>
@@ -38,10 +37,12 @@ const PublikTemplate = ({ publik }) => {
             </CardBody>
           </Card>
 
-          <div style={{marginBottom:"6em"}}></div>
-          <div className="parallax"></div>
-          <div style={{marginBottom:"18em"}}></div>
+          <div className="phantom"></div>
+          <div className="phantom"></div>
+          <ScrollerPic33 />
 
+          <div className="phantom"></div>
+          <div className="phantom"></div>
   </Col>
   </div>
   )

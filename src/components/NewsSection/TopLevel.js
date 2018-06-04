@@ -7,26 +7,13 @@ import DiamondCityNews from './DiamondCityNews'
 import PublikOccurrences from './PublikOccurrences'
 import MainStory from './MainStory'
 import MainNav from '../Reactstrap/MainNav'
+import ScrollerPic35 from '../Scrollers/ScrollerPic35'
 import {
-  Container,
   Col,
-  Card,
-  CardText,
-  CardImg,
-  CardBody,
-  CardTitle,
-  ListGroup,
   Row,
-  FormGroup,
-  Form,
-  Label,
-  Input,
   Button,
-  NavItem,
-  NavLink,
-  Navbar,
-  NavbarBrand
-} from 'reactstrap'
+  } from 'reactstrap'
+
 
 class NewsMain extends Component {
   state = {
@@ -42,8 +29,8 @@ class NewsMain extends Component {
       <div className="container-fluid">
 
 
-          <h1 style={{marginBottom:"1em"}} className="text-center">Latest news from Diamond City Radio and Publik Occurrences</h1>
-          <div className="parallax"></div>
+          <h1 style={{marginBottom:"1em"}} className="text-center">Latest news from Diamond City Radio and Publick Occurrences</h1>
+          <ScrollerPic35 />
           <div className="phantom"></div>
           <Row>
             <Col md={{size:3}}>
@@ -82,7 +69,8 @@ const mapDispatchToProps = dispatch =>
   const mapStateToProps = state => ({
     publik: state.publik,
     dcr: state.dcr,
-    main: state.main
+    main: state.main,
+    scroller: state.scroller
   })
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewsMain)

@@ -95,6 +95,21 @@ body {
 .mainCard {
   border-radius: 15px;
 }
+.modal-body {
+  background-image: url('./components/images/crossing.jpg')
+}
+.storyDetail {
+  background-image: url('./components/images/fallout_pipboy.png');
+  height: 100vh;
+}
+.newsDetail {
+  background-image: url('./components/images/crossing.jpg');
+}
+/*.cardFix {
+  padding-right: 1em;
+   padding-left: 1em;
+   border-radius: 5%;
+}*/
 /*Erios Area*/
 
 /* Styling for the chat bot */

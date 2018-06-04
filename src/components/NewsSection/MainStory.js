@@ -3,23 +3,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import MainStoryTemplate from './MainStoryTemplate'
-import {
-  Container,
-  Col,
-  Card,
-  CardText,
-  ListGroup,
-  Row,
-  FormGroup,
-  Form,
-  Label,
-  Input,
-  Button,
-  NavItem,
-  NavLink,
-  Navbar,
-  NavbarBrand
-} from 'reactstrap'
+import MainStoryTemplate2 from './MainStoryTemplate2'
+import MainStoryTemplate3 from './MainStoryTemplate3'
 
   class MainStory extends Component {
     state = {
@@ -27,11 +12,18 @@ import {
     }
 
     render() {
-      let mainPosts = this.props.main.map(main => <MainStoryTemplate key={ main.id } main={ main } />)
+      let mainPosts = this.props.main.map(main => <MainStoryTemplate key={ main.id } main={ main } />).slice(0,1)
+
+      let mainPosts2 = this.props.main.map(main => <MainStoryTemplate2 key={ main.id } main={ main } />).slice(2,3)
+
+      let mainPosts3 = this.props.main.map(main => <MainStoryTemplate3 key={ main.id } main={ main } />).slice(4,5)
 
       return(
+        <div>
         <div>{ mainPosts }</div>
-
+        <div>{ mainPosts2 }</div>
+        <div>{ mainPosts3 }</div>
+        </div>
       )
     }
   }
@@ -44,7 +36,9 @@ import {
     const mapStateToProps = state => ({
       main: state.main,
       publik: state.publik,
-      dcr: state.dcr
+      dcr: state.dcr,
+      scroller: state.scroller
+
     })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainStory)

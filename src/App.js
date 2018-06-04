@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import NewsMain from './components/NewsSection/NewsMain'
+import TopLevel from './components/NewsSection/TopLevel'
 import PipersPage from './components/PipersSection/PipersPage'
 import BlogPage from './components/BlogSection/BlogPage'
+import Splash from './components/Splash'
+import Register from './components/Register'
+import StoryDetail from './components/NewsSection/StoryDetail'
+
 import {
   BrowserRouter as Router,
   Route,
   Switch
 } from 'react-router-dom'
-import Login from './components/Login'
 
 
 class App extends Component {
@@ -16,10 +19,12 @@ class App extends Component {
       <Router>
         <div className="App">
           <Switch>
-            <Route exact path="/" component = { Login } />
-            <Route path="/NewsMain" component = { NewsMain } />
+            <Route exact path="/" component = { Splash } />
+            <Route path="/Register" component = { Register } />
+            <Route path="/NewsMain" component = { TopLevel } />
             <Route path="/PipersPage" component = { PipersPage } />
             <Route path="/BlogPage" component = { BlogPage } />
+            <Route path="/Details" component = { StoryDetail } />
             <Route path="/Erios" component = {() => window.location = 'http://localhost:1701' } />
           </Switch>
         </div>

@@ -8,6 +8,16 @@ export const DELETE_DCR_STORIES_FAILED = 'DELETE_DCR_STORIES_FAILED'
 export const DELETE_DCR_STORIES_SUCCESS = 'DELETE_DCR_STORIES_SUCCESS'
 export const PUT_DCR_STORIES_FAILED = 'PUT_DCR_STORIES_FAILED'
 export const PUT_DCR_STORIES_SUCCESS = 'PUT_DCR_STORIES_SUCCESS'
+//DCR COMMENTS FUNCTIONALITY
+export const FETCH_DCR_COMMENTS_FAILED = 'FETCH_DCR_COMMENTS_FAILED'
+export const FETCH_DCR_COMMENTS_SUCCESS = 'FETCH_DCR_COMMENTS_SUCCESS'
+export const ADD_DCR_COMMENTS_FAILED = 'ADD_DCR_COMMENTS_FAILED'
+export const ADD_DCR_COMMENTS_SUCCESS = 'ADD_DCR_COMMENTS_SUCCESS'
+export const DELETE_DCR_COMMENTS_FAILED = 'DELETE_DCR_COMMENTS_FAILED'
+export const DELETE_DCR_COMMENTS_SUCCESS = 'DELETE_DCR_COMMENTS_SUCCESS'
+export const PUT_DCR_COMMENTS_FAILED = 'PUT_DCR_COMMENTS_FAILED'
+export const PUT_DCR_COMMENTS_SUCCESS = 'PUT_DCR_COMMENTS_SUCCESS'
+
 //PUBLIK OCCURRENCES SECTION
 export const FETCH_PUBLIK_OCCURRENCES_STORIES_FAILED = 'FETCH_PUBLIK_OCCURRENCES_STORIES_FAILED'
 export const FETCH_PUBLIK_OCCURRENCES_STORIES_SUCCESS = 'FETCH_PUBLIK_OCCURRENCES_STORIES_SUCCESS'
@@ -17,6 +27,16 @@ export const DELETE_PUBLIK_OCCURRENCES_STORIES_FAILED = 'DELETE_PUBLIK_OCCURRENC
 export const DELETE_PUBLIK_OCCURRENCES_STORIES_SUCCESS = 'DELETE_PUBLIK_OCCURRENCES_STORIES_SUCCESS'
 export const PUT_PUBLIK_OCCURRENCES_STORIES_FAILED = 'PUT_PUBLIK_OCCURRENCES_STORIES_FAILED'
 export const PUT_PUBLIK_OCCURRENCES_STORIES_SUCCESS = 'PUT_PUBLIK_OCCURRENCES_STORIES_SUCCESS'
+//PUBLIK OCCURRENCES COMMENT FUNCTIONALITY
+export const FETCH_PUBLIK_OCCURRENCES_COMMENTS_FAILED = 'FETCH_PUBLIK_OCCURRENCES_COMMENTS_FAILED'
+export const FETCH_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS = 'FETCH_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS'
+export const ADD_PUBLIK_OCCURRENCES_COMMENTS_FAILED = 'ADD_PUBLIK_OCCURRENCES_COMMENTS_FAILED'
+export const ADD_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS = 'ADD_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS'
+export const DELETE_PUBLIK_OCCURRENCES_COMMENTS_FAILED = 'DELETE_PUBLIK_OCCURRENCES_COMMENTS_FAILED'
+export const DELETE_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS = 'DELETE_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS'
+export const PUT_PUBLIK_OCCURRENCES_COMMENTS_FAILED = 'PUT_PUBLIK_OCCURRENCES_COMMENTS_FAILED'
+export const PUT_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS = 'PUT_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS'
+
 //PIPER FIELD REPORTING SECTION
 export const FETCH_PIPER_STORIES_FAILED = 'FETCH_PIPER_STORIES_FAILED'
 export const FETCH_PIPER_STORIES_SUCCESS = 'FETCH_PIPER_STORIES_SUCCESS'
@@ -26,6 +46,16 @@ export const DELETE_PIPER_STORIES_FAILED = 'DELETE_PIPER_STORIES_FAILED'
 export const DELETE_PIPER_STORIES_SUCCESS = 'DELETE_PIPER_STORIES_SUCCESS'
 export const PUT_PIPER_STORIES_FAILED = 'PUT_PIPER_STORIES_FAILED'
 export const PUT_PIPER_STORIES_SUCCESS = 'PUT_PIPER_STORIES_SUCCESS'
+//PIPER FIELD REPORTS COMMENTS
+export const FETCH_PIPER_COMMENTS_FAILED = 'FETCH_PIPER_COMMENTS_FAILED'
+export const FETCH_PIPER_COMMENTS_SUCCESS = 'FETCH_PIPER_COMMENTS_SUCCESS'
+export const ADD_PIPER_COMMENTS_FAILED = 'ADD_PIPER_COMMENTS_FAILED'
+export const ADD_PIPER_COMMENTS_SUCCESS = 'ADD_PIPER_COMMENTS_SUCCESS'
+export const DELETE_PIPER_COMMENTS_FAILED = 'DELETE_PIPER_COMMENTS_FAILED'
+export const DELETE_PIPER_COMMENTS_SUCCESS = 'DELETE_PIPER_COMMENTS_SUCCESS'
+export const PUT_PIPER_COMMENTS_FAILED = 'PUT_PIPER_COMMENTS_FAILED'
+export const PUT_PIPER_COMMENTS_SUCCESS = 'PUT_PIPER_COMMENTS_SUCCESS'
+
 //MAIN STORIES
 export const FETCH_MAIN_STORY_FAILED = 'FETCH_MAIN_STORY_FAILED'
 export const FETCH_MAIN_STORY_SUCCESS = 'FETCH_MAIN_STORY_SUCCESS'
@@ -35,6 +65,15 @@ export const DELETE_MAIN_STORY_FAILED = 'DELETE_MAIN_STORY_FAILED'
 export const DELETE_MAIN_STORY_SUCCESS = 'DELETE_MAIN_STORY_SUCCESS'
 export const PUT_MAIN_STORY_FAILED = 'PUT_MAIN_STORY_FAILED'
 export const PUT_MAIN_STORY_SUCCESS = 'PUT_MAIN_STORY_SUCCESS'
+//MAIN STORY COMMENTS
+export const FETCH_MAIN_STORY_COMMENTS_FAILED = 'FETCH_MAIN_STORY_COMMENTS_FAILED'
+export const FETCH_MAIN_STORY_COMMENTS_SUCCESS = 'FETCH_MAIN_STORY_COMMENTS_SUCCESS'
+export const ADD_MAIN_STORY_COMMENTS_FAILED = 'ADD_MAIN_STORY_COMMENTS_FAILED'
+export const ADD_MAIN_STORY_COMMENTS_SUCCESS = 'ADD_MAIN_STORY_COMMENTS_SUCCESS'
+export const DELETE_MAIN_STORY_COMMENTS_FAILED = 'DELETE_MAIN_STORY_COMMENTS_FAILED'
+export const DELETE_MAIN_STORY_COMMENTS_SUCCESS = 'DELETE_MAIN_STORY_COMMENTS_SUCCESS'
+export const PUT_MAIN_STORY_COMMENTS_FAILED = 'PUT_MAIN_STORY_COMMENTS_FAILED'
+export const PUT_MAIN_STORY_COMMENTS_SUCCESS = 'PUT_MAIN_STORY_COMMENTS_SUCCESS'
 
 //BLOG OF THE GENERAL
 export const FETCH_BLOG_STORIES_FAILED = 'FETCH_BLOG_STORIES_FAILED'
@@ -48,26 +87,15 @@ export const PUT_BLOG_STORIES_SUCCESS = 'PUT_BLOG_STORIES_SUCCESS'
 //GET USER
 export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS'
 export const FETCH_USER_FAILED = 'FETCH_USER_FAILED'
+//CREATE USER
+export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS'
+export const CREATE_USER_FAILED = 'CREATE_USER_FAILED'
 //GET ABOUT PAGE INFO
 export const FETCH_ABOUT_SUCCESS = 'FETCH_ABOUT_SUCCESS'
 export const FETCH_ABOUT_FAILED = 'FETCH_ABOUT_FAILED'
 
-export const FETCH_ERIOS_SUCCESS = 'FETCH_ERIOS_SUCCESS'
-export const FETCH_ERIOS_FAILED = 'FETCH_ERIOS_FAILED'
-
-export const fetchErios = () => {
-  return dispatch => {
-    axios.get('http://localhost:1701')
-    .then(res => dispatch({
-      type: FETCH_ERIOS_SUCCESS,
-      payload: res.data.data
-    }))
-    .catch(err => dispatch({
-      type: FETCH_ERIOS_FAILED,
-      payload: err
-    }))
-  }
-}
+export const FETCH_SCROLLER_SUCCESS = 'FETCH_SCROLLER_SUCCESS'
+export const FETCH_SCROLLER_FAILED = 'FETCH_SCROLLER_FAILED'
 
   export const fetchUser = () => {
     return dispatch => {
@@ -78,6 +106,20 @@ export const fetchErios = () => {
       }))
       .catch(err => dispatch({
         type: FETCH_USER_FAILED,
+        payload: err
+      }))
+    }
+  }
+
+  export const fetchScroller = () => {
+    return dispatch => {
+      axios.get('http://localhost:3000/api/v1/scroller')
+      .then(res => dispatch({
+        type: FETCH_SCROLLER_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: FETCH_SCROLLER_FAILED,
         payload: err
       }))
     }
@@ -111,6 +153,20 @@ export const fetchErios = () => {
     }
   }
 
+  export const fetchDcrComments = () => {
+    return dispatch => {
+      axios.get('http://localhost:3000/api/v1/dcr_comments/')
+      .then(res => dispatch({
+        type: FETCH_DCR_COMMENTS_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: FETCH_DCR_COMMENTS_FAILED,
+        payload: err
+      }))
+    }
+  }
+
   export const fetchPublikStories = () => {
     return dispatch => {
       axios.get('http://localhost:3000/api/v1/publik_news/')
@@ -120,6 +176,20 @@ export const fetchErios = () => {
       }))
       .catch(err => dispatch({
         type: FETCH_PUBLIK_OCCURRENCES_STORIES_FAILED,
+        payload: err
+      }))
+    }
+  }
+
+  export const fetchPublikComments = () => {
+    return dispatch => {
+      axios.get('http://localhost:3000/api/v1/publik_comments/')
+      .then(res => dispatch({
+        type: FETCH_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: FETCH_PUBLIK_OCCURRENCES_COMMENTS_FAILED,
         payload: err
       }))
     }
@@ -139,15 +209,15 @@ export const fetchErios = () => {
     }
   }
 
-  export const fetchBlogStories = () => {
+  export const fetchPiperComments = () => {
     return dispatch => {
-      axios.get('http://localhost:3000/api/v1/blogs/')
+      axios.get('http://localhost:3000/api/v1/piper_comments/')
       .then(res => dispatch({
-        type: FETCH_BLOG_STORIES_SUCCESS,
+        type: FETCH_PIPER_COMMENTS_SUCCESS,
         payload: res.data.data
       }))
       .catch(err => dispatch({
-        type: FETCH_BLOG_STORIES_FAILED,
+        type: FETCH_PIPER_COMMENTS_FAILED,
         payload: err
       }))
     }
@@ -162,6 +232,34 @@ export const fetchErios = () => {
       }))
       .catch(err => dispatch({
         type: FETCH_MAIN_STORY_FAILED,
+        payload: err
+      }))
+    }
+  }
+
+  export const fetchMainStoryComments = () => {
+    return dispatch => {
+      axios.get('http://localhost:3000/api/v1/main_story_comments/')
+      .then(res => dispatch({
+        type: FETCH_MAIN_STORY_COMMENTS_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: FETCH_MAIN_STORY_COMMENTS_FAILED,
+        payload: err
+      }))
+    }
+  }
+
+  export const fetchBlogStories = () => {
+    return dispatch => {
+      axios.get('http://localhost:3000/api/v1/blogs/')
+      .then(res => dispatch({
+        type: FETCH_BLOG_STORIES_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: FETCH_BLOG_STORIES_FAILED,
         payload: err
       }))
     }
