@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import ScrollerPic14 from '../Scrollers/ScrollerPic14'
 import ScrollerPic4 from '../Scrollers/ScrollerPic4'
 
@@ -16,7 +18,8 @@ import cardPics from '../images/Fallout-4-Concept-Art-23.jpg'
 
 
 
-const DiamondCityTemplate = ({ dcr }) => {
+class DiamondTemplate4 extends Component {
+  render(){
   return(
   <div>
     <div style={{marginTop:"3em"}}></div>
@@ -27,11 +30,11 @@ const DiamondCityTemplate = ({ dcr }) => {
 
     <Col>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} className="text-center">{ dcr.title }</CardTitle>
+        <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.dcr[3].title }</CardTitle>
          <CardImg className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
             <CardBody>
 
-              <CardText>{ dcr.body.slice(0,25).concat("...") }</CardText>
+              <CardText>{ this.props.dcr[3].body.slice(0,25).concat("...") }</CardText>
               <Button style={{borderRadius:"15px"}}>Read More</Button>
             </CardBody>
 
@@ -44,6 +47,11 @@ const DiamondCityTemplate = ({ dcr }) => {
   </Col>
   </div>
   )
+}
 };
 
-export default DiamondCityTemplate;
+const mapStateToProps = state => ({
+  dcr: state.dcr
+})
+
+export default connect(mapStateToProps)(DiamondTemplate4);

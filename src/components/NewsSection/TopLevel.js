@@ -17,9 +17,20 @@ import {
 
 class NewsMain extends Component {
   state = {
-
+    id:''
   }
 
+
+
+    handleMainSubmit = e => {
+    e.preventDefault()
+    this.props.getSingleMain(this.state)
+  }
+
+  handlePublikSubmit = e => {
+    e.preventDefault()
+    this.props.getSinglePublik(this.state)
+  }
 
 
   render(){
@@ -70,7 +81,6 @@ const mapDispatchToProps = dispatch =>
     publik: state.publik,
     dcr: state.dcr,
     main: state.main,
-    scroller: state.scroller
   })
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewsMain)

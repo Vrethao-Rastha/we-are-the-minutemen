@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import {browserHistory,withRouter} from "react-router-dom"
+
+import { Link } from 'react-router-dom'
+import StoryDetail from './StoryDetail'
+import { bindActionCreators } from 'redux'
+import { fetchDcrSingle } from '../../redux/actions'
 import ScrollerPic3 from '../Scrollers/ScrollerPic3'
 import ScrollerPic23 from '../Scrollers/ScrollerPic23'
+
 import {
   Button,
   Col,
@@ -9,13 +17,30 @@ import {
   CardImg,
   CardBody,
   CardTitle,
+  Form
 } from 'reactstrap'
 import { getRandom } from './util'
 import cardPics from '../images/Fallout-4-Concept-Art-23.jpg'
 
 
+class DiamondTemplate extends Component {
+  state = {
+    id: '',
+  }
 
-const DiamondTemplate = ({ dcr }) => {
+  handleDcrSubmit = e => {
+    console.log('FIRE!')
+    e.preventDefault()
+    this.props.fetchDcrSingle(this.props.dcr[0].id)
+    this.props.history.push('/StoryDetail')
+
+
+  }
+
+
+  render(){
+
+    console.log('state test', this.props)
   return(
   <div>
 
@@ -27,12 +52,19 @@ const DiamondTemplate = ({ dcr }) => {
 
     <Col>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} className="text-center">{ dcr.title }</CardTitle>
+        <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.dcr[0].title }</CardTitle>
          <CardImg className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
             <CardBody>
 
-              <CardText>{ dcr.body.slice(0,25).concat("...") }</CardText>
-              <Button style={{borderRadius:"15px"}}>Read More</Button>
+              <CardText>{ this.props.dcr[0].body.slice(0,25).concat("...") }</CardText>
+
+                <Button style={{borderRadius:"15px"}}
+                  type="submit"
+                  value={ this.props.dcr[0].id}
+
+                  onClick={ this.handleDcrSubmit }
+                  >Read More</Button>
+
             </CardBody>
 
           </Card>
@@ -46,6 +78,16 @@ const DiamondTemplate = ({ dcr }) => {
   </Col>
   </div>
   )
+}
 };
 
-export default DiamondTemplate;
+const mapDispatchToProps = dispatch =>
+ bindActionCreators({
+   fetchDcrSingle
+ }, dispatch)
+
+const mapStateToProps = state => ({
+  dcr: state.dcr
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(DiamondTemplate);

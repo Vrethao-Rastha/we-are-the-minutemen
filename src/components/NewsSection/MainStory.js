@@ -14,9 +14,9 @@ import MainStoryTemplate3 from './MainStoryTemplate3'
     render() {
       let mainPosts = this.props.main.map(main => <MainStoryTemplate key={ main.id } main={ main } />).slice(0,1)
 
-      let mainPosts2 = this.props.main.map(main => <MainStoryTemplate2 key={ main.id } main={ main } />).slice(2,3)
+      let mainPosts2 = this.props.main.map(main => <MainStoryTemplate2 key={ main.id } main={ main } />).slice(0,1)
 
-      let mainPosts3 = this.props.main.map(main => <MainStoryTemplate3 key={ main.id } main={ main } />).slice(4,5)
+      let mainPosts3 = this.props.main.map(main => <MainStoryTemplate3 key={ main.id } main={ main } />).slice(0,1)
 
       return(
         <div>

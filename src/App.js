@@ -24,7 +24,7 @@ class App extends Component {
             <Route path="/NewsMain" component = { TopLevel } />
             <Route path="/PipersPage" component = { PipersPage } />
             <Route path="/BlogPage" component = { BlogPage } />
-            <Route path="/Details" component = { StoryDetail } />
+            {/* <Route path="/Details" component = { StoryDetail } /> */}
             <Route path="/Erios" component = {() => window.location = 'http://localhost:1701' } />
           </Switch>
         </div>

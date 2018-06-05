@@ -4,7 +4,7 @@ import cardPic28 from '../images/Fallout-4-Concept-Art-28.jpg'
 
 const ScrollerPic28 = () => {
   return(
-  <div><CardImg className="diamondCard cardFix" top width="100%" src={ cardPic28 }  /></div>
+  <div><CardImg top width="100%" src={ cardPic28 }  /></div>
   )
 };
 

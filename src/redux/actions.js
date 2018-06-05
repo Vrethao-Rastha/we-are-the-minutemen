@@ -8,6 +8,9 @@ export const DELETE_DCR_STORIES_FAILED = 'DELETE_DCR_STORIES_FAILED'
 export const DELETE_DCR_STORIES_SUCCESS = 'DELETE_DCR_STORIES_SUCCESS'
 export const PUT_DCR_STORIES_FAILED = 'PUT_DCR_STORIES_FAILED'
 export const PUT_DCR_STORIES_SUCCESS = 'PUT_DCR_STORIES_SUCCESS'
+export const FETCH_DCR_SINGLE_SUCCESS ='FETCH_DCR_SINGLE_SUCCESS'
+export const FETCH_DCR_SINGLE_FAILED ='FETCH_DCR_SINGLE_FAILED'
+
 //DCR COMMENTS FUNCTIONALITY
 export const FETCH_DCR_COMMENTS_FAILED = 'FETCH_DCR_COMMENTS_FAILED'
 export const FETCH_DCR_COMMENTS_SUCCESS = 'FETCH_DCR_COMMENTS_SUCCESS'
@@ -27,6 +30,8 @@ export const DELETE_PUBLIK_OCCURRENCES_STORIES_FAILED = 'DELETE_PUBLIK_OCCURRENC
 export const DELETE_PUBLIK_OCCURRENCES_STORIES_SUCCESS = 'DELETE_PUBLIK_OCCURRENCES_STORIES_SUCCESS'
 export const PUT_PUBLIK_OCCURRENCES_STORIES_FAILED = 'PUT_PUBLIK_OCCURRENCES_STORIES_FAILED'
 export const PUT_PUBLIK_OCCURRENCES_STORIES_SUCCESS = 'PUT_PUBLIK_OCCURRENCES_STORIES_SUCCESS'
+export const FETCH_PUBLIK_SINGLE_SUCCESS ='FETCH_PUBLIK_SINGLE_SUCCESS'
+export const FETCH_PUBLIK_SINGLE_FAILED ='FETCH_PUBLIK_SINGLE_FAILED'
 //PUBLIK OCCURRENCES COMMENT FUNCTIONALITY
 export const FETCH_PUBLIK_OCCURRENCES_COMMENTS_FAILED = 'FETCH_PUBLIK_OCCURRENCES_COMMENTS_FAILED'
 export const FETCH_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS = 'FETCH_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS'
@@ -65,6 +70,8 @@ export const DELETE_MAIN_STORY_FAILED = 'DELETE_MAIN_STORY_FAILED'
 export const DELETE_MAIN_STORY_SUCCESS = 'DELETE_MAIN_STORY_SUCCESS'
 export const PUT_MAIN_STORY_FAILED = 'PUT_MAIN_STORY_FAILED'
 export const PUT_MAIN_STORY_SUCCESS = 'PUT_MAIN_STORY_SUCCESS'
+export const FETCH_MAIN_SINGLE_SUCCESS ='FETCH_MAIN_SINGLE_SUCCESS'
+export const FETCH_MAIN_SINGLE_FAILED ='FETCH_MAIN_SINGLE_FAILED'
 //MAIN STORY COMMENTS
 export const FETCH_MAIN_STORY_COMMENTS_FAILED = 'FETCH_MAIN_STORY_COMMENTS_FAILED'
 export const FETCH_MAIN_STORY_COMMENTS_SUCCESS = 'FETCH_MAIN_STORY_COMMENTS_SUCCESS'
@@ -94,8 +101,7 @@ export const CREATE_USER_FAILED = 'CREATE_USER_FAILED'
 export const FETCH_ABOUT_SUCCESS = 'FETCH_ABOUT_SUCCESS'
 export const FETCH_ABOUT_FAILED = 'FETCH_ABOUT_FAILED'
 
-export const FETCH_SCROLLER_SUCCESS = 'FETCH_SCROLLER_SUCCESS'
-export const FETCH_SCROLLER_FAILED = 'FETCH_SCROLLER_FAILED'
+
 
   export const fetchUser = () => {
     return dispatch => {
@@ -111,19 +117,6 @@ export const FETCH_SCROLLER_FAILED = 'FETCH_SCROLLER_FAILED'
     }
   }
 
-  export const fetchScroller = () => {
-    return dispatch => {
-      axios.get('http://localhost:3000/api/v1/scroller')
-      .then(res => dispatch({
-        type: FETCH_SCROLLER_SUCCESS,
-        payload: res.data.data
-      }))
-      .catch(err => dispatch({
-        type: FETCH_SCROLLER_FAILED,
-        payload: err
-      }))
-    }
-  }
 
   export const fetchAbout = () => {
       return dispatch => {
@@ -153,6 +146,22 @@ export const FETCH_SCROLLER_FAILED = 'FETCH_SCROLLER_FAILED'
     }
   }
 
+  export const fetchDcrSingle = (id) => {
+    console.log('fire 2', id)
+    return dispatch => {
+      console.log('im in the dispatch!')
+      axios.get(`http://localhost:3000/api/v1/dc_rnews/${id}`)
+      .then(res => dispatch({
+        type: FETCH_DCR_SINGLE_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: FETCH_DCR_SINGLE_FAILED,
+        payload: err
+      }))
+    }
+  }
+
   export const fetchDcrComments = () => {
     return dispatch => {
       axios.get('http://localhost:3000/api/v1/dcr_comments/')
@@ -176,6 +185,22 @@ export const FETCH_SCROLLER_FAILED = 'FETCH_SCROLLER_FAILED'
       }))
       .catch(err => dispatch({
         type: FETCH_PUBLIK_OCCURRENCES_STORIES_FAILED,
+        payload: err
+      }))
+    }
+  }
+
+  export const fetchPublikSingle = (id) => {
+    console.log('fire 2', id)
+    return dispatch => {
+      console.log('im in the dispatch!')
+      axios.get(`http://localhost:3000/api/v1/publik_news/${id}`)
+      .then(res => dispatch({
+        type: FETCH_PUBLIK_SINGLE_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: FETCH_PUBLIK_SINGLE_FAILED,
         payload: err
       }))
     }
@@ -232,6 +257,20 @@ export const FETCH_SCROLLER_FAILED = 'FETCH_SCROLLER_FAILED'
       }))
       .catch(err => dispatch({
         type: FETCH_MAIN_STORY_FAILED,
+        payload: err
+      }))
+    }
+  }
+
+  export const fetchMainSingle = (id) => {
+    return dispatch => {
+      axios.get(`http://localhost:3000/api/v1/main_story/${id}`)
+      .then(res => dispatch({
+        type: FETCH_MAIN_SINGLE_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: FETCH_MAIN_SINGLE_FAILED,
         payload: err
       }))
     }

@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { fetchDcrSingle } from '../../redux/actions'
 import ScrollerPic31 from '../Scrollers/ScrollerPic31'
 import ScrollerPic12 from '../Scrollers/ScrollerPic12'
 
@@ -16,7 +19,20 @@ import cardPics from '../images/Fallout-4-Concept-Art-23.jpg'
 
 
 
-const DiamondCityTemplate = ({ dcr }) => {
+class DiamondTemplate2 extends Component {
+
+  state = {
+    id: ''
+  }
+
+  handleDcrSubmit = e => {
+    console.log('FIRE!')
+    e.preventDefault()
+    this.props.fetchDcrSingle(this.props.dcr[0].id)
+  }
+
+
+  render(){
   return(
   <div>
     <div style={{marginTop:"3em"}}></div>
@@ -25,12 +41,16 @@ const DiamondCityTemplate = ({ dcr }) => {
 
     <Col>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} className="text-center">{ dcr.title }</CardTitle>
+        <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.dcr[1].title }</CardTitle>
          <CardImg className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
             <CardBody>
 
-              <CardText>{ dcr.body.slice(0,25).concat("...") }</CardText>
-              <Button style={{borderRadius:"15px"}}>Read More</Button>
+              <CardText>{ this.props.dcr[1].body.slice(0,25).concat("...") }</CardText>
+              <Button style={{borderRadius:"15px"}}
+                type="submit"
+                value={ this.props.dcr[0].id}
+                onClick={ this.handleDcrSubmit }
+                >Read More</Button>
             </CardBody>
 
           </Card>
@@ -44,6 +64,16 @@ const DiamondCityTemplate = ({ dcr }) => {
   </Col>
   </div>
   )
+}
 };
 
-export default DiamondCityTemplate;
+const mapDispatchToProps = dispatch =>
+ bindActionCreators({
+   fetchDcrSingle
+ }, dispatch)
+
+const mapStateToProps = state => ({
+  dcr: state.dcr
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(DiamondTemplate2);

@@ -12,23 +12,26 @@ import PiperCommentsReducer from './PiperCommentsReducer'
 import MainStoryReducer from './MainStoryReducer'
 import MainStoryCommentsReducer from './MainStoryCommentsReducer'
 
-import ScrollerReducer from './ScrollerReducer'
-
+import DcrSingleReducer from './DcrSingleReducer'
+import MainSingleReducer from './MainSingleReducer'
+import PublikSingleReducer from './PublikSingleReducer'
 
 export default combineReducers({
   dcr: DcrReducer,
+  dcrSingle: DcrSingleReducer,
   dcrComments: DcrCommentsReducer,
 
   publik: PublikReducer,
+  publikSingle: PublikSingleReducer,
   publikComments: PublikCommentsReducer,
 
   blog: BlogReducer,
+
   piper: PiperReducer,
   piperComments: PiperCommentsReducer,
 
   main: MainStoryReducer,
+  mainSingle: MainSingleReducer,
   mainComments: MainStoryCommentsReducer,
-
-  scroller: ScrollerReducer
 
 })

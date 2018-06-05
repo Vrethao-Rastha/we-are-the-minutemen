@@ -6,7 +6,7 @@ const ScrollerPic1 = () => {
 
     return(
     <div>
-      <CardImg className="diamondCard cardFix" top width="100%" src={ cardPic1 }  />
+      <CardImg top width="100%" src={ cardPic1 }  />
     </div>
     )
   }

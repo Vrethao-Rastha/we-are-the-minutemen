@@ -1,14 +1,14 @@
-import { FETCH_SCROLLER_FAILED,
-         FETCH_SCROLLER_SUCCESS,
+import { FETCH_PUBLIK_SINGLE_FAILED,
+         FETCH_PUBLIK_SINGLE_SUCCESS
 } from '../actions'
 
   const initialState = []
 
   export default (state = initialState, action) => {
     switch(action.type) {
-      case FETCH_SCROLLER_SUCCESS:
+      case FETCH_PUBLIK_SINGLE_SUCCESS:
         return [...action.payload]
-      case FETCH_SCROLLER_FAILED:
+      case FETCH_PUBLIK_SINGLE_FAILED:
         return action.payload
       default:
         return state

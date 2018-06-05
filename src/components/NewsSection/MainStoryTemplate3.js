@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import ScrollerPic12 from '../Scrollers/ScrollerPic12'
+import theRoad from '../images/the road.jpg'
 import {
   Container,
   Col,
@@ -23,19 +26,20 @@ import {
 } from 'reactstrap'
 
 
-const MainStoryTemplate3 = ({ main }) => {
+class MainStoryTemplate3 extends Component {
+  render(){
   return(
   <div>
 
 <div style={{marginTop:"6em"}}></div>
     <Col>
       <Card className="mainCard">
-        <CardTitle style={{marginTop:".5em"}}  className="text-center">{ main.title }</CardTitle>
+        <CardTitle style={{marginTop:".5em"}}  className="text-center">{ this.props.main[2].title }</CardTitle>
          <CardImg className="headline mainCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
             <CardBody>
 
-              <CardText>{ main.picture.slice(0,65).concat("...") }</CardText>
-              <Link onClick={() => console.log('main',main)} className="btn btn-secondary" style={{borderRadius:"15px"}} to="/Details">Read More</Link>
+              <CardText>{ this.props.main[2].picture.slice(0,65).concat("...") }</CardText>
+              <Link onClick={() => console.log('main',this.props.main)} className="btn btn-secondary" style={{borderRadius:"15px"}} to="/Details">Read More</Link>
             </CardBody>
           </Card>
 
@@ -46,6 +50,11 @@ const MainStoryTemplate3 = ({ main }) => {
   </Col>
   </div>
   )
+}
 };
 
-export default MainStoryTemplate3;
+const mapStateToProps = state => ({
+main: state.main
+})
+
+export default connect(mapStateToProps)(MainStoryTemplate3);

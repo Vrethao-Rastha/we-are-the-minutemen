@@ -5,7 +5,7 @@ import cardPic35 from '../images/Art_of_Fo4_Publick_Occurrences_(concept_art).pn
 const ScrollerPic34 = () => {
   return(
   <div>
-    <CardImg className="diamondCard cardFix" top width="100%" src={ cardPic35 }  /></div>
+    <CardImg top width="100%" src={ cardPic35 }  /></div>
   )
 };
 

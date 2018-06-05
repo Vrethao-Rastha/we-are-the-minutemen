@@ -19,7 +19,7 @@ import PublikTemplate4 from './PublikTemplate4'
 
       let publikPosts3 = this.props.publik.map(publik => <PublikTemplate3 key={ publik.id } publik={ publik } />).slice(4,5)
 
-      let publikPosts4 = this.props.publik.map(publik => <PublikTemplate4 key={ publik.id } publik={ publik } />).slice(4,5)
+      let publikPosts4 = this.props.publik.map(publik => <PublikTemplate4 key={ publik.id } publik={ publik } />).slice(6,7)
 
       return(
         <div>
