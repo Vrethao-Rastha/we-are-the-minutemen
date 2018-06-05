@@ -101,6 +101,7 @@ export const CREATE_USER_FAILED = 'CREATE_USER_FAILED'
 export const FETCH_ABOUT_SUCCESS = 'FETCH_ABOUT_SUCCESS'
 export const FETCH_ABOUT_FAILED = 'FETCH_ABOUT_FAILED'
 
+export const REDIRECT_PENDING = 'REDIRECT_PENDING'
 
 
   export const fetchUser = () => {
@@ -146,21 +147,27 @@ export const FETCH_ABOUT_FAILED = 'FETCH_ABOUT_FAILED'
     }
   }
 
-  export const fetchDcrSingle = (id) => {
-    console.log('fire 2', id)
-    return dispatch => {
+  export const fetchDcrSingle = (id, history) => {
+    console.log('fire 2', id, history)
+    return async dispatch => {
+      try{
+        dispatch({type: REDIRECT_PENDING})
       console.log('im in the dispatch!')
-      axios.get(`http://localhost:3000/api/v1/dc_rnews/${id}`)
-      .then(res => dispatch({
+      let res = await fetch(`http://localhost:3000/api/v1/dc_rnews/${id}`)
+      let userObj = await res.json()
+      dispatch({
         type: FETCH_DCR_SINGLE_SUCCESS,
-        payload: res.data.data
-      }))
-      .catch(err => dispatch({
+        payload: userObj.data
+      })
+      history.push(`/DcrDetails/${id}`)
+    }catch(err){
+     dispatch({
         type: FETCH_DCR_SINGLE_FAILED,
         payload: err
-      }))
+      })
     }
   }
+}
 
   export const fetchDcrComments = () => {
     return dispatch => {

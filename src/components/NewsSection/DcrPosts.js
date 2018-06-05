@@ -22,21 +22,23 @@ import {
   NavbarBrand
 } from 'reactstrap'
 
-const Posts = ({ piperComments }) => {
-  if(piperComments){
+const Posts = ({ dcrComments }) => {
+  if(dcrComments){
     return(
 
     <div>
       <Card className="diamondCard">
         <CardTitle style={{marginTop:".5em"}} className="text-center"> </CardTitle>
 
+        <CardBody>
           <CardImg style={{maxWidth:"10em", borderRadius:"5%"}} className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
 
-            <CardBody>
+              <Col className="col-md-6 offset-md-2">
+                <CardText> { dcrComments.comment } </CardText>
+              </Col>
 
-              <CardText> { piperComments.comment } </CardText>
 
-              <Link className="btn btn-secondary" style={{borderRadius:"5%"}} to="/NewsMain">Back</Link>
+
             </CardBody>
 
           </Card>

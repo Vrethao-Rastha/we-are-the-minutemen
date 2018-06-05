@@ -15,11 +15,11 @@ import PublikTemplate4 from './PublikTemplate4'
     render() {
       let publikPosts1 = this.props.publik.map(publik => <PublikTemplate key={ publik.id } publik={ publik } />).slice(0,1)
 
-      let publikPosts2 = this.props.publik.map(publik => <PublikTemplate2 key={ publik.id } publik={ publik } />).slice(2,3)
+      let publikPosts2 = this.props.publik.map(publik => <PublikTemplate2 key={ publik.id } publik={ publik } />).slice(0,1)
 
-      let publikPosts3 = this.props.publik.map(publik => <PublikTemplate3 key={ publik.id } publik={ publik } />).slice(4,5)
+      let publikPosts3 = this.props.publik.map(publik => <PublikTemplate3 key={ publik.id } publik={ publik } />).slice(0,1)
 
-      let publikPosts4 = this.props.publik.map(publik => <PublikTemplate4 key={ publik.id } publik={ publik } />).slice(6,7)
+      let publikPosts4 = this.props.publik.map(publik => <PublikTemplate4 key={ publik.id } publik={ publik } />).slice(0,1)
 
       return(
         <div>

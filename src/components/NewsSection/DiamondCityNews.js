@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import DiamondTemplate from './DiamondTemplate'
 import DiamondTemplate2 from './DiamondTemplate2'
 import DiamondTemplate3 from './DiamondTemplate3'
@@ -33,11 +33,11 @@ import {
     render() {
       let dcrPosts1 = this.props.dcr.map(dcr => <DiamondTemplate key={ dcr.id } dcr={ dcr } />).slice(0,1)
 
-      let dcrPosts2 = this.props.dcr.map(dcr => <DiamondTemplate2 key={ dcr.id } dcr={ dcr } />).slice(2,3)
+      let dcrPosts2 = this.props.dcr.map(dcr => <DiamondTemplate2 key={ dcr.id } dcr={ dcr } />).slice(0,1)
 
-      let dcrPosts3 = this.props.dcr.map(dcr => <DiamondTemplate3 key={ dcr.id } dcr={ dcr } />).slice(4,5)
+      let dcrPosts3 = this.props.dcr.map(dcr => <DiamondTemplate3 key={ dcr.id } dcr={ dcr } />).slice(0,1)
 
-      let dcrPosts4 = this.props.dcr.map(dcr => <DiamondTemplate4 key={ dcr.id } dcr={ dcr } />).slice(6,7)
+      let dcrPosts4 = this.props.dcr.map(dcr => <DiamondTemplate4 key={ dcr.id } dcr={ dcr } />).slice(0,1)
 
       return(
         <div>
@@ -65,4 +65,4 @@ import {
       scroller: state.scroller
     })
 
-export default connect(mapStateToProps, mapDispatchToProps)(DiamondCityNews)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DiamondCityNews))

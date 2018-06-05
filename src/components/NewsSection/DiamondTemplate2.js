@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Link, browserHistory,withRouter } from 'react-router-dom'
+
 import { fetchDcrSingle } from '../../redux/actions'
 import ScrollerPic31 from '../Scrollers/ScrollerPic31'
 import ScrollerPic12 from '../Scrollers/ScrollerPic12'
@@ -26,11 +28,10 @@ class DiamondTemplate2 extends Component {
   }
 
   handleDcrSubmit = e => {
-    console.log('FIRE!')
+    console.log('FIRE!', this.props)
     e.preventDefault()
-    this.props.fetchDcrSingle(this.props.dcr[0].id)
-  }
-
+    this.props.fetchDcrSingle(this.props.dcr[2].id, this.props.history)
+}
 
   render(){
   return(
@@ -41,14 +42,14 @@ class DiamondTemplate2 extends Component {
 
     <Col>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.dcr[1].title }</CardTitle>
+        <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.dcr[2].title }</CardTitle>
          <CardImg className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
             <CardBody>
 
-              <CardText>{ this.props.dcr[1].body.slice(0,25).concat("...") }</CardText>
+              <CardText>{ this.props.dcr[2].body.slice(0,25).concat("...") }</CardText>
               <Button style={{borderRadius:"15px"}}
                 type="submit"
-                value={ this.props.dcr[0].id}
+                value={ this.props.dcr[2].id}
                 onClick={ this.handleDcrSubmit }
                 >Read More</Button>
             </CardBody>
@@ -76,4 +77,4 @@ const mapStateToProps = state => ({
   dcr: state.dcr
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(DiamondTemplate2);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DiamondTemplate2));

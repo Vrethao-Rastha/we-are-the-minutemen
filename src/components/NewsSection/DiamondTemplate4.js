@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Link, browserHistory,withRouter } from 'react-router-dom'
+
+import { fetchDcrSingle } from '../../redux/actions'
 import ScrollerPic14 from '../Scrollers/ScrollerPic14'
 import ScrollerPic4 from '../Scrollers/ScrollerPic4'
 
@@ -19,6 +22,16 @@ import cardPics from '../images/Fallout-4-Concept-Art-23.jpg'
 
 
 class DiamondTemplate4 extends Component {
+
+  state = {
+    id: ''
+  }
+
+  handleDcrSubmit = e => {
+    console.log('FIRE!', this.props)
+    e.preventDefault()
+    this.props.fetchDcrSingle(this.props.dcr[4].id, this.props.history)
+}
   render(){
   return(
   <div>
@@ -30,12 +43,17 @@ class DiamondTemplate4 extends Component {
 
     <Col>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.dcr[3].title }</CardTitle>
+        <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.dcr[4].title
+        }</CardTitle>
          <CardImg className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
             <CardBody>
 
-              <CardText>{ this.props.dcr[3].body.slice(0,25).concat("...") }</CardText>
-              <Button style={{borderRadius:"15px"}}>Read More</Button>
+              <CardText>{ this.props.dcr[4].body.slice(0,25).concat("...") }</CardText>
+              <Button style={{borderRadius:"15px"}}
+                type="submit"
+                value={ this.props.dcr[4].id}
+                onClick={ this.handleDcrSubmit }
+                >Read More</Button>
             </CardBody>
 
           </Card>
@@ -50,8 +68,13 @@ class DiamondTemplate4 extends Component {
 }
 };
 
+const mapDispatchToProps = dispatch =>
+ bindActionCreators({
+   fetchDcrSingle
+ }, dispatch)
+
 const mapStateToProps = state => ({
   dcr: state.dcr
 })
 
-export default connect(mapStateToProps)(DiamondTemplate4);
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(DiamondTemplate4));
