@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
+import {browserHistory,withRouter} from "react-router-dom"
+import {fetchMainSingle} from '../../redux/actions'
 import ScrollerPic6 from '../Scrollers/ScrollerPic6'
 import ScrollerPic5 from '../Scrollers/ScrollerPic5'
 import {
@@ -27,6 +29,19 @@ import {
 
 
 class MainStoryTemplate extends Component {
+
+  tate = {
+    id: '',
+  }
+
+  handleMainSubmit = e => {
+    console.log('FIRE!', this.props)
+    e.preventDefault()
+    this.props.fetchMainSingle(this.props.main[0].id, this.props.history)
+
+
+  }
+
   render(){
     console.log("dbfdbfbfbd", this.props)
   return(
@@ -48,7 +63,12 @@ class MainStoryTemplate extends Component {
             <CardBody>
 
               <CardText>{ this.props.main[0].picture.slice(0,65).concat("...") }</CardText>
-              <Link className="btn btn-secondary" style={{borderRadius:"15px"}} to="/Details">Read More</Link>
+              <Button style={{borderRadius:"15px"}}
+                type="submit"
+                value={ this.props.main[0].id}
+
+                onClick={ this.handleMainSubmit }
+                >Read More</Button>
             </CardBody>
           </Card>
 
@@ -62,8 +82,13 @@ class MainStoryTemplate extends Component {
 }
 };
 
+const mapDispatchToProps = dispatch =>
+ bindActionCreators({
+   fetchMainSingle
+ }, dispatch)
+
 const mapStateToProps = state => ({
 main: state.main
 })
 
-export default connect(mapStateToProps)(MainStoryTemplate);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainStoryTemplate));

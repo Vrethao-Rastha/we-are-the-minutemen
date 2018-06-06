@@ -278,19 +278,27 @@ export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
     }
   }
 
-  export const fetchMainSingle = (id) => {
-    return dispatch => {
-      axios.get(`http://localhost:3000/api/v1/main_story/${id}`)
-      .then(res => dispatch({
+  export const fetchMainSingle = (id, history) => {
+    console.log('fire 2', id, history)
+    return async dispatch => {
+      try{
+        dispatch({type: MAIN_REDIRECT_PENDING})
+      console.log('im in publik the dispatch!')
+      let res = await fetch(`http://localhost:3000/api/v1/main_story/${id}`)
+      let userObj = await res.json()
+      dispatch({
         type: FETCH_MAIN_SINGLE_SUCCESS,
-        payload: res.data.data
-      }))
-      .catch(err => dispatch({
+        payload: userObj.data
+      })
+      history.push(`/MainDetails/${id}`)
+    }catch(err){
+     dispatch({
         type: FETCH_MAIN_SINGLE_FAILED,
         payload: err
-      }))
+      })
     }
   }
+}
 
   export const fetchMainStoryComments = () => {
     return dispatch => {

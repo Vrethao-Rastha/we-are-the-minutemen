@@ -6,6 +6,7 @@ import Splash from './components/Splash'
 import Register from './components/Register'
 import PublikStoryDetail from './components/NewsSection/PublikStoryDetail'
 import DcrStoryDetail from './components/NewsSection/DcrStoryDetail'
+import MainStoryDetail from './components/NewsSection/MainStoryDetail'
 
 import {
   BrowserRouter as Router,
@@ -27,6 +28,7 @@ class App extends Component {
             <Route path="/BlogPage" component = { BlogPage } />
             <Route path="/DcrDetails" component = { DcrStoryDetail } />
             <Route path="/PublikDetails" component = { PublikStoryDetail } />
+            <Route path="/MainDetails" component = { MainStoryDetail } />
             <Route path="/Erios" component = {() => window.location = 'http://localhost:1701' } />
           </Switch>
         </div>

@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
-import ScrollerPic12 from '../Scrollers/ScrollerPic12'
-import theRoad from '../images/the road.jpg'
+import {browserHistory,withRouter} from "react-router-dom"
+import {fetchMainSingle} from '../../redux/actions'
+import ScrollerPic6 from '../Scrollers/ScrollerPic6'
+import ScrollerPic5 from '../Scrollers/ScrollerPic5'
 import {
   Container,
   Col,
@@ -26,12 +28,34 @@ import {
 } from 'reactstrap'
 
 
-class MainStoryTemplate3 extends Component {
+class MainStoryTemplate extends Component {
+
+  tate = {
+    id: '',
+  }
+
+  handleMainSubmit = e => {
+    console.log('FIRE!', this.props)
+    e.preventDefault()
+    this.props.fetchMainSingle(this.props.main[2].id, this.props.history)
+
+
+  }
+
   render(){
+    console.log("dbfdbfbfbd", this.props)
   return(
   <div>
 
-<div style={{marginTop:"6em"}}></div>
+    <div style={{marginTop:"5em"}}></div>
+
+    <div className="phantom"></div>
+
+
+    <ScrollerPic6 />
+
+    <div className="phantom"></div>
+
     <Col>
       <Card className="mainCard">
         <CardTitle style={{marginTop:".5em"}}  className="text-center">{ this.props.main[2].title }</CardTitle>
@@ -39,12 +63,17 @@ class MainStoryTemplate3 extends Component {
             <CardBody>
 
               <CardText>{ this.props.main[2].picture.slice(0,65).concat("...") }</CardText>
-              <Link onClick={() => console.log('main',this.props.main)} className="btn btn-secondary" style={{borderRadius:"15px"}} to="/Details">Read More</Link>
+              <Button style={{borderRadius:"15px"}}
+                type="submit"
+                value={ this.props.main[2].id}
+
+                onClick={ this.handleMainSubmit }
+                >Read More</Button>
             </CardBody>
           </Card>
 
           <div style={{marginBottom:"5em"}}></div>
-          <ScrollerPic12 />
+          <ScrollerPic5 />
           <div style={{marginBottom:"8em"}}></div>
 
   </Col>
@@ -53,8 +82,13 @@ class MainStoryTemplate3 extends Component {
 }
 };
 
+const mapDispatchToProps = dispatch =>
+ bindActionCreators({
+   fetchMainSingle
+ }, dispatch)
+
 const mapStateToProps = state => ({
 main: state.main
 })
 
-export default connect(mapStateToProps)(MainStoryTemplate3);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainStoryTemplate));
