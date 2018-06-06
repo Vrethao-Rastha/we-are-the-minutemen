@@ -101,7 +101,10 @@ export const CREATE_USER_FAILED = 'CREATE_USER_FAILED'
 export const FETCH_ABOUT_SUCCESS = 'FETCH_ABOUT_SUCCESS'
 export const FETCH_ABOUT_FAILED = 'FETCH_ABOUT_FAILED'
 
-export const REDIRECT_PENDING = 'REDIRECT_PENDING'
+export const DCR_REDIRECT_PENDING = 'REDIRECT_PENDING'
+export const PUBLIK_REDIRECT_PENDING = 'REDIRECT_PENDING'
+export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
+
 
 
   export const fetchUser = () => {
@@ -151,8 +154,8 @@ export const REDIRECT_PENDING = 'REDIRECT_PENDING'
     console.log('fire 2', id, history)
     return async dispatch => {
       try{
-        dispatch({type: REDIRECT_PENDING})
-      console.log('im in the dispatch!')
+        dispatch({type: DCR_REDIRECT_PENDING})
+      console.log('im in the dcr dispatch!')
       let res = await fetch(`http://localhost:3000/api/v1/dc_rnews/${id}`)
       let userObj = await res.json()
       dispatch({
@@ -197,21 +200,27 @@ export const REDIRECT_PENDING = 'REDIRECT_PENDING'
     }
   }
 
-  export const fetchPublikSingle = (id) => {
-    console.log('fire 2', id)
-    return dispatch => {
-      console.log('im in the dispatch!')
-      axios.get(`http://localhost:3000/api/v1/publik_news/${id}`)
-      .then(res => dispatch({
+  export const fetchPublikSingle = (id, history) => {
+    console.log('fire 2', id, history)
+    return async dispatch => {
+      try{
+        dispatch({type: PUBLIK_REDIRECT_PENDING})
+      console.log('im in publik the dispatch!')
+      let res = await fetch(`http://localhost:3000/api/v1/publik_news/${id}`)
+      let userObj = await res.json()
+      dispatch({
         type: FETCH_PUBLIK_SINGLE_SUCCESS,
-        payload: res.data.data
-      }))
-      .catch(err => dispatch({
+        payload: userObj.data
+      })
+      history.push(`/PublikDetails/${id}`)
+    }catch(err){
+     dispatch({
         type: FETCH_PUBLIK_SINGLE_FAILED,
         payload: err
-      }))
+      })
     }
   }
+}
 
   export const fetchPublikComments = () => {
     return dispatch => {

@@ -32,6 +32,7 @@ class DiamondTemplate4 extends Component {
     e.preventDefault()
     this.props.fetchDcrSingle(this.props.dcr[4].id, this.props.history)
 }
+
   render(){
   return(
   <div>

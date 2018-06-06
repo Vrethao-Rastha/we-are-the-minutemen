@@ -22,7 +22,7 @@ import {
   NavbarBrand
 } from 'reactstrap'
 
-const Posts = ({ dcrComments }) => {
+const DcrPosts = ({ dcrComments }) => {
   if(dcrComments){
     return(
 
@@ -55,4 +55,4 @@ const Posts = ({ dcrComments }) => {
 
 };
 
-export default Posts;
+export default DcrPosts;

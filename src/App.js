@@ -4,6 +4,7 @@ import PipersPage from './components/PipersSection/PipersPage'
 import BlogPage from './components/BlogSection/BlogPage'
 import Splash from './components/Splash'
 import Register from './components/Register'
+import PublikStoryDetail from './components/NewsSection/PublikStoryDetail'
 import DcrStoryDetail from './components/NewsSection/DcrStoryDetail'
 
 import {
@@ -25,6 +26,7 @@ class App extends Component {
             <Route path="/PipersPage" component = { PipersPage } />
             <Route path="/BlogPage" component = { BlogPage } />
             <Route path="/DcrDetails" component = { DcrStoryDetail } />
+            <Route path="/PublikDetails" component = { PublikStoryDetail } />
             <Route path="/Erios" component = {() => window.location = 'http://localhost:1701' } />
           </Switch>
         </div>

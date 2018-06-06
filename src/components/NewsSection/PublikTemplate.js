@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Link, browserHistory,withRouter } from 'react-router-dom'
+import { fetchPublikSingle } from '../../redux/actions'
 import ScrollerPic15 from '../Scrollers/ScrollerPic15'
 import ScrollerPic33 from '../Scrollers/ScrollerPic33'
 import {
@@ -15,6 +17,17 @@ import {
 
 
 class PublikTemplate extends Component {
+
+  state = {
+    id: ''
+  }
+
+  handlePublikSubmit = e => {
+    console.log('FIRE!', this.props)
+    e.preventDefault()
+    this.props.fetchPublikSingle(this.props.publik[1].id, this.props.history)
+}
+
   render(){
       return(
       <div>
@@ -36,7 +49,11 @@ class PublikTemplate extends Component {
                 <CardBody>
 
                   <CardText>{ this.props.publik[1].body.slice(0,25).concat("...") }</CardText>
-                  <Button style={{borderRadius:"15px"}}>Read More</Button>
+                  <Button style={{borderRadius:"15px"}}
+                    type="submit"
+                    value={ this.props.publik[1].id}
+                    onClick={ this.handlePublikSubmit }
+                    >Read More</Button>
                 </CardBody>
               </Card>
 
@@ -52,8 +69,13 @@ class PublikTemplate extends Component {
     }
 };
 
+const mapDispatchToProps = dispatch =>
+ bindActionCreators({
+   fetchPublikSingle
+ }, dispatch)
+
 const mapStateToProps = state => ({
   publik: state.publik
 })
 
-export default connect(mapStateToProps)(PublikTemplate);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PublikTemplate));

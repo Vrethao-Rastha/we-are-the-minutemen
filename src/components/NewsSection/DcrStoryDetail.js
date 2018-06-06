@@ -49,12 +49,14 @@ toggle = () => {
 
 componentDidMount(props) {
   if(!this.props.singleDcr.title) {
-    this.props.fetchDcrSingle(this.props.location.pathname.slice(9), this.props.history)
+    this.props.fetchDcrSingle(this.props.location.pathname.slice(11), this.props.history)
   }
 }
 
 
   render() {
+    console.log('state:', this.state, 'props', this.props)
+
     var pathThing = this.props.location.pathname.slice(9)
 
      let posts = this.props.dcrComments.map(dcrComments => <DcrPosts key={ dcrComments.id } dcrComments={ dcrComments } />)

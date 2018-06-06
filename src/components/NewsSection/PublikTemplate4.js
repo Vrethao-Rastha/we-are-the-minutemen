@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import ScrollerPic14 from '../Scrollers/ScrollerPic14'
-import ScrollerPic25 from '../Scrollers/ScrollerPic25'
-
+import { Link, browserHistory,withRouter } from 'react-router-dom'
+import { fetchPublikSingle } from '../../redux/actions'
+import ScrollerPic19 from '../Scrollers/ScrollerPic19'
 import {
   Button,
   Col,
@@ -13,43 +13,67 @@ import {
   CardBody,
   CardTitle,
 } from 'reactstrap'
-import { getRandom } from './util'
-import cardPics from '../images/Fallout-4-Concept-Art-23.jpg'
-
 
 
 class PublikTemplate4 extends Component {
+
+  state = {
+    id: ''
+  }
+
+  handlePublikSubmit = e => {
+    console.log('FIRE!', this.props)
+    e.preventDefault()
+    this.props.fetchPublikSingle(this.props.publik[4].id, this.props.history)
+}
+
   render(){
-  return(
-  <div>
+      return(
+      <div>
+
     <div style={{marginTop:"3em"}}></div>
 
-    <div className="phantom"></div>
-    <div className="phantom"></div>
-
-    <Col>
-      <Card className="publikCard">
-        <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.publik[4].title }</CardTitle>
-
-         <CardImg className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-            <CardBody>
-
-              <CardText>{ this.props.publik[4].body.slice(0,25).concat("...") }</CardText>
-              <Button style={{borderRadius:"15px"}}>Read More</Button>
-            </CardBody>
-          </Card>
-          <div className="phantom"></div>
-          <ScrollerPic25 />
 
 
-  </Col>
-  </div>
-  )
-}
+
+      <div className="phantom"></div>
+
+
+        <Col>
+          <Card className="publikCard">
+            <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.publik[4].title }</CardTitle>
+
+             <CardImg className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                <CardBody>
+
+                  <CardText>{ this.props.publik[4].body.slice(0,25).concat("...") }</CardText>
+                  <Button style={{borderRadius:"15px"}}
+                    type="submit"
+                    value={ this.props.publik[4].id}
+                    onClick={ this.handlePublikSubmit }
+                    >Read More</Button>
+                </CardBody>
+              </Card>
+
+              <div className="phantom"></div>
+              <div className="phantom"></div>
+              <ScrollerPic19 />
+
+              <div className="phantom"></div>
+              <div className="phantom"></div>
+      </Col>
+      </div>
+      )
+    }
 };
 
-  const mapStateToProps = state => ({
-  publik: state.publik
-  })
+const mapDispatchToProps = dispatch =>
+ bindActionCreators({
+   fetchPublikSingle
+ }, dispatch)
 
-  export default connect(mapStateToProps)(PublikTemplate4);
+const mapStateToProps = state => ({
+  publik: state.publik
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PublikTemplate4));

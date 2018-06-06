@@ -48,16 +48,17 @@ toggle = () => {
 }
 
 componentDidMount(props) {
-  if(!this.props.singlePublik.title) {
-    this.props.fetchPublikSingle(this.props.location.pathname.slice(9), this.props.history)
+  if(!this.props.publikSingle.title) {
+    this.props.fetchPublikSingle(this.props.location.pathname.slice(15), this.props.history)
   }
 }
 
 
   render() {
+    console.log('state:', this.state, 'props', this.props)
     var pathThing = this.props.location.pathname.slice(9)
 
-     let posts = this.props.publikComments.map(publikComments => <PublikPosts key={ publikComments.id } publikComments={ dcrComments } />)
+     let posts = this.props.publikComments.map(publikComments => <PublikPosts key={ publikComments.id } publikComments={ publikComments } />)
 
 
         return (
@@ -69,7 +70,7 @@ componentDidMount(props) {
                 <div className="phantom"></div>
             <CardImg style={{marginTop:"1em"}} className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
             <CardBody>
-              <CardTitle>Card {this.props.singlePublik.title}</CardTitle>
+              <CardTitle>Card {this.props.publikSingle.title}</CardTitle>
               <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
               <Button style={{marginRight:"1em"}} onClick={this.toggle}>Post</Button>
               <Link className="btn btn-secondary" to="/NewsMain">Back</Link>
@@ -120,7 +121,7 @@ const mapDispatchToProps = dispatch =>
 }, dispatch)
 
 const mapStateToProps = state => ({
-  publikSingle: state.publik,
+  publikSingle: state.publikSingle,
   //singleDcr: state.dcrSingle,
   // piperSingle: state.piper,
   // mainSingle: state.main,
