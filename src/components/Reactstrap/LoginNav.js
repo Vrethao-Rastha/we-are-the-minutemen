@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
+//import { userLogin } from '../../redux/actions'
 import { Container,
          Row,
          Col,
@@ -19,13 +22,22 @@ import logo from '../images/Icon_Minutemen_quest.png'
   class LoginNav extends Component {
 
     state = {
-      modal: false
+      modal: false,
+      login: [{
+        email: '',
+        password: ''
+      }]
     };
 
   toggle = () => {
     this.setState({
       modal: !this.state.modal
     });
+  }
+
+  handleSubmit = e => {
+    e.preventDefault()
+    this.props.userLogin(this.state, this.props.history)
   }
 
     render(){
@@ -61,7 +73,9 @@ import logo from '../images/Icon_Minutemen_quest.png'
                         <Input
                         type="email"
                         name="email"
-                        id="email-field"
+                        id="exampleEmail"
+                        onChange={e => this.setState({ email: e.target.value})}
+                        value={this.state.email}
                       />
                         </Form>
 
@@ -70,21 +84,27 @@ import logo from '../images/Icon_Minutemen_quest.png'
                         <Input
                           type="password"
                           name="password"
-                          id="password-field"
+                          id="examplePassword"
+                          onChange={e => this.setState({ password: e.target.value})}
+                          value={this.state.password}
                         />
                         </Form>
                </Col>
                 <ModalFooter>
-                  <Link className="btn btn-secondary" to="/NewsMain">Login</Link>
+                  <Button className="btn btn-secondary" type="submit">Login</Button>
                   <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                 </ModalFooter>
               </ModalBody>
               </Modal>
 
-              
+
 
       </Navbar>
     )
   }
 }
-  export default LoginNav
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  //userLogin
+})
+  export default connect(null, mapDispatchToProps)(LoginNav)

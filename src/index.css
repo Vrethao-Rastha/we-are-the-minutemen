@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-image: url('https://www.shutterstock.com/image-photo/fragment-abstract-wall-close-warm-colors-176487842');
 }
 .logNav {
   padding: 0px;
@@ -53,21 +54,9 @@ body {
   width: 100%;
 }
 .parallax {
-  background-image: url("../src/components/images/heather near goodneighbor.jpg");
+  background-image: url("../src/components/images/Fallout-4-Concept-Art-12.jpg");
   height: 200px;
   /*border-radius: 35px;*/
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.parallaxB {
-  background-image: url("../src/components/images/heather near goodneighbor.jpg");
-  height: 200px;
-  padding-left: 2em;
-  padding-right: 2em;
-  margin-left:calc(-50vw + 200px);
-  margin-right:calc(-50vw + 200px);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -83,6 +72,36 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.parallaxThree {
+  background-image: url("../src/components/images/Fallout-4-Concept-Art-17.jpg");
+  height: 400px;
+  margin-left:calc(-80vw + 200px);
+  margin-right:calc(-80vw + 200px);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 55%;
+}
+.parallaxFour {
+  background-image: url("../src/components/images/Fallout-4-Concept-Art-21.jpg");
+  height: 400px;
+  margin-left:calc(-200vw + 200px);
+  margin-right:calc(-200vw + 200px);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallaxFive {
+  background-image: url("../src/components/images/Fallout-4-Concept-Art-21.jpg");
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .headline {
   height: 25em;
 }
@@ -90,16 +109,19 @@ body {
   border-radius: 5%;
   padding-left: 1em;
   padding-right: 1em;
+  border: 1px solid black;
 }
 .diamondCard {
-  border-radius: 10%;
+  border-radius: 5%;
   padding-left: 1em;
   padding-right: 1em;
+  border: 1px solid black;
 }
 .mainCard {
   border-radius: 5%;
   padding-left: 1em;
   padding-right: 1em;
+  border: 1px solid black;
 }
 .modal-body {
   background-image: url('./components/images/crossing.jpg')
@@ -113,11 +135,3 @@ body {
   background-attachment: fixed;
   background-image: url('./components/images/crossing.jpg');
 }
-/*.cardFix {
-  padding-right: 1em;
-   padding-left: 1em;
-   border-radius: 5%;
-}*/
-/*Erios Area*/
-
-/* Styling for the chat bot */

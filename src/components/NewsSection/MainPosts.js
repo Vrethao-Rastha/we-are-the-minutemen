@@ -22,7 +22,8 @@ import {
   NavbarBrand
 } from 'reactstrap'
 
-const MainPosts = ({ mainComments }) => {
+const MainPosts = ({ user, mainComments }) => {
+  console.log('PROPS IN THE POST','main comments', mainComments, 'user', user)
   if(mainComments){
     return(
 
@@ -31,7 +32,7 @@ const MainPosts = ({ mainComments }) => {
         <CardTitle style={{marginTop:".5em"}} className="text-center"> </CardTitle>
 
         <CardBody>
-          <CardImg style={{maxWidth:"10em", borderRadius:"5%"}} className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+          {/* <CardImg style={{maxWidth:"10em", borderRadius:"5%"}} className="diamondCard" top width="100%" src={process.env.PUBLIC_URL + user.avatar} alt="Card image cap" /> */}
 
               <Col className="col-md-6 offset-md-2">
                 <CardText> { mainComments.comment } </CardText>
@@ -42,6 +43,7 @@ const MainPosts = ({ mainComments }) => {
             </CardBody>
 
           </Card>
+          <div className="phantom"></div>
     </div>
     )
   }else{

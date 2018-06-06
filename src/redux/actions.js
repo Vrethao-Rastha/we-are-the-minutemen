@@ -186,6 +186,20 @@ export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
     }
   }
 
+  export const addDcrComments = (name, comment, avatar) => {
+    return dispatch => {
+      axios.post('http://localhost:3000/api/v1/dcr_comments/', {name, comment, avatar})
+      .then(res => dispatch({
+        type: ADD_DCR_COMMENTS_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: ADD_DCR_COMMENTS_FAILED,
+        payload: err
+      }))
+    }
+  }
+
   export const fetchPublikStories = () => {
     return dispatch => {
       axios.get('http://localhost:3000/api/v1/publik_news/')
@@ -236,6 +250,20 @@ export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
     }
   }
 
+  export const addPublikComments = (name, comment, avatar) => {
+    return dispatch => {
+      axios.post('http://localhost:3000/api/v1/publik_comments/', {name, comment, avatar})
+      .then(res => dispatch({
+        type: ADD_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: ADD_PUBLIK_OCCURRENCES_COMMENTS_FAILED,
+        payload: err
+      }))
+    }
+  }
+
   export const fetchPiperStories = () => {
     return dispatch => {
       axios.get('http://localhost:3000/api/v1/piper_news/')
@@ -259,6 +287,20 @@ export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
       }))
       .catch(err => dispatch({
         type: FETCH_PIPER_COMMENTS_FAILED,
+        payload: err
+      }))
+    }
+  }
+
+  export const addPiperComments = (name, comment, avatar) => {
+    return dispatch => {
+      axios.post('http://localhost:3000/api/v1/piper_comments/', {name, comment, avatar})
+      .then(res => dispatch({
+        type: ADD_PIPER_COMMENTS_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: ADD_PIPER_COMMENTS_FAILED,
         payload: err
       }))
     }
@@ -309,6 +351,20 @@ export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
       }))
       .catch(err => dispatch({
         type: FETCH_MAIN_STORY_COMMENTS_FAILED,
+        payload: err
+      }))
+    }
+  }
+
+  export const addMainStoryComments = (name, comment, avatar) => {
+    return dispatch => {
+      axios.post('http://localhost:3000/api/v1/main_story_comments/', {name, comment, avatar})
+      .then(res => dispatch({
+        type: ADD_MAIN_STORY_COMMENTS_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: ADD_MAIN_STORY_COMMENTS_FAILED,
         payload: err
       }))
     }

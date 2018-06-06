@@ -54,11 +54,11 @@ class PublikTemplate4 extends Component {
                     >Read More</Button>
                 </CardBody>
               </Card>
-
               <div className="phantom"></div>
+              <div className="parallaxFive"></div>
+
               <div className="phantom"></div>
               <ScrollerPic19 />
-
               <div className="phantom"></div>
               <div className="phantom"></div>
       </Col>

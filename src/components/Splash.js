@@ -39,7 +39,7 @@ let picStyle = {
       <div>
         <LoginNav/>
         <Container>
-          
+
 
         <Col className="clearfix" style={ picStyle } md="12">
           <h1 style={{color: "white", textShadow: "-1px 0 black, 0 1px black, 0px 0 black, 0 -2px black"}} className="text-center">We Are the Minutemen</h1>

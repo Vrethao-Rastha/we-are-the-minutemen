@@ -21,6 +21,7 @@ import MainStoryTemplate3 from './MainStoryTemplate3'
       return(
         <div>
         <div>{ mainPosts }</div>
+        <div className="parallaxThree"></div>
         <div>{ mainPosts2 }</div>
         <div>{ mainPosts3 }</div>
         </div>
@@ -38,7 +39,6 @@ import MainStoryTemplate3 from './MainStoryTemplate3'
       publik: state.publik,
       dcr: state.dcr,
       scroller: state.scroller
-
     })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainStory)

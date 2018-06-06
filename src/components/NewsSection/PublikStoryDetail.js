@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
-import { fetchPublikSingle } from '../../redux/actions'
+import { fetchPublikSingle, addPublikComments } from '../../redux/actions'
 import Footer from '../Reactstrap/Footer'
 import MainNav from '../Reactstrap/MainNav'
 import PublikPosts from './PublikPosts'
@@ -38,7 +38,11 @@ class PublikStoryDetail extends Component {
 
   state = {
     modal: false,
-    test: ''
+    post : [{
+    name: 'test',
+    comment: '',
+    avatar: 'test'
+  }]
   };
 
 toggle = () => {
@@ -46,6 +50,11 @@ toggle = () => {
     modal: !this.state.modal
   });
 }
+
+handlePostSubmit = e => {
+    // e.preventDefault()
+    this.props.addPublikComments(this.state.name, this.state.comment, this.state.avatar)
+  }
 
 componentDidMount(props) {
   if(!this.props.publikSingle.title) {
@@ -92,18 +101,24 @@ componentDidMount(props) {
 
                 <Col>
               <Label className="btns" for="text-field">Enter your post</Label>
-                    <Form>
-                    <textarea rows="4" cols="50"
-                      type="text"
-                      name="text"
-                      id="text-field"
-                    />
-                    </Form>
-           </Col>
+              <Form onSubmit={ this.handlePostSubmit }>
+                <FormGroup>
+                  <textarea rows="4" cols="50"
+                    type="text"
+                    name="text"
+                    id="text-field"
+                    value={this.state.comment}
+                    onChange={e => this.setState({comment: e.target.value, name: this.props.user[0].name, avatar: this.props.user[0].avatar})}
+                  />
+
+                </FormGroup>
             <ModalFooter>
+
               <Button className="btn btn-secondary">Post</Button>
               <Button color="secondary" onClick={this.toggle}>Cancel</Button>
             </ModalFooter>
+          </Form>
+        </Col>
           </ModalBody>
           </Modal>
 
@@ -117,18 +132,14 @@ componentDidMount(props) {
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    fetchPublikSingle
+    fetchPublikSingle,
+    addPublikComments
 }, dispatch)
 
 const mapStateToProps = state => ({
   publikSingle: state.publikSingle,
-  //singleDcr: state.dcrSingle,
-  // piperSingle: state.piper,
-  // mainSingle: state.main,
   publikComments: state.publikComments,
-  //dcrComments: state.dcrComments,
-  // piperComments: state.piperComments,
-  // mainComments: state.mainComments
+  user: state.currentUser
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PublikStoryDetail);

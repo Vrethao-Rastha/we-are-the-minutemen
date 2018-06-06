@@ -16,6 +16,8 @@ import DcrSingleReducer from './DcrSingleReducer'
 import MainSingleReducer from './MainSingleReducer'
 import PublikSingleReducer from './PublikSingleReducer'
 
+import UsersReducer from './UsersReducer'
+
 export default combineReducers({
   dcr: DcrReducer,
   dcrSingle: DcrSingleReducer,
@@ -33,5 +35,7 @@ export default combineReducers({
   main: MainStoryReducer,
   mainSingle: MainSingleReducer,
   mainComments: MainStoryCommentsReducer,
+
+  user: UsersReducer
 
 })

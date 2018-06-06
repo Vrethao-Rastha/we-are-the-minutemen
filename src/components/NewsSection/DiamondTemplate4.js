@@ -61,6 +61,7 @@ class DiamondTemplate4 extends Component {
           <div className="phantom"></div>
           <ScrollerPic4 />
           <div style={{marginBottom:"4em"}}></div>
+          <div  className="parallaxFive" style={{borderRadius:"50%"}}></div>
 
 
   </Col>
