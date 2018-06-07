@@ -39,11 +39,11 @@ class MainStoryDetail extends Component {
 
   state = {
     modal: false,
-    post : [{
-    name: 'test',
+
+    name: '',
     comment: '',
     avatar: 'test'
-  }]
+
   };
 
 toggle = () => {
@@ -117,7 +117,7 @@ componentDidMount(props) {
                           name="text"
                           id="text-field"
                           value={this.state.comment}
-                          onChange={e => this.setState({comment: e.target.value, name: this.props.user[0].name, avatar: this.props.user[0].avatar})}
+                          onChange={e => this.setState({comment: e.target.value, name: localStorage.user.replace(/"/g,""), avatar:localStorage.avatar.replace(/"/g,"") })}
                         />
 
                         <Button className="btn btn-secondary">Post</Button>

@@ -181,3 +181,10 @@ body {
   background-attachment: fixed;
   background-image: url('./components/images/crossing.jpg');
 }
+.postName {
+  text-align: center;
+}
+.postComment {
+  text-align: center;
+
+}

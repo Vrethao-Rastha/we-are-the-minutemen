@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import renderIf from './util'
 import {
   Container,
   Col,
@@ -23,20 +24,29 @@ import {
 } from 'reactstrap'
 
 const PublikPosts = ({ publikComments }) => {
-  if(publikComments){
     return(
 
     <div>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} className="text-center"> </CardTitle>
+        <CardTitle style={{marginTop:".5em"}} lassName="postName"> { publikComments.name } </CardTitle>
+
 
         <CardBody>
-          <CardImg style={{maxWidth:"10em", borderRadius:"5%"}} className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+          <Row>
+            <Col className="col-md-2">
 
-              <Col className="col-md-6 offset-md-2">
-                <CardText> { publikComments.comment } </CardText>
-              </Col>
+              <CardImg style={{maxWidth:"10em", borderRadius:"5%", marginBottom:"2em"}} className="diamondCard" top width="100%" src={publikComments.avatar} alt="Card image cap" />
+            </Col>
+            <Col>
 
+              <CardText style={{marginLeft:"2em"}}> { publikComments.comment } </CardText>
+            </Col>
+
+            {renderIf(localStorage.user.replace(/"/g,"") === publikComments.name,
+            <Button className="pull-right" style={{maxHeight:"3em"}}>Delete</Button>
+          )}
+
+          </Row>
 
 
             </CardBody>
@@ -44,15 +54,6 @@ const PublikPosts = ({ publikComments }) => {
           </Card>
     </div>
     )
-  }else{
-    return(
-      <div>
-        esdbnsdonsdo
-      </div>
-
-    )
-  }
-
 };
 
 export default PublikPosts;

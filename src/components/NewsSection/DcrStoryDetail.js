@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import { fetchDcrSingle, addDcrComments, fetchUser } from '../../redux/actions'
+import renderIf from './util'
 import Footer from '../Reactstrap/Footer'
 import MainNav from '../Reactstrap/MainNav'
 import DcrPosts from './DcrPosts'
@@ -38,11 +39,11 @@ class DcrStoryDetail extends Component {
 
   state = {
     modal: false,
-    post : [{
-    name: 'test',
+
+    name: '',
     comment: '',
     avatar: 'test'
-  }]
+
   };
 
 toggle = () => {
@@ -52,23 +53,24 @@ toggle = () => {
 }
 
 handlePostSubmit = e => {
-    this.props.addDcrComments(this.state.name, this.state.comment, this.state.avatar)
+    this.props.addDcrComments( this.state.name, this.state.comment, this.state.avatar )
   }
 
 componentDidMount(props) {
   if(!this.props.singleDcr.title) {
-    this.props.fetchDcrSingle(this.props.location.pathname.slice(11), this.props.history)
+    this.props.fetchDcrSingle(this.props.location.pathname.slice(12), this.props.history)
   }
 }
 
 
   render() {
     console.log('DCR DETAIL','state:', this.state, 'props', this.props)
-
+    console.log(this.props);
+    console.log('test', localStorage.user)
+    console.log('local', localStorage.avatar)
     var pathThing = this.props.location.pathname.slice(9)
 
-     let posts = this.props.dcrComments.map(dcrComments => <DcrPosts key={ dcrComments.id } dcrComments={ dcrComments } />)
-
+     let posts = this.props.dcrComments.map(item => <DcrPosts key={ item.id } dcrComment={ item } />)
 
         return (
           <div className="newsDetail">
@@ -108,8 +110,12 @@ componentDidMount(props) {
                     name="text"
                     id="text-field"
                     value={this.state.comment}
-                    onChange={e => this.setState({comment: e.target.value, name: this.props.user[0].name, avatar: this.props.user[0].avatar})}
+                    onChange={e => this.setState({comment: e.target.value, name: localStorage.user.replace(/"/g,""), avatar:localStorage.avatar.replace(/"/g,"") })}
                   />
+                  <Col>
+
+
+                  </Col>
 
                 </FormGroup>
             <ModalFooter>

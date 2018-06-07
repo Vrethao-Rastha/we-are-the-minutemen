@@ -9,7 +9,7 @@ import App from './App';
 import { fetchUser, fetchAbout, fetchDcrStories, fetchPublikStories, fetchPiperStories, fetchBlogStories, fetchMainStory, fetchDcrComments, fetchPublikComments, fetchPiperComments, fetchMainStoryComments } from './redux/actions'
 
 let newStore = store()
-newStore.dispatch(fetchUser())
+//newStore.dispatch(fetchUser())
 //newStore.dispatch(fetchAbout())
 newStore.dispatch(fetchDcrStories())
 newStore.dispatch(fetchPublikStories())

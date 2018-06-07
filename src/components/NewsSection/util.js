@@ -1,3 +1,7 @@
-export const getRandom = (min, max) => {
-  return Math.floor(Math.random() * (max - min)) + min;
+export default function renderIf(condition, content) {
+    if (condition) {
+        return content;
+    } else {
+         return null;
+    }
 }

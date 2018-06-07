@@ -15,8 +15,9 @@ let initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case USER_LOGIN_SUCCESS:
-      localStorage.setItem('user', JSON.stringify(action.payload.user))
-      localStorage.setItem('token', JSON.stringify(action.payload.token))
+      localStorage.setItem('user', JSON.stringify(action.payload.user.name))
+      localStorage.setItem('avatar', JSON.stringify(action.payload.user.avatar))
+      localStorage.setItem('token', JSON.stringify(action.payload.access_token))
       return {
         ...state,
         user: action.payload,

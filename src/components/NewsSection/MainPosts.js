@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import renderIf from './util'
 import {
   Container,
   Col,
@@ -23,21 +24,32 @@ import {
 } from 'reactstrap'
 
 const MainPosts = ({ user, mainComments }) => {
-  console.log('PROPS IN THE POST','main comments', mainComments, 'user', user)
-  if(mainComments){
+  console.log('PROPS IN THE POST Main post','main comments', mainComments, 'user', user)
+//   if (user.role === ADMIN || user.auth && post.author === user.id) {
+//   <button onClick={this.deletePost.bind(this}>Delete</button>
+// }
     return(
 
     <div>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} className="text-center"> </CardTitle>
+        <CardTitle style={{marginTop:".5em"}} lassName="postName"> { mainComments.name } </CardTitle>
+
 
         <CardBody>
-          {/* <CardImg style={{maxWidth:"10em", borderRadius:"5%"}} className="diamondCard" top width="100%" src={process.env.PUBLIC_URL + user.avatar} alt="Card image cap" /> */}
+          <Row>
+            <Col className="col-md-2">
 
-              <Col className="col-md-6 offset-md-2">
-                <CardText> { mainComments.comment } </CardText>
-              </Col>
+              <CardImg style={{maxWidth:"10em", borderRadius:"5%", marginBottom:"2em"}} className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+            </Col>
+            <Col>
 
+              <CardText style={{marginLeft:"2em"}}> { mainComments.comment } </CardText>
+            </Col>
+
+            {renderIf(localStorage.user.replace(/"/g,"") === mainComments.name,
+            <Button className="pull-right" style={{maxHeight:"3em"}}>Delete</Button>
+          )}
+          </Row>
 
 
             </CardBody>
@@ -46,14 +58,6 @@ const MainPosts = ({ user, mainComments }) => {
           <div className="phantom"></div>
     </div>
     )
-  }else{
-    return(
-      <div>
-        esdbnsdonsdo
-      </div>
-
-    )
-  }
 
 };
 

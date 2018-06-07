@@ -59,10 +59,10 @@ class MainStoryTemplate extends Component {
     <Col>
       <Card className="mainCard">
         <CardTitle style={{marginTop:".5em"}}  className="text-center">{ this.props.main[0].title }</CardTitle>
-         <CardImg className="headline mainCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+         <CardImg className="headline mainCard" top width="100%" src={ process.env.PUBLIC_URL + '/crossing.jpg' } alt="Card image cap" />
             <CardBody>
 
-              <CardText>{ this.props.main[0].picture.slice(0,65).concat("...") }</CardText>
+              <CardText>{ this.props.main[0].body.slice(0,65).concat("...") }</CardText>
               <Button style={{borderRadius:"15px"}}
                 type="submit"
                 value={ this.props.main[0].id}
