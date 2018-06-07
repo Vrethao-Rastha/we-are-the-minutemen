@@ -8,15 +8,17 @@ export const USER_REGISTER_FAILED = 'USER_REGISTER_FAILED'
 export const USER_LOGOUT = 'USER_LOGOUT'
 
 export const userLogin = (creds, history) => {
+  console.log('hit the login', 'creds', creds, 'history', history)
   return async dispatch => {
+    console.log('hit this thing too')
     try {
-      let response = await axios.post(`http://localhost:3000/auth/login`, creds)
+      let response = await axios.post(`http://localhost:3000/api/v1/login`, creds)
       let user = response.data
       dispatch({
         type: USER_LOGIN_SUCCESS,
         payload: user
       })
-      history.push('/dashboard')
+      history.push('/NewsMain')
     } catch (err) {
       dispatch({
         type: USER_LOGIN_FAILED,
@@ -30,7 +32,7 @@ export const userLogin = (creds, history) => {
 export const userRegister = (user, history) => {
   return async dispatch => {
     try {
-      let response = await axios.post(`http://localhost:3000/auth/register`, user)
+      let response = await axios.post(`http://localhost:3000/api/v1/register`, user)
       let newUser = response.data
       dispatch({
         type: USER_REGISTER_SUCCESS

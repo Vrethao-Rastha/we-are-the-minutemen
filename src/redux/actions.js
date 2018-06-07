@@ -109,7 +109,7 @@ export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
 
   export const fetchUser = () => {
     return dispatch => {
-      axios.get('http://localhost:3000/api/v1/users')
+      axios.get('http://localhost:3000/api/v1/user')
       .then(res => dispatch({
         type: FETCH_USER_SUCCESS,
         payload: res.data.data

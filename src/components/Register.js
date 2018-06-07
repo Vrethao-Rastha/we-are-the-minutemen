@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { withRouter } from 'react-router-dom'
+import { userRegister } from '../redux/auth'
 import { Container,
          Row,
          Col,
@@ -33,6 +37,21 @@ let picStyle = {
 
   class Register extends Component {
 
+    state = {
+      modal: false,
+      login: [
+        {
+        name: '',
+        email: '',
+        password: ''
+      }
+    ]
+    };
+
+    handleSubmit = e => {
+    e.preventDefault()
+    this.props.userRegister(this.state, this.props.history)
+  }
 
 
     render(){
@@ -54,30 +73,38 @@ let picStyle = {
                         <h3 className="col-md-8 offset-md-4">Welcome to the Minutemen! <br/> Please enter your credentials</h3>
                         <Row className="col-md-8 offset-md-2">
                         <Label style={{marginTop:".5em", marginRight:"1em"}} className="btns" for="name-field">Name</Label>
-                      <Form>
+                      <Form onSubmit={ this.handleSubmit }>
                           <Input
                           type="text"
                           name="name"
                           id="name-field"
+                          value={ this.state.name }
+                          onChange={e => this.setState({name: e.target.value})}
                         />
-                        </Form>
+
 
                       <Label style={{marginTop:".5em", marginLeft:"2em", marginRight:"1em"}} className="btns" for="email-field">Email</Label>
-                        <Form>
+
                           <Input
                           type="email"
                           name="email"
                           id="email-field"
+                          value={ this.state.email }
+                          onChange={e => this.setState({email: e.target.value})}
                         />
-                          </Form>
+
 
                         <Label style={{marginTop:".5em", marginLeft:"2em", marginRight:"1em"}} className="btns" for="password-field">Password</Label>
-                          <Form>
+
                           <Input
                             type="password"
                             name="password"
                             id="password-field"
+                            value={ this.state.password }
+                            onChange={e => this.setState({password: e.target.value})}
                           />
+
+                          <Button type="submit">Submit</Button>
                           </Form>
                     </Row>
                  </Col>
@@ -104,4 +131,11 @@ let picStyle = {
     )
   }
 }
-  export default Register
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+    userRegister
+}, dispatch)
+
+
+  export default withRouter(connect(null, mapDispatchToProps)(Register))

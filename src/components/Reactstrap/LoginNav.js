@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Link } from 'react-router-dom'
-//import { userLogin } from '../../redux/actions'
+import { Link, withRouter } from 'react-router-dom'
+import { userLogin } from '../../redux/auth'
 import { Container,
          Row,
          Col,
          Form,
+         FormGroup,
          Label,
          Input,
          Navbar,
@@ -23,10 +24,11 @@ import logo from '../images/Icon_Minutemen_quest.png'
 
     state = {
       modal: false,
-      login: [{
+
         email: '',
         password: ''
-      }]
+
+
     };
 
   toggle = () => {
@@ -60,40 +62,44 @@ import logo from '../images/Icon_Minutemen_quest.png'
                     <Col>
 
                       <Label className="btns" for="name-field">Name</Label>
-                    <Form>
+                    <Form onSubmit={ this.handleSubmit }>
+                      <FormGroup>
                         <Input
-                        type="text"
+                        type="name"
                         name="name"
                         id="name-field"
+                        value={this.state.name}
+                        onChange={e => this.setState({ name: e.target.value})}
                       />
-                      </Form>
+
 
                     <Label className="btns" for="email-field">Email</Label>
-                      <Form>
+
                         <Input
                         type="email"
                         name="email"
                         id="exampleEmail"
-                        onChange={e => this.setState({ email: e.target.value})}
                         value={this.state.email}
+                        onChange={e => this.setState({ email: e.target.value})}
                       />
-                        </Form>
+
 
                       <Label className="btns" for="password-field">Password</Label>
-                        <Form>
+
                         <Input
                           type="password"
                           name="password"
                           id="examplePassword"
-                          onChange={e => this.setState({ password: e.target.value})}
                           value={this.state.password}
+                          onChange={e => this.setState({ password: e.target.value})}
                         />
-                        </Form>
-               </Col>
                 <ModalFooter>
                   <Button className="btn btn-secondary" type="submit">Login</Button>
                   <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                 </ModalFooter>
+              </FormGroup>
+              </Form>
+            </Col>
               </ModalBody>
               </Modal>
 
@@ -105,6 +111,6 @@ import logo from '../images/Icon_Minutemen_quest.png'
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  //userLogin
-})
-  export default connect(null, mapDispatchToProps)(LoginNav)
+  userLogin
+}, dispatch)
+  export default withRouter(connect(null, mapDispatchToProps)(LoginNav))

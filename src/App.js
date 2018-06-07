@@ -7,6 +7,7 @@ import Register from './components/Register'
 import PublikStoryDetail from './components/NewsSection/PublikStoryDetail'
 import DcrStoryDetail from './components/NewsSection/DcrStoryDetail'
 import MainStoryDetail from './components/NewsSection/MainStoryDetail'
+import CheckAuth from './components/CheckAuth'
 
 import {
   BrowserRouter as Router,
@@ -23,12 +24,12 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component = { Splash } />
             <Route path="/Register" component = { Register } />
-            <Route path="/NewsMain" component = { TopLevel } />
-            <Route path="/PipersPage" component = { PipersPage } />
-            <Route path="/BlogPage" component = { BlogPage } />
-            <Route path="/DcrDetails" component = { DcrStoryDetail } />
-            <Route path="/PublikDetails" component = { PublikStoryDetail } />
-            <Route path="/MainDetails" component = { MainStoryDetail } />
+            <Route path="/NewsMain" component = { CheckAuth(TopLevel) } />
+            <Route path="/PipersPage" component = { CheckAuth(PipersPage) } />
+            <Route path="/BlogPage" component = { CheckAuth(BlogPage) } />
+            <Route path="/DcrDetails" component = { CheckAuth(DcrStoryDetail) } />
+            <Route path="/PublikDetails" component = { CheckAuth(PublikStoryDetail) } />
+            <Route path="/MainDetails" component = { CheckAuth(MainStoryDetail) } />
             <Route path="/Erios" component = {() => window.location = 'http://localhost:1701' } />
           </Switch>
         </div>

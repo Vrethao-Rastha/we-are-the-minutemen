@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-image: url('https://www.shutterstock.com/image-photo/fragment-abstract-wall-close-warm-colors-176487842');
+  background-image: url('../src/components/images/worn-wood.jpg');
 }
 .logNav {
   padding: 0px;

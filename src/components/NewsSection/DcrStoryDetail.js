@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
+import { Link } from 'react-router-dom'
 import { fetchDcrSingle, addDcrComments, fetchUser } from '../../redux/actions'
 import Footer from '../Reactstrap/Footer'
 import MainNav from '../Reactstrap/MainNav'
