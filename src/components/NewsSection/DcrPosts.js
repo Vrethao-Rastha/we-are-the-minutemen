@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { deleteDcrComments } from '../../redux/actions'
 import { Link } from 'react-router-dom'
 import renderIf from './util'
 import {
@@ -26,6 +27,16 @@ import {
 } from 'reactstrap'
 
 class DcrPosts extends Component {
+
+  state = {
+    id: ''
+  }
+
+  handleSubmit = e => {
+      // e.preventDefault()
+      this.props.deleteDcrComments(this.props.dcrComments.id)
+    }
+
   render(){
 
       console.log('DCR POST DETAIL','state:', this.state, 'prps:', this.props)
@@ -35,7 +46,7 @@ class DcrPosts extends Component {
 
     <div>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} lassName="postName"> { this.props.dcrComment.name } </CardTitle>
+        <CardTitle style={{marginTop:".5em"}} lassName="postName"> { this.props.dcrComments.name } </CardTitle>
 
 
         <CardBody>
@@ -47,11 +58,17 @@ class DcrPosts extends Component {
             <Col>
 
 
-              <CardText style={{marginLeft:"2em"}}> { this.props.dcrComment.comment } </CardText>
+              <CardText style={{marginLeft:"2em"}}> { this.props.dcrComments.comment } </CardText>
             </Col>
 
-            {renderIf(localStorage.user.replace(/"/g,"") === this.props.dcrComment.name,
-            <Button className="pull-right" style={{maxHeight:"3em"}}>Delete</Button>
+            {renderIf(localStorage.user.replace(/"/g,"") === this.props.dcrComments.name,
+
+            <Button
+              className="pull-right"
+              style={{maxHeight:"3em"}}
+              value={this.props.dcrComments.id}
+              onClick={ this.handleSubmit }
+              >Delete</Button>
           )}
           </Row>
 
@@ -65,10 +82,15 @@ class DcrPosts extends Component {
   }
 };
 
-const mapStateToProps = state => ({
-  singleDcr: state.dcrSingle,
-  user: state.user,
-  dcrComments: state.dcrComments,
-})
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+    deleteDcrComments
+}, dispatch)
 
-export default connect(mapStateToProps)(DcrPosts);
+// const mapStateToProps = state => ({
+//   singleDcr: state.dcrSingle,
+//   user: state.user,
+//   //dcrComments: state.dcrComments,
+// })
+
+export default connect(null, mapDispatchToProps)(DcrPosts);

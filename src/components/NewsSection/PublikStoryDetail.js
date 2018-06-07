@@ -67,12 +67,13 @@ componentDidMount(props) {
     console.log('state:', this.state, 'props', this.props)
     var pathThing = this.props.location.pathname.slice(9)
 
-     let posts = this.props.publikComments.map(publikComments => <PublikPosts key={ publikComments.id } publikComments={ publikComments } />)
+     let posts = this.props.publikComments.map(item => <PublikPosts key={ item.id } publikComment={ item } />)
 
 
         return (
           <div className="newsDetail">
             <MainNav />
+            <h1>Publik!!!!!!!</h1>
 
             <div className="container col-md-8 offset-md-2">
               <Card className="diamondCard">

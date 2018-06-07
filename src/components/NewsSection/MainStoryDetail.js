@@ -42,7 +42,7 @@ class MainStoryDetail extends Component {
 
     name: '',
     comment: '',
-    avatar: 'test'
+    avatar: ''
 
   };
 

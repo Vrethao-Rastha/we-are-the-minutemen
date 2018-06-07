@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { deleteMainComments } from '../../redux/actions'
 import renderIf from './util'
 import {
   Container,
@@ -23,16 +26,18 @@ import {
   NavbarBrand
 } from 'reactstrap'
 
-const MainPosts = ({ user, mainComments }) => {
-  console.log('PROPS IN THE POST Main post','main comments', mainComments, 'user', user)
-//   if (user.role === ADMIN || user.auth && post.author === user.id) {
-//   <button onClick={this.deletePost.bind(this}>Delete</button>
-// }
+class MainPosts extends Component {
+
+  handleSubmit = e => {
+      // e.preventDefault()
+      this.props.deleteMainComments(this.props.mainComments.id)
+    }
+    render(){
     return(
 
     <div>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} lassName="postName"> { mainComments.name } </CardTitle>
+        <CardTitle style={{marginTop:".5em"}} lassName="postName"> { this.props.mainComments.name } </CardTitle>
 
 
         <CardBody>
@@ -43,11 +48,17 @@ const MainPosts = ({ user, mainComments }) => {
             </Col>
             <Col>
 
-              <CardText style={{marginLeft:"2em"}}> { mainComments.comment } </CardText>
+              <CardText style={{marginLeft:"2em"}}> { this.props.mainComments.comment } </CardText>
             </Col>
 
-            {renderIf(localStorage.user.replace(/"/g,"") === mainComments.name,
-            <Button className="pull-right" style={{maxHeight:"3em"}}>Delete</Button>
+            {renderIf(localStorage.user.replace(/"/g,"") === this.props.mainComments.name,
+
+            <Button
+              className="pull-right"
+              style={{maxHeight:"3em"}}
+              value={this.props.mainComments.id}
+              onClick={ this.handleSubmit }
+              >Delete</Button>
           )}
           </Row>
 
@@ -58,7 +69,12 @@ const MainPosts = ({ user, mainComments }) => {
           <div className="phantom"></div>
     </div>
     )
-
+  }
 };
 
-export default MainPosts;
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+    deleteMainComments
+}, dispatch)
+
+export default connect(null, mapDispatchToProps)(MainPosts);

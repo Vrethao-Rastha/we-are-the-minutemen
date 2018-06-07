@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
+import {deletePublikComments} from '../../redux/actions'
 import renderIf from './util'
 import {
   Container,
@@ -23,27 +26,45 @@ import {
   NavbarBrand
 } from 'reactstrap'
 
-const PublikPosts = ({ publikComments }) => {
+class PublikPosts extends Component {
+
+  state = {
+    id: ''
+  }
+
+  handleSubmit = e => {
+      // e.preventDefault()
+      this.props.deletePublikComments(this.props.publikComment.id)
+    }
+
+
+    render(){
     return(
 
     <div>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} lassName="postName"> { publikComments.name } </CardTitle>
+        <CardTitle style={{marginTop:".5em"}} lassName="postName"> { this.props.publikComment.name } </CardTitle>
 
 
         <CardBody>
           <Row>
             <Col className="col-md-2">
 
-              <CardImg style={{maxWidth:"10em", borderRadius:"5%", marginBottom:"2em"}} className="diamondCard" top width="100%" src={publikComments.avatar} alt="Card image cap" />
+              <CardImg style={{maxWidth:"10em", borderRadius:"5%", marginBottom:"2em"}} className="diamondCard" top width="100%" src={this.props.publikComment.avatar} alt="Card image cap" />
             </Col>
             <Col>
 
-              <CardText style={{marginLeft:"2em"}}> { publikComments.comment } </CardText>
+              <CardText style={{marginLeft:"2em"}}> { this.props.publikComment.comment } </CardText>
             </Col>
 
-            {renderIf(localStorage.user.replace(/"/g,"") === publikComments.name,
-            <Button className="pull-right" style={{maxHeight:"3em"}}>Delete</Button>
+            {renderIf(localStorage.user.replace(/"/g,"") === this.props.publikComment.name,
+
+            <Button
+              className="pull-right"
+              style={{maxHeight:"3em"}}
+              value={this.props.publikComment.id}
+              onClick={ this.handleSubmit }
+              >Delete</Button>
           )}
 
           </Row>
@@ -54,6 +75,12 @@ const PublikPosts = ({ publikComments }) => {
           </Card>
     </div>
     )
+  }
 };
 
-export default PublikPosts;
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+    deletePublikComments
+}, dispatch)
+
+export default connect(null, mapDispatchToProps)(PublikPosts);

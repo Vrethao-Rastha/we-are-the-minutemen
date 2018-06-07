@@ -70,12 +70,12 @@ componentDidMount(props) {
     console.log('local', localStorage.avatar)
     var pathThing = this.props.location.pathname.slice(9)
 
-     let posts = this.props.dcrComments.map(item => <DcrPosts key={ item.id } dcrComment={ item } />)
+     let posts = this.props.dcrComments.map(item => <DcrPosts key={ item.id } dcrComments={ item } />)
 
         return (
           <div className="newsDetail">
             <MainNav />
-
+            <div>DCR!!!!!!!!!</div>
             <div className="container col-md-8 offset-md-2">
               <Card className="diamondCard">
                 <div className="phantom"></div>
