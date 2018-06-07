@@ -8,9 +8,7 @@ export const USER_REGISTER_FAILED = 'USER_REGISTER_FAILED'
 export const USER_LOGOUT = 'USER_LOGOUT'
 
 export const userLogin = (creds, history) => {
-  console.log('hit the login', 'creds', creds, 'history', history)
   return async dispatch => {
-    console.log('hit this thing too')
     try {
       let response = await axios.post(`http://localhost:3000/api/v1/login`, creds)
       let user = response.data
@@ -24,7 +22,7 @@ export const userLogin = (creds, history) => {
         type: USER_LOGIN_FAILED,
         payload: err
       })
-      history.push('/')
+      history.push('/LoginFail')
     }
   }
 }
@@ -48,10 +46,12 @@ export const userRegister = (user, history) => {
   }
 }
 
-export const userLogout = () => {
+export const userLogout = (history) => {
   return dispatch => {
     dispatch({
       type: USER_LOGOUT
+
     })
+    history.push('/')
   }
 }

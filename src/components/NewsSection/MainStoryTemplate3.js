@@ -4,8 +4,7 @@ import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import {browserHistory,withRouter} from "react-router-dom"
 import {fetchMainSingle} from '../../redux/actions'
-import ScrollerPic6 from '../Scrollers/ScrollerPic6'
-import ScrollerPic5 from '../Scrollers/ScrollerPic5'
+import ScrollerPic12 from '../Scrollers/ScrollerPic12'
 import {
   Container,
   Col,
@@ -43,16 +42,12 @@ class MainStoryTemplate extends Component {
   }
 
   render(){
-    console.log("dbfdbfbfbd", this.props)
   return(
   <div>
 
-    <div style={{marginTop:"5em"}}></div>
 
     <div className="phantom"></div>
 
-
-    <ScrollerPic6 />
 
     <div className="phantom"></div>
 
@@ -73,7 +68,10 @@ class MainStoryTemplate extends Component {
           </Card>
 
           <div style={{marginBottom:"5em"}}></div>
-          <ScrollerPic5 />
+          <div className="parallaxB"></div>
+          <div style={{marginBottom:"5em"}}></div>
+
+          <ScrollerPic12 />
           <div style={{marginBottom:"8em"}}></div>
 
   </Col>

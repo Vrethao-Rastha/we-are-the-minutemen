@@ -35,6 +35,7 @@ export default (state = initialState, action) => {
         err: action.payload
       }
     case USER_LOGOUT:
+    localStorage.clear()
       return {
         ...initialState
       }

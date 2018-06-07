@@ -27,6 +27,7 @@ import PublikTemplate4 from './PublikTemplate4'
           <div>{ publikPosts2 }</div>
           <div>{ publikPosts3 }</div>
           <div>{ publikPosts4 }</div>
+          <div className="parallaxB" style={{height:"50em"}}></div>
 
         </div>
 

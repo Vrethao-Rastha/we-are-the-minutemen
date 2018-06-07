@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { Link, browserHistory,withRouter } from 'react-router-dom'
 
 import { fetchDcrSingle } from '../../redux/actions'
-import ScrollerPic14 from '../Scrollers/ScrollerPic14'
+import ScrollerPic2 from '../Scrollers/ScrollerPic2'
 import ScrollerPic4 from '../Scrollers/ScrollerPic4'
 
 import {
@@ -58,10 +58,11 @@ class DiamondTemplate4 extends Component {
             </CardBody>
 
           </Card>
-          <div className="phantom"></div>
+          <div style={{marginBottom:"8em"}}></div>
           <ScrollerPic4 />
-          <div style={{marginBottom:"4em"}}></div>
-          <div  className="parallaxFive" style={{borderRadius:"50%"}}></div>
+          {/* <div className="parallaxFive"></div> */}
+          <div style={{marginBottom:"8em"}}></div>
+          <ScrollerPic2 />
 
 
   </Col>

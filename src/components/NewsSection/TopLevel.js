@@ -38,9 +38,9 @@ class NewsMain extends Component {
       <div>
       <MainNav/>
       <div className="container-fluid">
+        <div className="mainNews"></div>
 
-
-          <h1 style={{marginBottom:"1em"}} className="text-center">Latest news from Diamond City Radio and Publick Occurrences</h1>
+          <h1 style={{marginBottom:"1em"}} className="text-center thing">Latest news from Diamond City Radio and Publick Occurrences</h1>
           <ScrollerPic35 />
           <div className="phantom"></div>
           <Row>

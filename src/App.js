@@ -4,6 +4,7 @@ import PipersPage from './components/PipersSection/PipersPage'
 import BlogPage from './components/BlogSection/BlogPage'
 import Splash from './components/Splash'
 import Register from './components/Register'
+import LoginFail from './components/LoginFail'
 import PublikStoryDetail from './components/NewsSection/PublikStoryDetail'
 import DcrStoryDetail from './components/NewsSection/DcrStoryDetail'
 import MainStoryDetail from './components/NewsSection/MainStoryDetail'
@@ -24,6 +25,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component = { Splash } />
             <Route path="/Register" component = { Register } />
+            <Route path="/LoginFail" component = { LoginFail } />
             <Route path="/NewsMain" component = { CheckAuth(TopLevel) } />
             <Route path="/PipersPage" component = { CheckAuth(PipersPage) } />
             <Route path="/BlogPage" component = { CheckAuth(BlogPage) } />

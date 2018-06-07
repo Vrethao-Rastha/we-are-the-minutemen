@@ -37,6 +37,9 @@ class PublikTemplate3 extends Component {
 
 
       <div className="phantom"></div>
+      <div className="phantom"></div>
+      <div className="phantom"></div>
+      <div className="phantom"></div>
 
 
         <Col>
@@ -58,7 +61,7 @@ class PublikTemplate3 extends Component {
               <div className="phantom"></div>
               <div className="phantom"></div>
               <ScrollerPic10 />
-
+              
               <div className="phantom"></div>
               <div className="phantom"></div>
       </Col>

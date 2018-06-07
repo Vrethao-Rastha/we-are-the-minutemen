@@ -1,6 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { Link, withRouter } from 'react-router-dom'
+import { userLogout } from '../../redux/auth'
 import { Container,
+         Button,
          DropdownMenu,
          DropdownItem,
          DropdownToggle,
@@ -15,7 +19,14 @@ import { Container,
          NavbarBrand } from 'reactstrap'
 import logo from '../images/Icon_Minutemen_quest.png'
 
-  const MainNav = () => {
+
+  class MainNav extends Component {
+
+    handleSubmit = e => {
+      e.preventDefault()
+      this.props.userLogout(this.props.history)
+    }
+    render(){
     return(
       <Navbar className="logNav" style={{marginBottom: "2em"}} color="dark">
         <NavbarBrand className="logNav" style={{color: 'white', fontSize: "2em", paddingLeft: "0px"}}>
@@ -40,7 +51,7 @@ import logo from '../images/Icon_Minutemen_quest.png'
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem className="navLinks">
-                  <Link className="navLinks" to="/">Logout</Link>
+                  <Button className="navLinks logout" onClick={ this.handleSubmit }>Logout</Button>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
@@ -48,5 +59,10 @@ import logo from '../images/Icon_Minutemen_quest.png'
       </Navbar>
     )
   }
+}
+  const mapDispatchToProps = dispatch =>
+    bindActionCreators({
+      userLogout
+    }, dispatch)
 
-  export default MainNav
+  export default withRouter(connect(null, mapDispatchToProps)(MainNav))

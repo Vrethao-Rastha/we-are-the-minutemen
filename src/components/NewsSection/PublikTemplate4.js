@@ -55,11 +55,12 @@ class PublikTemplate4 extends Component {
                 </CardBody>
               </Card>
               <div className="phantom"></div>
-              <div className="parallaxFive"></div>
 
               <div className="phantom"></div>
               <ScrollerPic19 />
               <div className="phantom"></div>
+              {/* <div className="parallaxFive" style={{borderRadius:"50%", width:"10em"}}></div> */}
+
               <div className="phantom"></div>
       </Col>
       </div>

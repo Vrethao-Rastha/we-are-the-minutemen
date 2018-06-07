@@ -21,6 +21,9 @@ import MainStoryTemplate3 from './MainStoryTemplate3'
       return(
         <div>
         <div>{ mainPosts }</div>
+        <div className="phantom"></div>
+        <div className="phantom"></div>
+
         <div className="parallaxThree"></div>
         <div>{ mainPosts2 }</div>
         <div>{ mainPosts3 }</div>

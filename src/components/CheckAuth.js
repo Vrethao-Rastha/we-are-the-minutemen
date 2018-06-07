@@ -6,13 +6,13 @@ export default function(ComposedComponent) {
 
     componentWillMount() {
       if (!localStorage.getItem('user') && !this.props.auth.isAuthed) {
-        this.props.history.push('/');
+        this.props.history.push('/LoginFail');
       }
     }
 
     componentWillUpdate(nextProps) {
       if (!localStorage.getItem('user') && !nextProps.auth.isAuthed) {
-        this.props.history.push('/');
+        this.props.history.push('/LoginFail');
       }
     }
 
