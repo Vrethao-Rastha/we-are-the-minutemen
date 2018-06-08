@@ -53,7 +53,7 @@ class MainStoryTemplate extends Component {
 
     <Col>
       <Card className="mainCard">
-        <CardTitle style={{marginTop:".5em"}}  className="text-center">{ this.props.main[2].title }</CardTitle>
+        <CardTitle style={{marginTop:".5em"}}  className="text-center" style={{fontSize:"30pt"}}>{ this.props.main[2].title }</CardTitle>
          <CardImg className="headline mainCard" top width="100%" src={ process.env.PUBLIC_URL + this.props.main[2].picture} alt="Card image cap" />
             <CardBody>
 

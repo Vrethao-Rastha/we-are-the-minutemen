@@ -77,7 +77,7 @@ componentDidMount(props) {
             <div className="container col-md-8 offset-md-2">
               <Card className="diamondCard">
                 <div className="phantom"></div>
-                <CardTitle className="text-center"> {this.props.publikSingle.title}</CardTitle>
+                <CardTitle className="text-center" style={{fontSize:"40pt"}}> {this.props.publikSingle.title}</CardTitle>
             <CardImg  style={{marginTop:"1em"}}  className="diamondCard" top width="100%" src={ process.env.PUBLIC_URL + this.props.publikSingle.picture} alt="Card image cap" />
             <CardBody>
               <CardText>{ this.props.publikSingle.body}</CardText>

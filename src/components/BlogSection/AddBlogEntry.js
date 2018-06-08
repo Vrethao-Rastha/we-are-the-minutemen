@@ -56,7 +56,7 @@ class AddBlog extends React.Component {
 
               <Label type="body" name="body" id="exampleBody" placeholder="Body">Compose</Label>
               <FormGroup>
-                <textarea rows="4" cols="60"
+                <textarea rows="4" cols="50"
                   type="text"
                   name="text"
                   id="text-field"
