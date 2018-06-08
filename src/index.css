@@ -200,3 +200,6 @@ body {
   margin: auto;
   object-fit: fill;
 }
+.pull-center {
+  margin: auto;
+}

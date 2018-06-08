@@ -5,6 +5,7 @@ import BlogPage from './components/BlogSection/BlogPage'
 import Splash from './components/Splash'
 import Register from './components/Register'
 import LoginFail from './components/LoginFail'
+import BlogDetail from './components/BlogSection/BlogDetail'
 import PublikStoryDetail from './components/NewsSection/PublikStoryDetail'
 import DcrStoryDetail from './components/NewsSection/DcrStoryDetail'
 import MainStoryDetail from './components/NewsSection/MainStoryDetail'
@@ -28,10 +29,11 @@ class App extends Component {
             <Route path="/LoginFail" component = { LoginFail } />
             <Route path="/NewsMain" component = { CheckAuth(TopLevel) } />
             <Route path="/PipersPage" component = { CheckAuth(PipersPage) } />
-            <Route path="/BlogPage" component = { CheckAuth(BlogPage) } />
+            <Route exact path="/BlogPage" component = { CheckAuth(BlogPage) } />
             <Route path="/DcrDetails" component = { CheckAuth(DcrStoryDetail) } />
             <Route path="/PublikDetails" component = { CheckAuth(PublikStoryDetail) } />
             <Route path="/MainDetails" component = { CheckAuth(MainStoryDetail) } />
+            <Route path="/DetailBlog" component = { CheckAuth(BlogDetail) } />
             <Route path="/Erios" component = {() => window.location = 'http://localhost:1701' } />
           </Switch>
       </Router>

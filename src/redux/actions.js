@@ -91,6 +91,10 @@ export const DELETE_BLOG_STORIES_FAILED = 'DELETE_BLOG_STORIES_FAILED'
 export const DELETE_BLOG_STORIES_SUCCESS = 'DELETE_BLOG_STORIES_SUCCESS'
 export const PUT_BLOG_STORIES_FAILED = 'PUT_BLOG_STORIES_FAILED'
 export const PUT_BLOG_STORIES_SUCCESS = 'PUT_BLOG_STORIES_SUCCESS'
+export const FETCH_BLOG_SINGLE_FAILED = 'FETCH_BLOG_SINGLE_FAILED'
+export const FETCH_BLOG_SINGLE_SUCCESS = 'FETCH_BLOG_SINGLE_SUCCESS'
+export const BLOG_REDIRECT_PENDING = 'BLOG_REDIRECT_PENDING'
+
 //GET USER
 export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS'
 export const FETCH_USER_FAILED = 'FETCH_USER_FAILED'
@@ -485,3 +489,38 @@ export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
       }))
     }
   }
+
+  export const deleteBlog = (id) => {
+    return dispatch => {
+      axios.delete(`http://localhost:3000/api/v1/blogs/ ${id}`)
+      .then(res => dispatch({
+        type: DELETE_BLOG_STORIES_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: DELETE_BLOG_STORIES_FAILED,
+        payload: err
+      }))
+    }
+  }
+
+  export const fetchBlogSingle = (id, history) => {
+    console.log('ion the fuction', history)
+    return async dispatch => {
+      try{
+        dispatch({type: BLOG_REDIRECT_PENDING})
+      let res = await fetch(`http://localhost:3000/api/v1/blogs/${id}`)
+      let userObj = await res.json()
+      dispatch({
+        type: FETCH_BLOG_SINGLE_SUCCESS,
+        payload: userObj.data
+      })
+      history.push(`/DetailBlog/${id}`)
+    }catch(err){
+     dispatch({
+        type: FETCH_BLOG_SINGLE_FAILED,
+        payload: err
+      })
+    }
+  }
+}

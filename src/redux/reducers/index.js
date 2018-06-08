@@ -6,6 +6,7 @@ import PublikReducer from './PublikReducer'
 import PublikCommentsReducer from './PublikCommentsReducer'
 
 import BlogReducer from './BlogReducer'
+import BlogSingleReducer from './BlogSingleReducer'
 import PiperReducer from './PiperReducer'
 import PiperCommentsReducer from './PiperCommentsReducer'
 
@@ -29,6 +30,7 @@ export default combineReducers({
   publikComments: PublikCommentsReducer,
 
   blog: BlogReducer,
+  singleBlog: BlogSingleReducer,
 
   piper: PiperReducer,
   piperComments: PiperCommentsReducer,

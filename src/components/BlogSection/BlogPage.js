@@ -29,8 +29,13 @@ class BlogPage extends Component {
   state = {
 
   }
+
+
+
+
+
   render(){
-    console.log(!localStorage.admin.length)
+    console.log('blog page', this.props)
     let blogPosts = this.props.blog.map(blog => <BlogIndividual key={ blog.id } blog={ blog } />)
 
     return(
@@ -39,7 +44,7 @@ class BlogPage extends Component {
       <div>Blog Page</div>
       <div className="blogs"></div>
       {renderIf(localStorage.admin.length < 5,
-        <Col style={{marginBottom:"5em", backgroundColor:"grey", marginLeft:"5em"}} className="col-md-12">
+        <Col style={{marginBottom:"5em", marginLeft:"15em"}} className="col-md-12">
 
           <AddBlogEntry />
         </Col>
@@ -53,7 +58,6 @@ class BlogPage extends Component {
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-
   }, dispatch)
 
   const mapStateToProps = state => ({
