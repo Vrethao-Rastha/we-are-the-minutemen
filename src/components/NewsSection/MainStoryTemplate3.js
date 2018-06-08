@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import {browserHistory,withRouter} from "react-router-dom"
 import {fetchMainSingle} from '../../redux/actions'
-import ScrollerPic12 from '../Scrollers/ScrollerPic12'
+import ScrollerPic18 from '../Scrollers/ScrollerPic18'
 import {
   Container,
   Col,
@@ -71,7 +71,7 @@ class MainStoryTemplate extends Component {
           <div className="parallaxB"></div>
           <div style={{marginBottom:"5em"}}></div>
 
-          <ScrollerPic12 />
+          <ScrollerPic18 />
           <div style={{marginBottom:"8em"}}></div>
 
   </Col>

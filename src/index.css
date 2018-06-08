@@ -12,6 +12,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  opacity: .85;
   z-index: -1;
 }
 .fail {
@@ -28,6 +29,17 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.blogs {
+  background-image: url('../src/components/images/Goodneighbor.jpg');
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 .thing {
   text-shadow: 2px 2px #ffffff;
@@ -93,7 +105,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 .parallaxB {
   background-image: url("../src/components/images/Fallout-4-Concept-Art-25.jpg");
@@ -153,20 +165,14 @@ body {
 }
 .publikCard{
   border-radius: 5%;
-  padding-left: 1em;
-  padding-right: 1em;
   border: 1px solid black;
 }
 .diamondCard {
   border-radius: 5%;
-  padding-left: 1em;
-  padding-right: 1em;
   border: 1px solid black;
 }
 .mainCard {
   border-radius: 5%;
-  padding-left: 1em;
-  padding-right: 1em;
   border: 1px solid black;
 }
 .modal-body {
@@ -187,4 +193,10 @@ body {
 .postComment {
   text-align: center;
 
+}
+.test {
+  width:900px;
+  height:500px;
+  margin: auto;
+  object-fit: fill;
 }

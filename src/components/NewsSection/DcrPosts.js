@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { deleteDcrComments } from '../../redux/actions'
+import { deleteDcrComments, editDcrComments } from '../../redux/actions'
 import { Link } from 'react-router-dom'
 import renderIf from './util'
 import {
@@ -33,27 +33,32 @@ class DcrPosts extends Component {
   }
 
   handleSubmit = e => {
-      // e.preventDefault()
+       e.preventDefault()
       this.props.deleteDcrComments(this.props.dcrComments.id)
+    }
+
+    handleEdit = e => {
+        e.preventDefault()
+      this.props.editDcrComments(this.props.dcrComments.id)
     }
 
   render(){
 
-      console.log('DCR POST DETAIL','state:', this.state, 'prps:', this.props)
+      console.log('DCR POST DETAIL','state:', localStorage.avatar)
 
 
     return(
 
-    <div>
+    <Container>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} lassName="postName"> { this.props.dcrComments.name } </CardTitle>
+        <CardTitle style={{marginTop:".5em"}} className="postName"> { this.props.dcrComments.name } </CardTitle>
 
 
         <CardBody>
           <Row>
             <Col className="col-md-2">
 
-              <CardImg style={{maxWidth:"10em", borderRadius:"5%", marginBottom:"2em"}} className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+              <CardImg style={{maxWidth:"10em", borderRadius:"5%", marginBottom:"2em"}} className="diamondCard" top width="100%" src={process.env.PUBLIC_URL + this.props.dcrComments.avatar} />
             </Col>
             <Col>
 
@@ -62,13 +67,22 @@ class DcrPosts extends Component {
             </Col>
 
             {renderIf(localStorage.user.replace(/"/g,"") === this.props.dcrComments.name,
+            <Container>
 
-            <Button
-              className="pull-right"
-              style={{maxHeight:"3em"}}
-              value={this.props.dcrComments.id}
-              onClick={ this.handleSubmit }
-              >Delete</Button>
+              <Button
+                className="pull-right"
+                style={{maxHeight:"3em"}}
+                value={this.props.dcrComments.id}
+                onClick={ this.handleSubmit }
+                >Delete</Button>
+
+                <Button
+                  className="pull-right"
+                  style={{maxHeight:"3em",marginRight:"1em"}}
+                  value={this.props.dcrComments.id}
+                  onClick={ this.handleEdit }
+                  >Edit</Button>
+            </Container>
           )}
           </Row>
 
@@ -76,7 +90,7 @@ class DcrPosts extends Component {
             </CardBody>
 
           </Card>
-    </div>
+    </Container>
       )
 
   }
@@ -84,7 +98,8 @@ class DcrPosts extends Component {
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    deleteDcrComments
+    deleteDcrComments,
+    editDcrComments
 }, dispatch)
 
 // const mapStateToProps = state => ({

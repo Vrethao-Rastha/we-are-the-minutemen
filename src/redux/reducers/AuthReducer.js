@@ -18,6 +18,7 @@ export default (state = initialState, action) => {
       localStorage.setItem('user', JSON.stringify(action.payload.user.name))
       localStorage.setItem('avatar', JSON.stringify(action.payload.user.avatar))
       localStorage.setItem('token', JSON.stringify(action.payload.access_token))
+      localStorage.setItem('admin', JSON.stringify(action.payload.user.admin))
       return {
         ...state,
         user: action.payload,

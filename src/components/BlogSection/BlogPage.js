@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import MainNav from '../Reactstrap/MainNav'
 import Footer from '../Reactstrap/Footer'
+import AddBlogEntry from './AddBlogEntry'
 import BlogIndividual from './BlogIndividual'
+import renderIf from '../NewsSection/util'
 import {
   Container,
   Col,
@@ -28,13 +30,20 @@ class BlogPage extends Component {
 
   }
   render(){
-
+    console.log(!localStorage.admin.length)
     let blogPosts = this.props.blog.map(blog => <BlogIndividual key={ blog.id } blog={ blog } />)
 
     return(
       <div>
       <MainNav/>
       <div>Blog Page</div>
+      <div className="blogs"></div>
+      {renderIf(localStorage.admin.length < 5,
+        <Col style={{marginBottom:"5em", backgroundColor:"grey", marginLeft:"5em"}} className="col-md-12">
+
+          <AddBlogEntry />
+        </Col>
+    )}
       <div>{ blogPosts }</div>
       <Footer/>
     </div>

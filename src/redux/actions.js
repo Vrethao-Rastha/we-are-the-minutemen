@@ -201,15 +201,30 @@ export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
     }
   }
 
-  export const addDcrComments = (name, comment, avatar) => {
+  export const addDcrComments = (name, comment, avatar, storyId) => {
     return dispatch => {
-      axios.post('http://localhost:3000/api/v1/dcr_comments/', {name, comment, avatar})
+      console.log('stuff in the post', name, comment, avatar, storyId)
+      axios.post('http://localhost:3000/api/v1/dcr_comments/', {name, comment, avatar, storyId})
       .then(res => dispatch({
         type: ADD_DCR_COMMENTS_SUCCESS,
         payload: res.data.data
       }))
       .catch(err => dispatch({
         type: ADD_DCR_COMMENTS_FAILED,
+        payload: err
+      }))
+    }
+  }
+
+  export const editDcrComments = (name, comment, avatar, storyId) => {
+    return dispatch => {
+      axios.put('http://localhost:3000/api/v1/dcr_comments/', {name, comment, avatar, storyId})
+      .then(res => dispatch({
+        type: PUT_DCR_COMMENTS_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: PUT_DCR_COMMENTS_FAILED,
         payload: err
       }))
     }
@@ -289,6 +304,20 @@ export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
       }))
       .catch(err => dispatch({
         type: DELETE_PUBLIK_OCCURRENCES_COMMENTS_FAILED,
+        payload: err
+      }))
+    }
+  }
+
+  export const editPublikComments = (id) => {
+    return dispatch => {
+      axios.put('http://localhost:3000/api/v1/publik_comments/', {id})
+      .then(res => dispatch({
+        type: PUT_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: PUT_PUBLIK_OCCURRENCES_COMMENTS_FAILED,
         payload: err
       }))
     }
@@ -414,6 +443,20 @@ export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
     }
   }
 
+  export const editMainComments = (name, comment, avatar, storyId) => {
+    return dispatch => {
+      axios.put('http://localhost:3000/api/v1/main_story_comments/', {name, comment, avatar, storyId})
+      .then(res => dispatch({
+        type: PUT_MAIN_STORY_COMMENTS_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: PUT_MAIN_STORY_COMMENTS_FAILED,
+        payload: err
+      }))
+    }
+  }
+
   export const fetchBlogStories = () => {
     return dispatch => {
       axios.get('http://localhost:3000/api/v1/blogs/')
@@ -423,6 +466,21 @@ export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
       }))
       .catch(err => dispatch({
         type: FETCH_BLOG_STORIES_FAILED,
+        payload: err
+      }))
+    }
+  }
+
+  export const addBlog = (title, body, picture) => {
+    console.log('working?')
+    return dispatch => {
+      axios.post('http://localhost:3000/api/v1/blogs/', {title, body, picture})
+      .then(res => dispatch({
+        type: ADD_BLOG_STORIES_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: ADD_BLOG_STORIES_FAILED,
         payload: err
       }))
     }

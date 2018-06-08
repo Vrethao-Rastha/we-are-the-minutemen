@@ -43,12 +43,15 @@ import {
         <div>
         <div>{ dcrPosts1 }</div>
         <div>{ dcrPosts2 }</div>
+        <div className="phantom"></div>
+        <div className="phantom"></div>
+        <div className="phantom"></div>
         <div>{ dcrPosts3 }</div>
         <div>{ dcrPosts4 }</div>
         <div style={{marginTop:"15em"}}></div>
         <div className="parallaxB" style={{marginBottom:"4em"}}></div>
         <div className="parallaxB" style={{marginBottom:"4em"}}></div>
-        <div className="parallaxB" style={{marginBottom:"4em"}}></div>
+        {/* <div className="parallaxB" style={{marginBottom:"4em"}}></div> */}
 
         </div>
 

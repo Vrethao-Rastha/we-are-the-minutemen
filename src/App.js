@@ -21,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+
           <Switch>
             <Route exact path="/" component = { Splash } />
             <Route path="/Register" component = { Register } />
@@ -34,7 +34,6 @@ class App extends Component {
             <Route path="/MainDetails" component = { CheckAuth(MainStoryDetail) } />
             <Route path="/Erios" component = {() => window.location = 'http://localhost:1701' } />
           </Switch>
-        </div>
       </Router>
     );
   }

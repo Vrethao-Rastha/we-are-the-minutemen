@@ -44,7 +44,7 @@ class MainPosts extends Component {
           <Row>
             <Col className="col-md-2">
 
-              <CardImg style={{maxWidth:"10em", borderRadius:"5%", marginBottom:"2em"}} className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+              <CardImg style={{maxWidth:"10em", borderRadius:"5%", marginBottom:"2em"}} className="diamondCard" top width="100%" src={process.env.PUBLIC_URL + this.props.mainComments.avatar} />
             </Col>
             <Col>
 

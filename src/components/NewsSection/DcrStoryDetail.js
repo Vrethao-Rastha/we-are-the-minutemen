@@ -42,7 +42,8 @@ class DcrStoryDetail extends Component {
 
     name: '',
     comment: '',
-    avatar: 'test'
+    avatar: 'test',
+    storyId: ''
 
   };
 
@@ -53,7 +54,7 @@ toggle = () => {
 }
 
 handlePostSubmit = e => {
-    this.props.addDcrComments( this.state.name, this.state.comment, this.state.avatar )
+    this.props.addDcrComments( this.state.name, this.state.comment, this.state.avatar, this.state.storyId )
   }
 
 componentDidMount(props) {
@@ -64,13 +65,16 @@ componentDidMount(props) {
 
 
   render() {
-    console.log('DCR DETAIL','state:', this.state, 'props', this.props)
-    console.log(this.props);
-    console.log('test', localStorage.user)
-    console.log('local', localStorage.avatar)
+    console.log('props', this.props)
+    console.log('state', this.state)
     var pathThing = this.props.location.pathname.slice(9)
 
-     let posts = this.props.dcrComments.map(item => <DcrPosts key={ item.id } dcrComments={ item } />)
+    let filteredPosts = this.props.dcrComments.filter(comment => comment.storyId == this.props.singleDcr.id)
+    console.log('single', filteredPosts)
+
+    let postComponents = filteredPosts.map(item => <DcrPosts key={ item.id } dcrComments={ item } />)
+
+
 
         return (
           <div className="newsDetail">
@@ -81,7 +85,7 @@ componentDidMount(props) {
                 <div className="phantom"></div>
             <CardImg style={{marginTop:"1em"}} className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
             <CardBody>
-              <CardTitle>Card {this.props.singleDcr.title}</CardTitle>
+              <CardTitle> {this.props.singleDcr.title}</CardTitle>
               <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
               <Button style={{marginRight:"1em"}} onClick={this.toggle}>Post</Button>
               <Link className="btn btn-secondary" to="/NewsMain">Back</Link>
@@ -90,13 +94,13 @@ componentDidMount(props) {
             <CardBody>
               <CardText>
 
-                <div>{ posts }</div>
+                { postComponents }
 
-                <div className="phantom"></div>
 
               </CardText>
             </CardBody>
           </Card>
+          <div className="phantom"></div>
 
           <Modal style={{backgroundImage: {modalThing}}} isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalBody style={{backgroundImage: {modalThing}}}>
@@ -110,7 +114,7 @@ componentDidMount(props) {
                     name="text"
                     id="text-field"
                     value={this.state.comment}
-                    onChange={e => this.setState({comment: e.target.value, name: localStorage.user.replace(/"/g,""), avatar:localStorage.avatar.replace(/"/g,"") })}
+                    onChange={e => this.setState({comment: e.target.value, name: localStorage.user.replace(/"/g,""), avatar:localStorage.avatar.replace(/"/g,""), storyId: this.props.singleDcr.id })}
                   />
                   <Col>
 

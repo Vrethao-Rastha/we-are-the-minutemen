@@ -75,7 +75,7 @@ componentDidMount(props) {
     //  let users = this.props.user.map(user => <MainPosts key={ user.id } user={ user } />)
 
         return (
-          <div className="newsDetail">
+          <div className="newsDetail container-fluid">
             <MainNav />
 
             <div className="container col-md-8 offset-md-2">
@@ -94,7 +94,7 @@ componentDidMount(props) {
             <CardBody>
               <CardText>
 
-                <div>{ posts }</div>
+                { posts }
 
                 {/* <div>{ users }</div> */}
 
@@ -130,9 +130,9 @@ componentDidMount(props) {
           </ModalBody>
           </Modal>
 
-          </div>
+        </div>
           <Footer />
-         </div>
+        </div>
     );
   }
 
