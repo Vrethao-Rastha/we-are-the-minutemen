@@ -24,7 +24,7 @@ class PublikTemplate4 extends Component {
   handlePublikSubmit = e => {
     console.log('FIRE!', this.props)
     e.preventDefault()
-    this.props.fetchPublikSingle(this.props.publik[4].id, this.props.history)
+    this.props.fetchPublikSingle(this.props.publik[3].id, this.props.history)
 }
 
   render(){
@@ -41,15 +41,15 @@ class PublikTemplate4 extends Component {
 
         <Col>
           <Card className="publikCard">
-            <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.publik[4].title }</CardTitle>
+            <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.publik[3].title }</CardTitle>
 
-             <CardImg className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+             <CardImg className="diamondCard" top width="100%" src={ process.env.PUBLIC_URL + this.props.publik[3].picture } alt="Card image cap" />
                 <CardBody>
 
-                  <CardText>{ this.props.publik[4].body.slice(0,25).concat("...") }</CardText>
+                  <CardText>{ this.props.publik[3].body.slice(0,25).concat("...") }</CardText>
                   <Button style={{borderRadius:"15px"}}
                     type="submit"
-                    value={ this.props.publik[4].id}
+                    value={ this.props.publik[3].id}
                     onClick={ this.handlePublikSubmit }
                     >Read More</Button>
                 </CardBody>

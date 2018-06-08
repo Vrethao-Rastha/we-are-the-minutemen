@@ -30,7 +30,7 @@ class DiamondTemplate2 extends Component {
   handleDcrSubmit = e => {
     console.log('FIRE!', this.props)
     e.preventDefault()
-    this.props.fetchDcrSingle(this.props.dcr[2].id, this.props.history)
+    this.props.fetchDcrSingle(this.props.dcr[1].id, this.props.history)
 }
 
   render(){
@@ -42,14 +42,14 @@ class DiamondTemplate2 extends Component {
 
     <Col>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.dcr[2].title }</CardTitle>
-         <CardImg className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+        <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.dcr[1].title }</CardTitle>
+         <CardImg className="diamondCard" top width="100%" src={ process.env.PUBLIC_URL + this.props.dcr[1].picture} alt="Card image cap" />
             <CardBody>
 
-              <CardText>{ this.props.dcr[2].body.slice(0,25).concat("...") }</CardText>
+              <CardText>{ this.props.dcr[1].body.slice(0,25).concat("...") }</CardText>
               <Button style={{borderRadius:"15px"}}
                 type="submit"
-                value={ this.props.dcr[2].id}
+                value={ this.props.dcr[1].id}
                 onClick={ this.handleDcrSubmit }
                 >Read More</Button>
             </CardBody>

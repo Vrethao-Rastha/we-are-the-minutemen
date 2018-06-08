@@ -40,9 +40,16 @@ import logo from '../images/Icon_Minutemen_quest.png'
                 <DropdownItem className="navLinks">
                   <Link className="navLinks" to="/NewsMain">Latest News</Link>
                 </DropdownItem>
-                <DropdownItem className="navLinks">
+
+
+
+                {/* diasbled due to lack of time */}
+
+
+
+                {/* <DropdownItem className="navLinks">
                   <Link className="navLinks" to="/PipersPage">Piper's Field Reports</Link>
-                </DropdownItem>
+                </DropdownItem> */}
                 <DropdownItem className="navLinks">
                   <Link className="navLinks" to="/BlogPage">Blog of the General</Link>
                 </DropdownItem>

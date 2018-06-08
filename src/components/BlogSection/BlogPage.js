@@ -35,13 +35,11 @@ class BlogPage extends Component {
 
 
   render(){
-    console.log('blog page', this.props)
     let blogPosts = this.props.blog.map(blog => <BlogIndividual key={ blog.id } blog={ blog } />)
 
     return(
       <div>
       <MainNav/>
-      <div>Blog Page</div>
       <div className="blogs"></div>
       {renderIf(localStorage.admin.length < 5,
         <Col style={{marginBottom:"5em", marginLeft:"15em"}} className="col-md-12">

@@ -48,10 +48,10 @@ class BlogIndividual extends Component {
     console.log('props in indiv', this.props)
   return(
     <Col md={{size: 6, offset: 3}} style={{marginBottom:"100vh"}}>
-      <Card>
-         <CardImg top width="100%" src={process.env.PUBLIC_URL + this.props.blog.picture} alt="Card image cap" />
+      <Card className="diamondCard">
+        <CardTitle style={{marginTop:"2em"}} className="text-center"><strong>{ this.props.blog.title.slice(0,25).concat("...") }</strong></CardTitle>
+         <CardImg className="diamondCard" style={{marginTop:"2em"}} top width="100%" src={process.env.PUBLIC_URL + this.props.blog.picture} alt="Card image cap" />
             <CardBody>
-              <CardTitle className="text-center"><strong>{ this.props.blog.title.slice(0,25).concat("...") }</strong></CardTitle>
               <hr/>
               <CardText>{ this.props.blog.body }</CardText>
               <hr/>

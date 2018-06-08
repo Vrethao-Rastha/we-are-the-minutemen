@@ -24,7 +24,7 @@ class PublikTemplate2 extends Component {
   handlePublikSubmit = e => {
     console.log('FIRE!', this.props)
     e.preventDefault()
-    this.props.fetchPublikSingle(this.props.publik[0].id, this.props.history)
+    this.props.fetchPublikSingle(this.props.publik[1].id, this.props.history)
 }
 
   render(){
@@ -36,32 +36,30 @@ class PublikTemplate2 extends Component {
 
 
 
-
+    <div className="phantom"></div>
+    <div className="phantom"></div><div className="phantom"></div>
+    <div className="phantom"></div>
       <div className="phantom"></div>
 
 
         <Col>
           <Card className="publikCard">
-            <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.publik[0].title }</CardTitle>
+            <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.publik[1].title }</CardTitle>
 
-             <CardImg className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+             <CardImg className="diamondCard" top width="100%" src={ process.env.PUBLIC_URL + this.props.publik[1].picture} alt="Card image cap" />
                 <CardBody>
 
-                  <CardText>{ this.props.publik[0].body.slice(0,25).concat("...") }</CardText>
+                  <CardText>{ this.props.publik[1].body.slice(0,25).concat("...") }</CardText>
                   <Button style={{borderRadius:"15px"}}
                     type="submit"
-                    value={ this.props.publik[0].id}
+                    value={ this.props.publik[1].id}
                     onClick={ this.handlePublikSubmit }
                     >Read More</Button>
                 </CardBody>
               </Card>
 
-              <div className="phantom"></div>
-              <div className="phantom"></div>
-              <ScrollerPic7 />
+              <div style={{marginBottom:"28em"}}></div>
 
-              <div className="phantom"></div>
-              <div className="phantom"></div>
       </Col>
       </div>
       )

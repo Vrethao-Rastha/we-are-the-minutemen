@@ -37,7 +37,7 @@ class MainPosts extends Component {
 
     <div>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} lassName="postName"> { this.props.mainComments.name } </CardTitle>
+        <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} lassName="postName"> { this.props.mainComments.name } </CardTitle>
 
 
         <CardBody>

@@ -1,7 +1,28 @@
+injectGlobal`
+
+@font-face {
+  font-family: 'Overseer';
+  font-style: normal;
+  font-weight: normal;
+  src:
+  local('Overseer'),
+  url(./Assets/Overseer.otf) format('opentype'),
+  /*url('./Assets/Overseer Bold Italic.otf') format('otf'),
+  url('./Assets/Overseer Bold.otf') format('otf'),
+  url('./Assets/Overseer Italic.otf') format('otf'),*/
+}
+`
+html {
+  padding: 0;
+  border: 0;
+  font-family: 'Overseer';
+
+}
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Overseer' sans-serif;
+  font-size: 16px;
 }
 .mainNews {
   background-image: url('../src/components/images/worn-wood.jpg');
@@ -29,6 +50,21 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.splash {
+    background-image: url('../src/components/images/Fallout-4-Concept-Art-18.jpg');
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .blogs {
   background-image: url('../src/components/images/Goodneighbor.jpg');
@@ -159,6 +195,7 @@ body {
   margin-left:calc(-200vw + 200px);
   margin-right:calc(-200vw + 200px);
 }
+
 
 .headline {
   height: 25em;

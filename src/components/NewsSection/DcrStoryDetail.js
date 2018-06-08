@@ -83,10 +83,10 @@ componentDidMount(props) {
             <div className="container col-md-8 offset-md-2">
               <Card className="diamondCard">
                 <div className="phantom"></div>
-            <CardImg style={{marginTop:"1em"}} className="diamondCard" top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+            <CardImg style={{marginTop:"1em"}} className="diamondCard" top width="100%" src={ process.env.PUBLIC_URL + this.props.singleDcr.picture} alt="Card image cap" />
             <CardBody>
               <CardTitle> {this.props.singleDcr.title}</CardTitle>
-              <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+              <CardText>{this.props.singleDcr.body}</CardText>
               <Button style={{marginRight:"1em"}} onClick={this.toggle}>Post</Button>
               <Link className="btn btn-secondary" to="/NewsMain">Back</Link>
               {/* COMMENT SECTION */}

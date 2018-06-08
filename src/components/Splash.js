@@ -16,7 +16,7 @@ import { Container,
          } from 'reactstrap'
 import LoginNav from '../components/Reactstrap/LoginNav'
 import { Link } from 'react-router-dom'
-import background from './images/minutemen.jpg'
+import background from './images/Fallout-4-Concept-Art-18.jpg'
 
 
 let picStyle = {
@@ -27,7 +27,7 @@ let picStyle = {
   backgroundSize: "cover",
   marginTop: "2em",
   marginBottom: "1.5em",
-  border: "1px solid black"
+  border: "1px solid black",
 }
 
   class Splash extends Component {
@@ -39,7 +39,9 @@ let picStyle = {
       <div>
         <LoginNav/>
         <Container>
+          <div className="splash"></div>
 
+          <div style={{marginTop:"20vh"}} ></div>
 
         <Col className="clearfix" style={ picStyle } md="12">
           <h1 style={{color: "white", textShadow: "-1px 0 black, 0 1px black, 0px 0 black, 0 -2px black"}} className="text-center">We Are the Minutemen</h1>
@@ -48,6 +50,7 @@ let picStyle = {
       </Container>
 
 
+      <div style={{marginBottom:"20vh"}} ></div>
 
         <Navbar className="logNav" color="dark">
           <NavbarBrand className="navFooter" style={{color: "white"}}>&copy; 2018 Red Rocket Productions <i style={{color:"red"}} className="fa fa-rocket fa-2x"> </i>
