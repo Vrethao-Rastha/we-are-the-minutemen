@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
-import { fetchBlogSingle } from '../../redux/actions'
+import { fetchBlogSingle, editBlog } from '../../redux/actions'
 import renderIf from '../NewsSection/util'
 import Footer from '../Reactstrap/Footer'
 import MainNav from '../Reactstrap/MainNav'
@@ -38,11 +38,11 @@ class BlogDetail extends Component {
 
   state = {
     modal: false,
+    id:'',
+    title: '',
+    body: '',
+    picture: '',
 
-    name: '',
-    comment: '',
-    avatar: 'test',
-    storyId: ''
 
   };
 
@@ -60,11 +60,13 @@ componentDidMount(props) {
   }
 }
 
+handleEdit = e => {
+    this.props.editBlog(this.state.id, this.state.title, this.state.body, this.state.picture)
+}
 
   render() {
     console.log('props', this.props)
-    console.log(!this.props.singleBlog.title)
-    console.log('path', this.props.location.pathname.slice(12))
+    console.log('state', this.state)
     // var pathThing = this.props.singleBlog.picture.replace(/"/g,"")
 
     // let filteredPosts = this.props.dcrComments.filter(comment => comment.storyId == this.props.singleDcr.id)
@@ -88,7 +90,9 @@ componentDidMount(props) {
 
           </CardText>
           <CardBody>
-
+            <Button className="pull-right" style={{marginLeft:"2em"}} onClick={ this.toggle }>
+              Edit
+            </Button>
             <Link className="btn btn-secondary pull-right" to="/BlogPage">Back</Link>
           </CardBody>
 
@@ -100,6 +104,38 @@ componentDidMount(props) {
 
 
           </div>
+
+          <Modal style={{backgroundImage: {modalThing}}} isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+            <ModalBody style={{backgroundImage: {modalThing}}}>
+
+                <Col>
+              <Label className="btns" for="text-field">Feeling different about things?</Label>
+              <Form onSubmit={ this.handleEdit }>
+                <FormGroup>
+                  <textarea rows="4" cols="50"
+                    type="text"
+                    name="text"
+                    id="text-field"
+                    value={this.state.body}
+                    onChange={e => this.setState({id: this.props.singleBlog.id, title: this.props.singleBlog.title, body: e.target.value, picture: this.props.singleBlog.picture })}
+
+                  />
+                  <Col>
+
+
+                  </Col>
+
+                </FormGroup>
+            <ModalFooter>
+
+              <Button className="btn btn-secondary">Post</Button>
+              <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+            </ModalFooter>
+          </Form>
+           </Col>
+          </ModalBody>
+          </Modal>
+
           <Footer />
          </div>
     );
@@ -109,7 +145,8 @@ componentDidMount(props) {
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    fetchBlogSingle
+    fetchBlogSingle,
+    editBlog
 }, dispatch)
 
 const mapStateToProps = state => ({

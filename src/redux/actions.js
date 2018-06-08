@@ -504,6 +504,21 @@ export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
     }
   }
 
+  export const editBlog = (id, title, body, picture) => {
+    return dispatch => {
+      console.log('in the put', id, title, body, picture)
+      axios.put(`http://localhost:3000/api/v1/blogs/${id}`, {title, body, picture})
+      .then(res => dispatch({
+        type: PUT_BLOG_STORIES_SUCCESS,
+        payload: res.data.data
+      }))
+      .catch(err => dispatch({
+        type: PUT_BLOG_STORIES_FAILED,
+        payload: err
+      }))
+    }
+  }
+
   export const fetchBlogSingle = (id, history) => {
     console.log('ion the fuction', history)
     return async dispatch => {
