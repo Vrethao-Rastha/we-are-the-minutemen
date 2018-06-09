@@ -43,7 +43,7 @@ class PublikPosts extends Component {
 
     <div>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} lassName="postName"> { this.props.publikComment.name } </CardTitle>
+        <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} lassName="postName"> { this.props.publikComment.name } </CardTitle>
 
 
         <CardBody>

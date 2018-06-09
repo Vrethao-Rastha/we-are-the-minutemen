@@ -37,11 +37,6 @@ class DcrPosts extends Component {
       this.props.deleteDcrComments(this.props.dcrComments.id)
     }
 
-    handleEdit = e => {
-        e.preventDefault()
-      this.props.editDcrComments(this.props.dcrComments.id)
-    }
-
   render(){
 
       console.log('DCR POST DETAIL','state:', localStorage.avatar)
@@ -49,9 +44,9 @@ class DcrPosts extends Component {
 
     return(
 
-    <Container>
+    <div>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:".5em"}} className="postName"> { this.props.dcrComments.name } </CardTitle>
+        <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} className="postName"> { this.props.dcrComments.name } </CardTitle>
 
 
         <CardBody>
@@ -67,7 +62,7 @@ class DcrPosts extends Component {
             </Col>
 
             {renderIf(localStorage.user.replace(/"/g,"") === this.props.dcrComments.name,
-            <Container>
+
 
               <Button
                 className="pull-right"
@@ -76,13 +71,6 @@ class DcrPosts extends Component {
                 onClick={ this.handleSubmit }
                 >Delete</Button>
 
-                <Button
-                  className="pull-right"
-                  style={{maxHeight:"3em",marginRight:"1em"}}
-                  value={this.props.dcrComments.id}
-                  onClick={ this.handleEdit }
-                  >Edit</Button>
-            </Container>
           )}
           </Row>
 
@@ -90,7 +78,7 @@ class DcrPosts extends Component {
             </CardBody>
 
           </Card>
-    </Container>
+    </div>
       )
 
   }

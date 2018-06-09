@@ -212,9 +212,13 @@ body {
   background-attachment: fixed;
   background-image: url('./components/images/crossing.jpg');
 }
-.postName {
-  text-align: center;
+.blogDetail {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url('./components/images/heather near goodneighbor.jpg');
 }
+
 .postComment {
   text-align: center;
 

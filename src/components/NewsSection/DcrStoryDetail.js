@@ -42,7 +42,7 @@ class DcrStoryDetail extends Component {
 
     name: '',
     comment: '',
-    avatar: 'test',
+    avatar: '',
     storyId: ''
 
   };
@@ -65,7 +65,7 @@ componentDidMount(props) {
 
 
   render() {
-    console.log('props', this.props)
+    console.log('props', localStorage.avatar)
     console.log('state', this.state)
     var pathThing = this.props.location.pathname.slice(9)
 
@@ -113,7 +113,7 @@ componentDidMount(props) {
                     name="text"
                     id="text-field"
                     value={this.state.comment}
-                    onChange={e => this.setState({comment: e.target.value, name: localStorage.user.replace(/"/g,""), avatar:localStorage.avatar, storyId: this.props.singleDcr.id })}
+                    onChange={e => this.setState({comment: e.target.value, name: localStorage.user.replace(/"/g,""), avatar: localStorage.avatar.replace(/"/g,""), storyId: this.props.singleDcr.id })}
                   />
                   <Col>
 

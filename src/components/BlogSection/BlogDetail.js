@@ -67,22 +67,17 @@ handleEdit = e => {
   render() {
     console.log('props', this.props)
     console.log('state', this.state)
-    // var pathThing = this.props.singleBlog.picture.replace(/"/g,"")
 
-    // let filteredPosts = this.props.dcrComments.filter(comment => comment.storyId == this.props.singleDcr.id)
-    // console.log('single', filteredPosts)
-
-    // let postComponents = filteredPosts.map(item => <DcrPosts key={ item.id } dcrComments={ item } />)
 
 
 
         return (
-          <div className="newsDetail">
+          <div className="blogDetail">
             <MainNav />
             <div className="container col-md-8 offset-md-2">
               <Card className="diamondCard" >
                 <div className="phantom"></div>
-                <CardTitle className="text-center"> {this.props.singleBlog.title}</CardTitle>
+                <CardTitle style={{fontSize:"40pt"}} className="text-center"> {this.props.singleBlog.title}</CardTitle>
             <CardImg style={{marginTop:"1em"}} className="diamondCard" top width="100%" src={ process.env.PUBLIC_URL + this.props.singleBlog.picture } />
             <CardBody>
               <CardText>{this.props.singleBlog.body}

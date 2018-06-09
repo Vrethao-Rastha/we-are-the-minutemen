@@ -49,11 +49,11 @@ class BlogIndividual extends Component {
   return(
     <Col md={{size: 6, offset: 3}} style={{marginBottom:"100vh"}}>
       <Card className="diamondCard">
-        <CardTitle style={{marginTop:"2em"}} className="text-center"><strong>{ this.props.blog.title.slice(0,25).concat("...") }</strong></CardTitle>
+        <CardTitle style={{marginTop:".5em", fontSize:"40pt"}} className="text-center"><strong>{ this.props.blog.title }</strong></CardTitle>
          <CardImg className="diamondCard" style={{marginTop:"2em"}} top width="100%" src={process.env.PUBLIC_URL + this.props.blog.picture} alt="Card image cap" />
             <CardBody>
               <hr/>
-              <CardText>{ this.props.blog.body }</CardText>
+              <CardText>{ this.props.blog.body.slice(0,200).concat("...") }</CardText>
               <hr/>
 
 
