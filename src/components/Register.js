@@ -20,7 +20,7 @@ import { Container,
          } from 'reactstrap'
 import LoginNav from '../components/Reactstrap/LoginNav'
 import { Link } from 'react-router-dom'
-import background from './images/minutemen.jpg'
+import background from './images/Fallout-4-Concept-Art-18.jpg'
 import logo from './images/Icon_Minutemen_quest.png'
 
 
@@ -43,7 +43,8 @@ let picStyle = {
         {
         name: '',
         email: '',
-        password: ''
+        password: '',
+        avatar: ''
       }
     ]
     };
@@ -57,6 +58,7 @@ let picStyle = {
     render(){
     return(
       <div>
+        <div className="splash"></div>
 
         <Navbar className="logNav" style={{marginBottom: "2em"}} color="dark">
           <NavbarBrand className="logNav" style={{color: 'white', fontSize: "2em", paddingLeft: "0px"}}>
@@ -104,6 +106,16 @@ let picStyle = {
                             onChange={e => this.setState({password: e.target.value})}
                           />
 
+                          <Label style={{marginTop:".5em", marginLeft:"2em", marginRight:"1em"}} className="btns" for="password-field">Avatar</Label>
+
+                            <Input
+                              type="avatar"
+                              name="avatar"
+                              id="avatar-field"
+                              value={ this.state.avatar }
+                              onChange={e => this.setState({avatar: e.target.value})}
+                            />
+
                           <Button type="submit">Submit</Button>
                           </Form>
                     </Row>
@@ -112,10 +124,10 @@ let picStyle = {
         <Container>
 
 
-        <Col className="clearfix" style={ picStyle } md="12">
-          <h1 style={{color: "white", textShadow: "-1px 0 black, 0 1px black, 0px 0 black, 0 -2px black"}} className="text-center">We Are the Minutemen</h1>
+          <Col className="clearfix" style={ picStyle } md="12">
+            <h1 style={{color: "white", textShadow: "-1px 0 black, 0 1px black, 0px 0 black, 0 -2px black"}} className="text-center">We Are the Minutemen</h1>
 
-        </Col>
+          </Col>
       </Container>
 
 
