@@ -57,7 +57,7 @@ class PublikPosts extends Component {
               <CardText style={{marginLeft:"2em"}}> { this.props.publikComment.comment } </CardText>
             </Col>
 
-            {renderIf(localStorage.user.replace(/"/g,"") === this.props.publikComment.name,
+            {renderIf(localStorage.user.replace(/"/g,"") === this.props.publikComment.name  || localStorage.admin.length < 5,
 
             <Button
               className="pull-right"

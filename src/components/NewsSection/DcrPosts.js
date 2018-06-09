@@ -61,7 +61,7 @@ class DcrPosts extends Component {
               <CardText style={{marginLeft:"2em"}}> { this.props.dcrComments.comment } </CardText>
             </Col>
 
-            {renderIf(localStorage.user.replace(/"/g,"") === this.props.dcrComments.name,
+            {renderIf(localStorage.user.replace(/"/g,"") === this.props.dcrComments.name || localStorage.admin.length < 5,
 
 
               <Button

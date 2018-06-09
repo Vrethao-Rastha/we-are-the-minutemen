@@ -51,7 +51,7 @@ class MainPosts extends Component {
               <CardText style={{marginLeft:"2em"}}> { this.props.mainComments.comment } </CardText>
             </Col>
 
-            {renderIf(localStorage.user.replace(/"/g,"") === this.props.mainComments.name,
+            {renderIf(localStorage.user.replace(/"/g,"") === this.props.mainComments.name  || localStorage.admin.length < 5,
 
             <Button
               className="pull-right"
