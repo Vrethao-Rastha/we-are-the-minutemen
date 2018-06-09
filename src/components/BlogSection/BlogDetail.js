@@ -75,7 +75,7 @@ handleEdit = e => {
           <div className="blogDetail">
             <MainNav />
             <div className="container col-md-8 offset-md-2">
-              <Card className="diamondCard" >
+              <Card className="diamondCard fix" >
                 <div className="phantom"></div>
                 <CardTitle style={{fontSize:"40pt"}} className="text-center"> {this.props.singleBlog.title}</CardTitle>
             <CardImg style={{marginTop:"1em"}} className="diamondCard" top width="100%" src={ process.env.PUBLIC_URL + this.props.singleBlog.picture } />
