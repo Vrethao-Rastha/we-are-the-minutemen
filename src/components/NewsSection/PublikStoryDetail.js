@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
-import { fetchPublikSingle, addPublikComments } from '../../redux/actions'
+import { fetchPublikSingle, addPublikComments } from '../../redux/Actions/PublikActions'
 import Footer from '../Reactstrap/Footer'
 import MainNav from '../Reactstrap/MainNav'
 import PublikPosts from './PublikPosts'
@@ -38,11 +38,9 @@ class PublikStoryDetail extends Component {
 
   state = {
     modal: false,
-    post : [{
     name: 'test',
     comment: '',
     avatar: 'test'
-  }]
   };
 
 toggle = () => {

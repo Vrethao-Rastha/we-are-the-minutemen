@@ -6,7 +6,7 @@ import { FETCH_MAIN_STORY_FAILED,
          DELETE_MAIN_STORY_SUCCESS,
          PUT_MAIN_STORY_FAILED,
          PUT_MAIN_STORY_SUCCESS,
-} from '../actions'
+} from '../Actions/MainActions'
 
   const initialState = []
 

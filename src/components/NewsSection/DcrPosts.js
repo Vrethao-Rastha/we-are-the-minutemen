@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { deleteDcrComments, editDcrComments } from '../../redux/actions'
+import { deleteDcrComments, editDcrComments } from '../../redux/Actions/DcrActions'
 import { Link } from 'react-router-dom'
 import renderIf from './util'
 import {
@@ -38,9 +38,6 @@ class DcrPosts extends Component {
     }
 
   render(){
-
-      console.log('DCR POST DETAIL','state:', localStorage.avatar)
-
 
     return(
 
@@ -90,10 +87,5 @@ const mapDispatchToProps = dispatch =>
     editDcrComments
 }, dispatch)
 
-// const mapStateToProps = state => ({
-//   singleDcr: state.dcrSingle,
-//   user: state.user,
-//   //dcrComments: state.dcrComments,
-// })
 
 export default connect(null, mapDispatchToProps)(DcrPosts);

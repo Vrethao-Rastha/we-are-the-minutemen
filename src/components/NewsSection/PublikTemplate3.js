@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link, browserHistory,withRouter } from 'react-router-dom'
-import { fetchPublikSingle } from '../../redux/actions'
+import { fetchPublikSingle } from '../../redux/Actions/PublikActions'
 import ScrollerPic10 from '../Scrollers/ScrollerPic10'
 import {
   Button,
@@ -22,7 +22,6 @@ class PublikTemplate3 extends Component {
   }
 
   handlePublikSubmit = e => {
-    console.log('FIRE!', this.props)
     e.preventDefault()
     this.props.fetchPublikSingle(this.props.publik[2].id, this.props.history)
 }
@@ -36,7 +35,7 @@ class PublikTemplate3 extends Component {
 
 
 
-      
+
 
 
         <Col>

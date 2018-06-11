@@ -1,6 +1,6 @@
 import { FETCH_MAIN_SINGLE_FAILED,
          FETCH_MAIN_SINGLE_SUCCESS
-} from '../actions'
+} from '../Actions/MainActions'
 
   const initialState = []
 

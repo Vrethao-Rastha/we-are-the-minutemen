@@ -1,6 +1,6 @@
 import { FETCH_PUBLIK_SINGLE_FAILED,
          FETCH_PUBLIK_SINGLE_SUCCESS
-} from '../actions'
+} from '../Actions/PublikActions'
 
   const initialState = []
 

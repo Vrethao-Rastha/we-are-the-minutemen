@@ -1,6 +1,6 @@
 import { FETCH_DCR_SINGLE_FAILED,
          FETCH_DCR_SINGLE_SUCCESS
-} from '../actions'
+} from '../Actions/DcrActions'
 
   const initialState = []
 

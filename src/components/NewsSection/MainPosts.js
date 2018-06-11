@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { deleteMainComments } from '../../redux/actions'
+import { deleteMainComments } from '../../redux/Actions/MainActions'
 import renderIf from './util'
 import {
   Container,

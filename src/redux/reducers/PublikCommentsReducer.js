@@ -6,7 +6,7 @@ import { FETCH_PUBLIK_OCCURRENCES_COMMENTS_FAILED,
          DELETE_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS,
          PUT_PUBLIK_OCCURRENCES_COMMENTS_FAILED,
          PUT_PUBLIK_OCCURRENCES_COMMENTS_SUCCESS,
-} from '../actions'
+} from '../Actions/PublikActions'
 
   const initialState = []
 

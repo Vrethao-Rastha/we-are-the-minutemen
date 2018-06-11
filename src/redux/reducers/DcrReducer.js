@@ -6,7 +6,7 @@ import { FETCH_DCR_STORIES_FAILED,
          DELETE_DCR_STORIES_SUCCESS,
          PUT_DCR_STORIES_FAILED,
          PUT_DCR_STORIES_SUCCESS,
-} from '../actions'
+} from '../Actions/DcrActions'
 
   const initialState = []
 

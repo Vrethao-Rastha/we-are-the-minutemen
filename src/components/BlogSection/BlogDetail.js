@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
-import { fetchBlogSingle, editBlog } from '../../redux/actions'
+import { fetchBlogSingle, editBlog } from '../../redux/Actions/BlogActions'
 import renderIf from '../NewsSection/util'
 import Footer from '../Reactstrap/Footer'
 import MainNav from '../Reactstrap/MainNav'
@@ -65,11 +65,6 @@ handleEdit = e => {
 }
 
   render() {
-    console.log('props', this.props)
-    console.log('state', this.state)
-
-
-
 
         return (
           <div className="blogDetail">
@@ -85,9 +80,14 @@ handleEdit = e => {
 
           </CardText>
           <CardBody>
-            <Button className="pull-right" style={{marginLeft:"2em"}} onClick={ this.toggle }>
-              Edit
-            </Button>
+
+            {renderIf(localStorage.admin.length < 5,
+              <Button className="pull-right" style={{marginLeft:"2em"}} onClick={ this.toggle }>
+                Edit
+              </Button>
+            )}
+
+
             <Link className="btn btn-secondary pull-right" to="/BlogPage">Back</Link>
           </CardBody>
 

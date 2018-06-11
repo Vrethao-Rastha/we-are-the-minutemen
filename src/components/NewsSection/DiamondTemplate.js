@@ -4,7 +4,7 @@ import {browserHistory,withRouter} from "react-router-dom"
 
 import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
-import { fetchDcrSingle } from '../../redux/actions'
+import { fetchDcrSingle } from '../../redux/Actions/DcrActions'
 import ScrollerPic3 from '../Scrollers/ScrollerPic3'
 import ScrollerPic23 from '../Scrollers/ScrollerPic23'
 
@@ -38,7 +38,6 @@ class DiamondTemplate extends Component {
 
   render(){
 
-    console.log('state test', this.props)
   return(
   <div>
 

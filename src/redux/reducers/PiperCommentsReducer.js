@@ -6,7 +6,7 @@ import { FETCH_PIPER_COMMENTS_FAILED,
          DELETE_PIPER_COMMENTS_SUCCESS,
          PUT_PIPER_COMMENTS_FAILED,
          PUT_PIPER_COMMENTS_SUCCESS,
-} from '../actions'
+} from '../Actions/PiperActions'
 
   const initialState = []
 

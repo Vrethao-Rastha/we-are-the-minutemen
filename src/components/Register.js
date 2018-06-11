@@ -39,19 +39,17 @@ let picStyle = {
 
     state = {
       modal: false,
-      login: [
-        {
+
         name: '',
         email: '',
         password: '',
         avatar: ''
-      }
-    ]
+
     };
 
     handleSubmit = e => {
     e.preventDefault()
-    this.props.userRegister(this.state, this.props.history)
+    this.props.userRegister(this.state.name ,this.state.email ,this.state.password ,this.state.avatar, this.props.history)
   }
 
 

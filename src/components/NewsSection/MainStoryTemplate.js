@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import {browserHistory,withRouter} from "react-router-dom"
-import {fetchMainSingle} from '../../redux/actions'
+import {fetchMainSingle} from '../../redux/Actions/MainActions'
 import ScrollerPic6 from '../Scrollers/ScrollerPic6'
 import ScrollerPic5 from '../Scrollers/ScrollerPic5'
 import {
@@ -43,7 +43,6 @@ class MainStoryTemplate extends Component {
   }
 
   render(){
-    console.log("dbfdbfbfbd", this.props)
   return(
   <div>
 

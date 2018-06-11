@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {addBlog} from '../../redux/actions'
+import {addBlog} from '../../redux/Actions/BlogActions'
 import { Button, Form, FormGroup, Label, Input, Row, Col, Card,
 CardText,
 CardImg,
@@ -21,7 +21,7 @@ class AddBlog extends React.Component {
     }
 
       render() {
-        console.log('state', this.state)
+
     return (
 
 <div>

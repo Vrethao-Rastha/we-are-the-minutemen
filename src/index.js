@@ -6,7 +6,11 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 import './index.css';
 import App from './App';
-import { fetchUser, fetchAbout, fetchDcrStories, fetchPublikStories, fetchPiperStories, fetchBlogStories, fetchMainStory, fetchDcrComments, fetchPublikComments, fetchPiperComments, fetchMainStoryComments, fetchBlogSingle } from './redux/actions'
+import { fetchPiperStories,    fetchPiperComments, } from './redux/Actions/PiperActions'
+import { fetchPublikStories, fetchPublikComments } from './redux/Actions/PublikActions'
+import { fetchMainStoryComments, fetchMainStory } from './redux/Actions/MainActions'
+import { fetchDcrStories, fetchDcrComments } from './redux/Actions/DcrActions'
+import { fetchBlogStories, fetchBlogSingle } from './redux/Actions/BlogActions'
 
 let newStore = store()
 //newStore.dispatch(fetchBlogSingle())

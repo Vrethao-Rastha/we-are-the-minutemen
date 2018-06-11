@@ -3,7 +3,7 @@ import renderIf from '../NewsSection/util'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
-import { deleteBlog , fetchBlogSingle} from '../../redux/actions'
+import { deleteBlog , fetchBlogSingle} from '../../redux/Actions/BlogActions'
 import { ListGroupItem,
   Container,
   Col,
@@ -37,7 +37,6 @@ class BlogIndividual extends Component {
     }
     handleRedirect = e => {
       e.preventDefault()
-      console.log('in the redirect', this.props.blog.id, this.props.history)
       this.props.fetchBlogSingle(this.props.blog.id, this.props.history)
 
 
@@ -45,7 +44,6 @@ class BlogIndividual extends Component {
 
 
   render(){
-    console.log('props in indiv', this.props)
   return(
     <Col md={{size: 6, offset: 3}} style={{marginBottom:"100vh"}}>
       <Card className="diamondCard">

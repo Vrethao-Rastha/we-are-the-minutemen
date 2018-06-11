@@ -6,7 +6,7 @@ import { FETCH_BLOG_STORIES_FAILED,
          DELETE_BLOG_STORIES_SUCCESS,
          PUT_BLOG_STORIES_FAILED,
          PUT_BLOG_STORIES_SUCCESS,
-} from '../actions'
+} from '../Actions/BlogActions'
 
   const initialState = []
 

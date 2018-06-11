@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import {browserHistory,withRouter} from "react-router-dom"
-import {fetchMainSingle} from '../../redux/actions'
+import {fetchMainSingle} from '../../redux/Actions/MainActions'
 import ScrollerPic9 from '../Scrollers/ScrollerPic9'
 import {
   Container,
@@ -34,7 +34,6 @@ class MainStoryTemplate2 extends Component {
   }
 
   handleMainSubmit = e => {
-    console.log('FIRE!', this.props)
     e.preventDefault()
     this.props.fetchMainSingle(this.props.main[1].id, this.props.history)
 
@@ -42,7 +41,6 @@ class MainStoryTemplate2 extends Component {
   }
 
   render(){
-    console.log("dbfdbfbfbd", this.props)
   return(
   <div>
 

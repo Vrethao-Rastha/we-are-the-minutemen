@@ -6,7 +6,7 @@ import { FETCH_DCR_COMMENTS_FAILED,
          DELETE_DCR_COMMENTS_SUCCESS,
          PUT_DCR_COMMENTS_FAILED,
          PUT_DCR_COMMENTS_SUCCESS,
-} from '../actions'
+} from '../Actions/DcrActions'
 
   const initialState = []
 

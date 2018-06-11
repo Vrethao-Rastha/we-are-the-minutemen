@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link, browserHistory,withRouter } from 'react-router-dom'
 
-import { fetchDcrSingle } from '../../redux/actions'
+import { fetchDcrSingle } from '../../redux/Actions/DcrActions'
 import ScrollerPic31 from '../Scrollers/ScrollerPic31'
 import ScrollerPic12 from '../Scrollers/ScrollerPic12'
 
@@ -28,7 +28,6 @@ class DiamondTemplate2 extends Component {
   }
 
   handleDcrSubmit = e => {
-    console.log('FIRE!', this.props)
     e.preventDefault()
     this.props.fetchDcrSingle(this.props.dcr[1].id, this.props.history)
 }

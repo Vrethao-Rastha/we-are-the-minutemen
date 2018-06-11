@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
-import { fetchMainSingle, addMainStoryComments } from '../../redux/actions'
+import { fetchMainSingle, addMainStoryComments } from '../../redux/Actions/MainActions'
 import Footer from '../Reactstrap/Footer'
 import MainNav from '../Reactstrap/MainNav'
 import MainPosts from './MainPosts'
@@ -64,15 +64,8 @@ componentDidMount(props) {
 
 
   render() {
-    console.log('MAIN STORY DETAIL:','state:', this.state, 'props', this.props)
-
-    // let names = ['1', '2', ,'3' ,'4'].map( (name, index) => {
-    // return <img key={index} src={require(`../images/Fallout-4-Concept-Art-${names}.png`)} /> })
-    var pathThing = this.props.location.pathname.slice(9)
 
      let posts = this.props.mainComments.map(mainComments => <MainPosts key={ mainComments.id } mainComments={ mainComments } />)
-
-    //  let users = this.props.user.map(user => <MainPosts key={ user.id } user={ user } />)
 
         return (
           <div className="newsDetail container-fluid">
@@ -95,8 +88,6 @@ componentDidMount(props) {
               <CardText>
 
                 { posts }
-
-                {/* <div>{ users }</div> */}
 
 
                 <div className="phantom"></div>

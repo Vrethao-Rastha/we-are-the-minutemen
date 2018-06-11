@@ -1,6 +1,6 @@
 import { FETCH_BLOG_SINGLE_FAILED,
          FETCH_BLOG_SINGLE_SUCCESS,
-} from '../actions'
+} from '../Actions/BlogActions'
 
   const initialState = []
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
-import { fetchDcrSingle, addDcrComments, fetchUser } from '../../redux/actions'
+import { fetchDcrSingle, addDcrComments } from '../../redux/Actions/DcrActions'
 import renderIf from './util'
 import Footer from '../Reactstrap/Footer'
 import MainNav from '../Reactstrap/MainNav'
@@ -65,8 +65,7 @@ componentDidMount(props) {
 
 
   render() {
-    console.log('props', localStorage.avatar)
-    console.log('state', this.state)
+
     var pathThing = this.props.location.pathname.slice(9)
 
     let filteredPosts = this.props.dcrComments.filter(comment => comment.storyId == this.props.singleDcr.id)
@@ -142,8 +141,7 @@ componentDidMount(props) {
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
     fetchDcrSingle,
-    addDcrComments,
-    fetchUser
+    addDcrComments
 }, dispatch)
 
 const mapStateToProps = state => ({
