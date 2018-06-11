@@ -10,19 +10,21 @@ import PublikStoryDetail from './components/NewsSection/PublikStoryDetail'
 import DcrStoryDetail from './components/NewsSection/DcrStoryDetail'
 import MainStoryDetail from './components/NewsSection/MainStoryDetail'
 import CheckAuth from './components/CheckAuth'
+import ScrollToTop from './components/ScrollToTop'
 
 import {
   BrowserRouter as Router,
   Route,
-  Switch
+  Switch,
+  browserHistory
 } from 'react-router-dom'
 
 
 class App extends Component {
   render() {
     return (
-      <Router>
-
+      <Router >
+        <ScrollToTop>
           <Switch>
             <Route exact path="/" component = { Splash } />
             <Route path="/Register" component = { Register } />
@@ -36,6 +38,7 @@ class App extends Component {
             <Route path="/DetailBlog" component = { CheckAuth(BlogDetail) } />
             <Route path="/Erios" component = {() => window.location = 'http://localhost:1701' } />
           </Switch>
+        </ScrollToTop>
       </Router>
     );
   }

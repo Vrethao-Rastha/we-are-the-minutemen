@@ -65,11 +65,9 @@ componentDidMount(props) {
 
 
   render() {
-
     var pathThing = this.props.location.pathname.slice(9)
 
     let filteredPosts = this.props.dcrComments.filter(comment => comment.storyId == this.props.singleDcr.id)
-    console.log('single', filteredPosts)
 
     let postComponents = filteredPosts.map(item => <DcrPosts key={ item.id } dcrComments={ item } />)
 

@@ -63,9 +63,15 @@ componentDidMount(props) {
 }
 
 
-  render() {
 
-     let posts = this.props.mainComments.map(mainComments => <MainPosts key={ mainComments.id } mainComments={ mainComments } />)
+
+  render() {
+    console.log('props in main****************', this.props)
+
+    let filteredPosts = this.props.mainComments.filter(comment => comment.storyId == this.props.mainSingle.id)
+
+     let posts = filteredPosts.map(mainComments => <MainPosts key={ mainComments.id } mainComments={ mainComments } />)
+
 
         return (
           <div className="newsDetail container-fluid">
