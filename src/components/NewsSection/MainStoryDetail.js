@@ -42,8 +42,8 @@ class MainStoryDetail extends Component {
 
     name: '',
     comment: '',
-    avatar: ''
-
+    avatar: '',
+    storyId: ''
   };
 
 toggle = () => {
@@ -53,7 +53,7 @@ toggle = () => {
 }
 
 handlePostSubmit = e => {
-    this.props.addMainStoryComments(this.state.name, this.state.comment, this.state.avatar)
+    this.props.addMainStoryComments(this.state.name, this.state.comment, this.state.avatar, this.state.storyId)
   }
 
 componentDidMount(props) {
@@ -67,6 +67,7 @@ componentDidMount(props) {
 
   render() {
     console.log('props in main****************', this.props)
+    console.log('state in main**********=>', this.state)
 
     let filteredPosts = this.props.mainComments.filter(comment => comment.storyId == this.props.mainSingle.id)
 
@@ -114,7 +115,7 @@ componentDidMount(props) {
                           name="text"
                           id="text-field"
                           value={this.state.comment}
-                          onChange={e => this.setState({comment: e.target.value, name: localStorage.user.replace(/"/g,""), avatar:localStorage.avatar.replace(/"/g,"") })}
+                          onChange={e => this.setState({comment: e.target.value, name: localStorage.user.replace(/"/g,""), avatar:localStorage.avatar.replace(/"/g,""), storyId:this.props.mainSingle.id })}
                         />
 
                         <Button className="btn btn-secondary">Post</Button>

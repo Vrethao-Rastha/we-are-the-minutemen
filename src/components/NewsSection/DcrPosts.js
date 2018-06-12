@@ -66,7 +66,7 @@ class DcrPosts extends Component {
                 style={{maxHeight:"3em"}}
                 value={this.props.dcrComments.id}
                 onClick={ this.handleSubmit }
-                >Delete</Button>
+                >[X]</Button>
 
           )}
           </Row>

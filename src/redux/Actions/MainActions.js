@@ -70,9 +70,9 @@ export const fetchMainStoryComments = () => {
   }
 }
 
-export const addMainStoryComments = (name, comment, avatar) => {
+export const addMainStoryComments = (name, comment, avatar, storyId) => {
   return dispatch => {
-    axios.post('http://localhost:3000/api/v1/main_story_comments/', {name, comment, avatar})
+    axios.post('http://localhost:3000/api/v1/main_story_comments/', {name, comment, avatar, storyId})
     .then(res => dispatch({
       type: ADD_MAIN_STORY_COMMENTS_SUCCESS,
       payload: res.data.data

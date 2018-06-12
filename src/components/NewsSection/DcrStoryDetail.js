@@ -67,6 +67,8 @@ componentDidMount(props) {
   render() {
     var pathThing = this.props.location.pathname.slice(9)
 
+    console.log('state in dcr**********=>', this.state)
+
     let filteredPosts = this.props.dcrComments.filter(comment => comment.storyId == this.props.singleDcr.id)
 
     let postComponents = filteredPosts.map(item => <DcrPosts key={ item.id } dcrComments={ item } />)
