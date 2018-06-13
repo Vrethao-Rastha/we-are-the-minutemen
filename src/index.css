@@ -198,6 +198,7 @@ body {
 .mainCard {
   border-radius: 5%;
   border: 1px solid black;
+  
 }
 .modal-body {
   background-image: url('./components/images/crossing.jpg')

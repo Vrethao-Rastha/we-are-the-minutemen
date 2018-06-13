@@ -34,7 +34,7 @@ import {
 
 const items = [
   {
-    src: process.env.PUBLIC_URL + '/Valk and Heather 2.jpg',
+    src: process.env.PUBLIC_URL + '/Valk and Heather.jpg',
     altText: 'Slide 1',
     caption: 'Slide 1'
   },
@@ -44,7 +44,7 @@ const items = [
     caption: 'Slide 2'
   },
   {
-    src: process.env.PUBLIC_URL + '/Valk and Heather.jpg',
+    src: process.env.PUBLIC_URL + '/Valk.jpg',
     altText: 'Slide 3',
     caption: 'Slide 3'
   }
@@ -118,7 +118,7 @@ class PipersPage extends Component {
           onExited={this.onExited}
           key={item.src}
         >
-          <img src={item.src} alt={item.altText} />
+          <img style={{height:"30em"}} src={item.src} alt={item.altText} />
           {/* <CarouselCaption captionText={item.caption} captionHeader={item.caption} /> */}
         </CarouselItem>
       );
@@ -129,6 +129,8 @@ class PipersPage extends Component {
       <div>
         <MainNav/>
         <div >
+
+          <img style={{height:"20em "}} src= {process.env.PUBLIC_URL + '/hey_there__blue_by_quizzicalkisses-d9iv9pb.jpg'}/>
           <Carousel
 
             activeIndex={activeIndex}

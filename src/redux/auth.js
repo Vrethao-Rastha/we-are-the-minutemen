@@ -28,7 +28,6 @@ export const userLogin = (creds, history) => {
 }
 
 export const userRegister = (name, email, password, avatar, history) => {
-  console.log('in the thing', name, email, password, avatar,)
   return async dispatch => {
     try {
       let response = await axios.post(`http://localhost:3000/api/v1/register`, {name, email, password, avatar})
