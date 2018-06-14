@@ -45,7 +45,7 @@ class PublikTemplate2 extends Component {
           <Card className="publikCard">
             <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.publik[1].title }</CardTitle>
 
-             <CardImg className="diamondCard" top width="100%" src={ process.env.PUBLIC_URL + this.props.publik[1].picture} alt="Card image cap" />
+             <CardImg className="cardImg" top width="100%" src={ process.env.PUBLIC_URL + this.props.publik[1].picture} alt="Card image cap" />
                 <CardBody>
 
                   <CardText>{ this.props.publik[1].body.slice(0,25).concat("...") }</CardText>

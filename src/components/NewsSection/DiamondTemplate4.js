@@ -45,7 +45,7 @@ class DiamondTemplate4 extends Component {
       <Card className="diamondCard">
         <CardTitle style={{marginTop:".5em"}} className="text-center">{ this.props.dcr[3].title
         }</CardTitle>
-         <CardImg className="diamondCard" top width="100%" src={ process.env.PUBLIC_URL + this.props.dcr[3].picture} alt="Card image cap" />
+         <CardImg className="cardImg" top width="100%" src={ process.env.PUBLIC_URL + this.props.dcr[3].picture} alt="Card image cap" />
             <CardBody>
 
               <CardText>{ this.props.dcr[3].body.slice(0,25).concat("...") }</CardText>

@@ -190,15 +190,22 @@ body {
 .publikCard{
   border-radius: 5%;
   border: 1px solid black;
+  box-shadow: 5px 10px #444444;
 }
 .diamondCard {
   border-radius: 5%;
   border: 1px solid black;
+  box-shadow: 5px 10px #444444;
+
 }
 .mainCard {
   border-radius: 5%;
   border: 1px solid black;
-
+  box-shadow: 5px 10px #444444;
+}
+.cardImg {
+  border-radius: 5%;
+  border: 1px solid black;
 }
 .modal-body {
   background-image: url('./components/images/crossing.jpg')

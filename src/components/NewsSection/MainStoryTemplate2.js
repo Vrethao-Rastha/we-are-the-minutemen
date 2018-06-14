@@ -54,7 +54,7 @@ class MainStoryTemplate2 extends Component {
     <Col>
       <Card className="mainCard">
         <CardTitle style={{marginTop:".5em"}}  className="text-center" style={{fontSize:"30pt"}}>{ this.props.main[1].title }</CardTitle>
-         <CardImg className="headline mainCard" top width="100%" src={ process.env.PUBLIC_URL + this.props.main[1].picture} alt="Card image cap" />
+         <CardImg className="headline cardImg" top width="100%" src={ process.env.PUBLIC_URL + this.props.main[1].picture} alt="Card image cap" />
             <CardBody>
 
               <CardText>{ this.props.main[1].body.slice(0,65).concat("...") }</CardText>
