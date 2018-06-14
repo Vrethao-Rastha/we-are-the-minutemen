@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import {deletePublikComments} from '../../redux/Actions/PublikActions'
 import renderIf from './util'
 import {
+  Badge,
   Container,
   Col,
   Card,
@@ -13,6 +14,7 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
+  CardFooter,
   ListGroup,
   Row,
   FormGroup,
@@ -42,7 +44,7 @@ class PublikPosts extends Component {
     return(
 
     <div>
-      <Card className="diamondCard">
+      <Card className="diamondCard postBody">
         <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} lassName="postName"> { this.props.publikComment.name } </CardTitle>
 
 
@@ -50,7 +52,7 @@ class PublikPosts extends Component {
           <Row>
             <Col className="col-md-2">
 
-              <CardImg style={{maxWidth:"10em", borderRadius:"5%", marginBottom:"2em"}} className="diamondCard" top width="100%" src={this.props.publikComment.avatar} alt="Card image cap" />
+              <CardImg className="diamondCard postImg" top width="100%" src={this.props.publikComment.avatar} alt="Card image cap" />
             </Col>
             <Col>
 
@@ -71,8 +73,18 @@ class PublikPosts extends Component {
 
 
             </CardBody>
-
-          </Card>
+            <CardFooter>
+              <Badge style={{borderRadius:"50%", marginRight:"1em"}}>
+                0
+              </Badge>
+              Comments
+              <Badge style={{borderRadius:"50%", marginRight:"1em", marginLeft:"1em"}}>
+                0
+              </Badge>
+              Likes
+              <Button className="pull-right" style={{marginLeft:"1em"}}>Like</Button>
+              <Button className="pull-right">Comment</Button>
+            </CardFooter>          </Card>
     </div>
     )
   }
