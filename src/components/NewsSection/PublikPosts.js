@@ -48,7 +48,7 @@ class PublikPosts extends Component {
         <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} lassName="postName"> { this.props.publikComment.name } </CardTitle>
 
 
-        <CardBody>
+        <CardBody className="cardTxt">
           <Row>
             <Col className="col-md-2">
 
@@ -73,7 +73,7 @@ class PublikPosts extends Component {
 
 
             </CardBody>
-            <CardFooter>
+            <CardFooter className="cardFoot">
               <Badge style={{borderRadius:"50%", marginRight:"1em"}}>
                 0
               </Badge>

@@ -48,7 +48,7 @@ class DcrPosts extends Component {
         <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} className="postName"> { this.props.dcrComments.name } </CardTitle>
 
 
-        <CardBody>
+        <CardBody className="cardTxt">
           <Row>
             <Col className="col-md-2">
 
@@ -75,7 +75,7 @@ class DcrPosts extends Component {
 
 
             </CardBody>
-            <CardFooter>
+            <CardFooter className="cardFoot">
               <Badge style={{borderRadius:"50%", marginRight:"1em"}}>
                 0
               </Badge>

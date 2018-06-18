@@ -6,6 +6,7 @@ import { fetchMainSingle, addMainStoryComments } from '../../redux/Actions/MainA
 import Footer from '../Reactstrap/Footer'
 import MainNav from '../Reactstrap/MainNav'
 import MainPosts from './MainPosts'
+import PostComments from './PostComments'
 import modalThing from '../images/Fallout-4-Concept-Art-3.jpg'
 import {
   Container,
@@ -66,8 +67,7 @@ componentDidMount(props) {
 
 
   render() {
-    console.log('props in main****************', this.props)
-    console.log('state in main**********=>', this.state)
+
 
     let filteredPosts = this.props.mainComments.filter(comment => comment.storyId == this.props.mainSingle.id)
 
@@ -79,6 +79,10 @@ componentDidMount(props) {
             <MainNav />
 
             <div className="container col-md-8 offset-md-2">
+
+              <PostComments />
+
+
               <Card className="diamondCard">
                 <div className="phantom"></div>
                 <CardTitle className="text-center" style={{fontSize:"40pt"}}> {this.props.mainSingle.title}</CardTitle>
@@ -127,6 +131,7 @@ componentDidMount(props) {
             </ModalFooter>
           </ModalBody>
           </Modal>
+
 
         </div>
           <Footer />
