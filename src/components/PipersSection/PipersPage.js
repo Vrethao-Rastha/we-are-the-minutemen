@@ -32,23 +32,7 @@ import {
   ModalFooter,
 } from 'reactstrap'
 
-const items = [
-  {
-    src: process.env.PUBLIC_URL + '/Valk and Heather.jpg',
-    altText: 'Slide 1',
-    caption: 'Slide 1'
-  },
-  {
-    src: process.env.PUBLIC_URL + '/Valk and Heather 3.jpg',
-    altText: 'Slide 2',
-    caption: 'Slide 2'
-  },
-  {
-    src: process.env.PUBLIC_URL + '/Valk.jpg',
-    altText: 'Slide 3',
-    caption: 'Slide 3'
-  }
-];
+
 
 
 
@@ -56,119 +40,35 @@ const items = [
 class PipersPage extends Component {
 
   state = {
-    modal: true,
+    modal: false,
 
-  }
-
-
-
-  constructor(props) {
-    super(props);
-    this.state = { activeIndex: 0 };
-    this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this);
-    this.goToIndex = this.goToIndex.bind(this);
-    this.onExiting = this.onExiting.bind(this);
-    this.onExited = this.onExited.bind(this);
-  }
-
-
-  onExiting() {
-    this.animating = true;
-  }
-
-  onExited() {
-    this.animating = false;
-  }
-
-  next() {
-    if (this.animating) return;
-    const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
-    this.setState({ activeIndex: nextIndex });
-  }
-
-  previous() {
-    if (this.animating) return;
-    const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
-    this.setState({ activeIndex: nextIndex });
-  }
-
-  goToIndex(newIndex) {
-    if (this.animating) return;
-    this.setState({ activeIndex: newIndex });
-  }
-
-  toggle = () => {
-    this.setState({
-      modal: !this.state.modal
-    });
   }
 
   render(){
 
-    let piperStory = this.props.piper.map(piper => <PiperStory key={ piper.id } piper={ piper } />)
-
-    const { activeIndex } = this.state;
-
-    const slides = items.map((item) => {
-      return (
-        <CarouselItem
-          className="test"
-          onExiting={this.onExiting}
-          onExited={this.onExited}
-          key={item.src}
-        >
-          <img style={{height:"30em"}} src={item.src} alt={item.altText} />
-          {/* <CarouselCaption captionText={item.caption} captionHeader={item.caption} /> */}
-        </CarouselItem>
-      );
-    });
-
-
     return(
       <div>
         <MainNav/>
-        <div >
+        <Container >
 
-          <img style={{height:"20em "}} src= {process.env.PUBLIC_URL + '/hey_there__blue_by_quizzicalkisses-d9iv9pb.jpg'}/>
-          <Carousel
+          Summer is failing, and Autumn is upon us. <br/>
+          Strange, its been almost a year to the day since The Valkyrie wandered out of an abandoned Vault and set the Commonwealth on fire.<br/>
 
-            activeIndex={activeIndex}
-            next={this.next}
-            previous={this.previous}
-            >
-              {/* <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} /> */}
-              {slides}
-              <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-              <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-            </Carousel>
+          Much has changed in a year. So much.<br/>
+          The Institute is gone.<br/>
+          Let that sink in for a minute.<br/>
+          The Institute is Gone. Destroyed.<br/>
 
-        </div>
+          The Railroad, with The Valkyrie at their head, fought the Institute on their own ground. And Won.<br/>
+
+          I know most of my readers are aware of this woman, but I wanted to clear the air as far as who she is, what she represents, and let her tell her story in her own words. <br/>
+          What follows is my second interview with her, this one taken the day after the assault on the Institute.
 
 
-      <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-        <ModalBody>
-
-            <Col>
-          <Label className="btns" for="text-field">Enter your post</Label>
+        </Container>
 
 
-              />
-              <Col>
 
-
-              </Col>
-
-
-        <ModalFooter>
-
-          <Button className="btn btn-secondary">Post</Button>
-          <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-        </ModalFooter>
-
-       </Col>
-      </ModalBody>
-      </Modal>
 
       <Footer/>
     </div>

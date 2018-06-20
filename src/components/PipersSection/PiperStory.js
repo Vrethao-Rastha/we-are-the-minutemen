@@ -27,9 +27,9 @@ const PiperStory = ({ piper }) => {
         <Card>
            <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
               <CardBody>
-                <CardTitle>{ piper.title }</CardTitle>
+                <CardTitle>{ piper.question }</CardTitle>
 
-                <CardText>{ piper.body }</CardText>
+                <CardText>{ piper.answer }</CardText>
                 <Button>Read More</Button>
               </CardBody>
             </Card>
