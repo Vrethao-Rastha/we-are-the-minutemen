@@ -4,7 +4,7 @@ import {
   Col,
   Card,
   CardText,
-  CardImg,
+  img,
   CardBody,
   CardTitle,
   ListGroup,
@@ -21,20 +21,17 @@ import {
 } from 'reactstrap'
 
 const PiperStory = ({ piper }) => {
+  console.log('piper', piper)
   return(
     <div>
       <Col>
-        <Card>
-           <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>{ piper.question }</CardTitle>
+           <img top width="100%" src={ piper.picture } alt="Card image cap" />
+           <div className="phantom"></div>
 
-                <CardText>{ piper.answer }</CardText>
-                <Button>Read More</Button>
-              </CardBody>
-            </Card>
+                <div style={{color:"white"}}>{ piper.question }</div>
+
+                <div style={{color:"white"}}>{ piper.answer }</div>
             <div className="phantom"></div>
-            <div className="parallaxTwo"></div>
 
             <br/>
 

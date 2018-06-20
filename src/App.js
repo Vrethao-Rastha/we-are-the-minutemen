@@ -9,6 +9,7 @@ import BlogDetail from './components/BlogSection/BlogDetail'
 import PublikStoryDetail from './components/NewsSection/PublikStoryDetail'
 import DcrStoryDetail from './components/NewsSection/DcrStoryDetail'
 import MainStoryDetail from './components/NewsSection/MainStoryDetail'
+import ProfileMain from './components/ProfileSection/ProfileMain'
 import CheckAuth from './components/CheckAuth'
 import ScrollToTop from './components/ScrollToTop'
 
@@ -36,6 +37,7 @@ class App extends Component {
             <Route path="/PublikDetails" component = { CheckAuth(PublikStoryDetail) } />
             <Route path="/MainDetails" component = { CheckAuth(MainStoryDetail) } />
             <Route path="/DetailBlog" component = { CheckAuth(BlogDetail) } />
+            <Route path="/Profile" component = { CheckAuth(ProfileMain) } />
             <Route path="/Erios" component = {() => window.location = 'http://localhost:1701' } />
           </Switch>
         </ScrollToTop>

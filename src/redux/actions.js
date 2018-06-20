@@ -23,8 +23,7 @@ export const FETCH_USER_FAILED = 'FETCH_USER_FAILED'
 export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS'
 export const CREATE_USER_FAILED = 'CREATE_USER_FAILED'
 //GET ABOUT PAGE INFO
-export const FETCH_ABOUT_SUCCESS = 'FETCH_ABOUT_SUCCESS'
-export const FETCH_ABOUT_FAILED = 'FETCH_ABOUT_FAILED'
+
 
 
 
@@ -42,24 +41,6 @@ export const FETCH_ABOUT_FAILED = 'FETCH_ABOUT_FAILED'
       }))
     }
   }
-
-
-  export const fetchAbout = () => {
-      return dispatch => {
-        axios.get(`http://localhost:3000/api/v1/about`)
-          .then(res => dispatch({
-            type: FETCH_ABOUT_SUCCESS,
-            payload: res.data.data
-          }))
-          .catch(err => dispatch({
-            type: FETCH_ABOUT_FAILED,
-            payload: err
-          }))
-      }
-    }
-
-
-
 
 
   

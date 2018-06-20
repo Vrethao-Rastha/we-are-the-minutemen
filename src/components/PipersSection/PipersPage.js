@@ -45,11 +45,13 @@ class PipersPage extends Component {
   }
 
   render(){
+    let piperStory = this.props.piperInt.map(item => <PiperStory key={ item.id } piper={ item } />)
 
     return(
       <div>
         <MainNav/>
-        <Container >
+        <div className="piperPage"></div>
+        <Container style={{color:"white"}}>
 
           Summer is failing, and Autumn is upon us. <br/>
           Strange, its been almost a year to the day since The Valkyrie wandered out of an abandoned Vault and set the Commonwealth on fire.<br/>
@@ -63,8 +65,8 @@ class PipersPage extends Component {
 
           I know most of my readers are aware of this woman, but I wanted to clear the air as far as who she is, what she represents, and let her tell her story in her own words. <br/>
           What follows is my second interview with her, this one taken the day after the assault on the Institute.
-
-
+          <div className="phantom"></div>
+           { piperStory }
         </Container>
 
 
@@ -82,7 +84,7 @@ const mapDispatchToProps = dispatch =>
   }, dispatch)
 
   const mapStateToProps = state => ({
-    piper: state.piper
+    piperInt: state.piper
   })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PipersPage)

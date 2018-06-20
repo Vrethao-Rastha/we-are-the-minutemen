@@ -67,6 +67,21 @@ body {
   left: 0;
   z-index: -1;
 }
+.piperPage {
+  background-image: url('../src/components/images/dugout.jpg');
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .logNav {
   padding: 0px;
 }
@@ -255,4 +270,9 @@ body {
 }
 .cardFoot {
   border: none;
+}
+.profileHeader{
+  font-family: 'Cinzel', serif;
+  font-size: 40pt;
+  text-shadow: 2px 2px red;
 }
