@@ -2,30 +2,33 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-class PostComments extends Component {
+class MainPostComments extends Component {
   render() {
     console.log('props:', this.props)
-  if(this.props.dcrComments){
-    return (
-      <div></div>
-    );
-
-  }else if(this.props.mainComments){
+  // if(this.props.dcrComments){
+  //   return (
+  //     <div>dcr comment test</div>
+  //   );
+  //
+  // }
+  //else if(this.props.mainComments){
       return (
-        <div></div>
+        <div>main comment test</div>
       );
 
-  } else if(this.props.publikComment){
-      return (
-        <div></div>
-      );
-
-  } else {
-      return (
-        <div>lknwvn</div>
-      );
-
-  }
+  //}
+  // else if(this.props.publikComment){
+  //     return (
+  //       <div>publik comment test</div>
+  //     );
+  //
+  // }
+  // else {
+  //     return (
+  //       <div>lknwvn</div>
+  //     );
+  //
+  // }
 }
 }
 const mapDispatchToProps = dispatch =>
@@ -33,10 +36,10 @@ const mapDispatchToProps = dispatch =>
 
   }, dispatch)
 
-// const mapStateToProps = state => ({
-//   dcrComments: state.dcrComments,
-//   mainComments: state.mainComments,
-//   publikComment: state.publikComments
-// })
+const mapStateToProps = state => ({
+  //dcrComments: state.dcrComments,
+  mainComments: state.mainComments,
+  //publikComment: state.publikComments
+})
 
-export default connect(null, mapDispatchToProps)(PostComments);
+export default connect(null, mapDispatchToProps)(MainPostComments);

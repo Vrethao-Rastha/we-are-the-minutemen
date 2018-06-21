@@ -12,9 +12,10 @@ import { fetchPublikStories, fetchPublikComments } from './redux/Actions/PublikA
 import { fetchMainStoryComments, fetchMainStory } from './redux/Actions/MainActions'
 import { fetchDcrStories, fetchDcrComments } from './redux/Actions/DcrActions'
 import { fetchBlogStories, fetchBlogSingle } from './redux/Actions/BlogActions'
+import { fetchMainPostComments } from './redux/Actions/MainPostCommentsActions'
 
 let newStore = store()
-//newStore.dispatch(fetchBlogSingle())
+newStore.dispatch(fetchMainPostComments())
 newStore.dispatch(fetchAbout())
 newStore.dispatch(fetchDcrStories())
 newStore.dispatch(fetchPublikStories())

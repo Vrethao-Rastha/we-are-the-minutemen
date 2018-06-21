@@ -22,6 +22,8 @@ import AuthReducer from './AuthReducer'
 
 import AboutReducer from './AboutReducer'
 
+import MainPostCommentsReducer from './MainPostCommentsReducer'
+
 export default combineReducers({
   dcr: DcrReducer,
   dcrSingle: DcrSingleReducer,
@@ -44,5 +46,6 @@ export default combineReducers({
   user: UsersReducer,
   auth: AuthReducer,
 
-  about: AboutReducer
+  about: AboutReducer,
+  MainPostComments: MainPostCommentsReducer
 })
