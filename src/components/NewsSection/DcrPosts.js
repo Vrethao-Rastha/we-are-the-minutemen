@@ -68,7 +68,7 @@ class DcrPosts extends Component {
                 style={{maxHeight:"3em"}}
                 value={this.props.dcrComments.id}
                 onClick={ this.handleSubmit }
-                >[X]</Button>
+                >Delete</Button>
 
           )}
           </Row>
@@ -84,9 +84,15 @@ class DcrPosts extends Component {
                 0
               </Badge>
               Likes
+              <Badge style={{borderRadius:"50%", marginRight:"1em", marginLeft:"1em"}}>
+                0
+              </Badge>
+              Dislikes
+              <Button className="pull-right" style={{marginLeft:"1em"}}>Dislike</Button>
               <Button className="pull-right" style={{marginLeft:"1em"}}>Like</Button>
               <Button className="pull-right">Comment</Button>
-            </CardFooter>          </Card>
+            </CardFooter>
+          </Card>
     </div>
       )
 
