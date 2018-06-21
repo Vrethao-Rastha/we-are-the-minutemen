@@ -28,9 +28,9 @@ const PiperStory = ({ piper }) => {
            <img top width="100%" src={ piper.picture } alt="Card image cap" />
            <div className="phantom"></div>
 
-                <div style={{color:"white"}}>{ piper.question }</div>
-
-                <div style={{color:"white"}}>{ piper.answer }</div>
+                <div style={{color:"white", textShadow:"2px 2px black"}}>{ piper.question }</div>
+                <div className="phantom"></div>
+                <div style={{color:"white", textShadow:"2px 2px black"}}>{ piper.answer }</div>
             <div className="phantom"></div>
 
             <br/>

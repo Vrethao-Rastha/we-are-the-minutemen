@@ -28,7 +28,7 @@ class AddBlog extends React.Component {
       <Col className="col-md-4 offset-md-2">
         <Card className="diamondCard">
           <CardTitle style={{marginTop:".5em"}} className="text-center">You can't go home again...</CardTitle>
-          <CardImg className="diamondCard" top width="100%" src={process.env.PUBLIC_URL + '/home.jpg'} alt="Card image cap" />
+          <CardImg className="CardImg" top width="100%" src={process.env.PUBLIC_URL + '/home.jpg'} alt="Card image cap" />
           <CardBody>
             <Form onSubmit={ this.handlePostSubmit }>
 

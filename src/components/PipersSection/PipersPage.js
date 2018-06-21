@@ -51,7 +51,7 @@ class PipersPage extends Component {
       <div>
         <MainNav/>
         <div className="piperPage"></div>
-        <Container style={{color:"white"}}>
+        <Container style={{color:"white", textShadow:"2px 2px black"}}>
 
           Summer is failing, and Autumn is upon us. <br/>
           Strange, its been almost a year to the day since The Valkyrie wandered out of an abandoned Vault and set the Commonwealth on fire.<br/>
