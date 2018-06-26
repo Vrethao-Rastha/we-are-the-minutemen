@@ -10,6 +10,7 @@ import PublikStoryDetail from './components/NewsSection/PublikStoryDetail'
 import DcrStoryDetail from './components/NewsSection/DcrStoryDetail'
 import MainStoryDetail from './components/NewsSection/MainStoryDetail'
 import ProfileMain from './components/ProfileSection/ProfileMain'
+import MainPostComments from './components/NewsSection/MainPostComments'
 import CheckAuth from './components/CheckAuth'
 import ScrollToTop from './components/ScrollToTop'
 

@@ -4,8 +4,11 @@ import { bindActionCreators } from 'redux'
 
 class MainPostComments extends Component {
   render() {
-    console.log('props:', this.props)
-  // if(this.props.dcrComments){
+    if(this.props.thePostComments[0]){
+
+    console.log('props:', this.props.thePostComments[0])
+  }
+   if(this.props.thePostComments[0]){
   //   return (
   //     <div>dcr comment test</div>
   //   );
@@ -13,7 +16,10 @@ class MainPostComments extends Component {
   // }
   //else if(this.props.mainComments){
       return (
-        <div>main comment test</div>
+        <div>
+          <div>{this.props.thePostComments.name}</div>
+          <div>{this.props.thePostComments.comment}</div>
+        </div>
       );
 
   //}
@@ -22,24 +28,21 @@ class MainPostComments extends Component {
   //       <div>publik comment test</div>
   //     );
   //
-  // }
-  // else {
-  //     return (
-  //       <div>lknwvn</div>
-  //     );
-  //
-  // }
-}
-}
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({
+  }
+  else {
+      return (
+        <div>lknwvn</div>
+      );
 
-  }, dispatch)
+   }
+}
+}
+
 
 const mapStateToProps = state => ({
   //dcrComments: state.dcrComments,
-  mainComments: state.mainComments,
+  thePostComments: state.mainPostComments
   //publikComment: state.publikComments
 })
 
-export default connect(null, mapDispatchToProps)(MainPostComments);
+export default connect(mapStateToProps)(MainPostComments);

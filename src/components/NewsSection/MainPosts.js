@@ -34,6 +34,7 @@ class MainPosts extends Component {
       // e.preventDefault()
       this.props.deleteMainComments(this.props.mainComments.id)
     }
+    
     render(){
     return(
 
@@ -81,7 +82,7 @@ class MainPosts extends Component {
                 Dislikes
                 <Button className="pull-right" style={{marginLeft:"1em"}}>Dislike</Button>
                 <Button className="pull-right" style={{marginLeft:"1em"}}>Like</Button>
-                <Button className="pull-right">Comment</Button>
+                <Link className="pull-right btn btn-secondary" to="/Comments">Comment</Link>
               </CardFooter>
           </Card>
 

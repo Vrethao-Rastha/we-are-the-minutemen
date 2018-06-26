@@ -257,8 +257,6 @@ body {
 .postImg {
   max-width:10em;
   border-radius:5%;
-  margin-bottom:2em;
-  box-shadow: 5px 10px #888888;
 }
 .postBody {
   box-shadow: 5px 10px #888888;

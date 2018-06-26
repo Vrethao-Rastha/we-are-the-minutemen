@@ -47,5 +47,5 @@ export default combineReducers({
   auth: AuthReducer,
 
   about: AboutReducer,
-  MainPostComments: MainPostCommentsReducer
+  mainPostComments: MainPostCommentsReducer
 })

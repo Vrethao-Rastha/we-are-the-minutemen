@@ -6,8 +6,9 @@ import { fetchMainSingle, addMainStoryComments } from '../../redux/Actions/MainA
 import Footer from '../Reactstrap/Footer'
 import MainNav from '../Reactstrap/MainNav'
 import MainPosts from './MainPosts'
-import PostComments from './PostComments'
+import MainPostComments from './MainPostComments'
 import modalThing from '../images/Fallout-4-Concept-Art-3.jpg'
+import renderIf from './util'
 import {
   Container,
   Col,
@@ -73,6 +74,19 @@ componentDidMount(props) {
 
      let posts = filteredPosts.map(mainComments => <MainPosts key={ mainComments.id } mainComments={ mainComments } />)
 
+    //  let filteredComments = this.props.mainPostComments.filter(post => post.main_story_comment_id === this.props.mainComments.id)
+     //
+    //  let someComment = filteredComments.map(item => <MainPostComments key={item.id} item={item} /> )
+     //if(this.props.mainPostComments[0] && this.props.mainComments[0]){
+
+     
+    //  let filteredComments = this.props.mainComments.filter(comment => comment.storyId == this.props.mainPostComments.postId)
+     //
+    //     console.log('props***************************', filteredComments)
+      //  console.log('test', this.props.mainPostComments[0].postId == this.props.mainComments[0].storyId)
+  //   }
+    //  if(this.props.mainPostComments[0] && this.props.mainComments[0]){
+
 
         return (
           <div className="newsDetail container-fluid">
@@ -80,13 +94,12 @@ componentDidMount(props) {
 
             <div className="container col-md-8 offset-md-2">
 
-              <PostComments />
 
 
               <Card className="diamondCard">
                 <div className="phantom"></div>
                 <CardTitle className="text-center" style={{fontSize:"40pt"}}> {this.props.mainSingle.title}</CardTitle>
-            <CardImg style={{marginTop:"1em"}} className="diamondCard" top width="100%" src={ process.env.PUBLIC_URL + this.props.mainSingle.picture} alt="Card image cap" />
+            <CardImg style={{marginTop:"1em"}} className="CardImg" top width="100%" src={ process.env.PUBLIC_URL + this.props.mainSingle.picture} alt="Card image cap" />
 
 
             <CardBody>
@@ -105,6 +118,7 @@ componentDidMount(props) {
 
               </CardText>
             </CardBody>
+
           </Card>
 
           <Modal style={{backgroundImage: {modalThing}}} isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
@@ -136,7 +150,12 @@ componentDidMount(props) {
         </div>
           <Footer />
         </div>
-    );
+      );
+    // }else {
+    //   return(
+    //     <div>sdfsdfs</div>
+    //   )
+    // }
   }
 
 }
@@ -150,7 +169,8 @@ const mapDispatchToProps = dispatch =>
 const mapStateToProps = state => ({
    mainSingle: state.mainSingle,
    mainComments: state.mainComments,
-   user: state.currentUser
+   user: state.currentUser,
+   mainPostComments: state.mainPostComments
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainStoryDetail);
