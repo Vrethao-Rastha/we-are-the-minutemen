@@ -294,3 +294,9 @@ body {
   border: none;
   color: black;
 }
+.profile-button:hover {
+  background-color: transparent;
+  text-decoration: underline;
+  border: none;
+  color: black;
+}
