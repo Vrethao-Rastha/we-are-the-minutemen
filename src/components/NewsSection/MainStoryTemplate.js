@@ -30,12 +30,11 @@ import {
 
 class MainStoryTemplate extends Component {
 
-  tate = {
+  state = {
     id: '',
   }
 
   handleMainSubmit = e => {
-    console.log('FIRE!', this.props)
     e.preventDefault()
     this.props.fetchMainSingle(this.props.main[0].id, this.props.history)
 

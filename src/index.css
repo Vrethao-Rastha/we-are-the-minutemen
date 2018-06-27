@@ -274,3 +274,23 @@ body {
   font-size: 40pt;
   text-shadow: 2px 2px red;
 }
+.link {
+  color: inherit;
+}
+.link:hover {
+  color: black;
+}
+.bottom {
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+.profile-button {
+  background-color: transparent;
+  border: none;
+  color: black;
+}

@@ -39,13 +39,18 @@ class DcrPosts extends Component {
       this.props.deleteDcrComments(this.props.dcrComments.id)
     }
 
+  handleAbout = e => {
+      e.preventDefault()
+      this.props.fetchAbout(this.state)
+  }
+
   render(){
 
     return(
 
     <div>
       <Card className="diamondCard postBody">
-        <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} className="postName"> { this.props.dcrComments.name } </CardTitle>
+        <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} className="postName"> <Link className="link" to="/Profile"> { this.props.dcrComments.name } </Link></CardTitle>
 
 
         <CardBody className="cardTxt">

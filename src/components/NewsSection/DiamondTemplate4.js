@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Link, browserHistory,withRouter } from 'react-router-dom'
+import { Link, browserHistory, withRouter } from 'react-router-dom'
 
 import { fetchDcrSingle } from '../../redux/Actions/DcrActions'
 import ScrollerPic2 from '../Scrollers/ScrollerPic2'

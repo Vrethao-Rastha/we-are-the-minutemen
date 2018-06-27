@@ -9,17 +9,22 @@ class ProfileMain extends Component {
 
   render() {
 
-    let theUser = this.props.about.filter(user => user.user === localStorage.user.replace(/"/g,""))
+    let theUser = this.props.about.filter(about => about.user === this.props.location.pathname.slice(9))
 
-    console.log('props in profile', this.props.about[0], 'the user', theUser)
+    console.log('props', this.props)
+    console.log('the user', theUser)
+    if(this.props.about[0]){
+      console.log('test2', this.props.location.pathname.slice(9))
+      console.log('test', this.props.about[4].user.replace(/"/g,""))
+    }
     if(this.props.about[0]){
       return (
         <div>
           <MainNav />
 
-          <Col>
+          <Col style={{marginLeft:"2em"}}>
             <Row>
-              <div className="profileHeader">{localStorage.user.replace(/"/g,"")}</div>
+              <div className="profileHeader">{theUser[0].user}</div>
 
               <Row style={{marginLeft:"15em", fontSize:"35pt"}}>About Me
 
@@ -27,7 +32,7 @@ class ProfileMain extends Component {
 
             </Row>
             <Row>
-              <img style={{height:"20em"}} src={process.env.PUBLIC_URL + localStorage.avatar.replace(/"/g,"")} />
+              <img style={{height:"20em"}} src={process.env.PUBLIC_URL + theUser[0].avatar} />
 
                 <Col md="4" style={{marginLeft:"10em"}}>
 
@@ -40,8 +45,9 @@ class ProfileMain extends Component {
 
 
 
-
-          <Footer />
+          <div className="bottom">
+            <Footer />
+          </div>
         </div>
       );
 

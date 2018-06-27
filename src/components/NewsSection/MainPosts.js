@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { deleteMainComments } from '../../redux/Actions/MainActions'
+import { fetchUser } from '../../redux/Actions/UserActions'
 import renderIf from './util'
 import {
   Badge,
@@ -30,17 +31,33 @@ import {
 
 class MainPosts extends Component {
 
+  state ={
+    user: ''
+  }
+
   handleSubmit = e => {
       // e.preventDefault()
       this.props.deleteMainComments(this.props.mainComments.id)
     }
-    
+
+  aboutUser = e => {
+    e.preventDefault()
+    console.log('did i fire?')
+    this.props.fetchUser(this.state.user, this.props.history)
+  }
+
     render(){
     return(
 
     <div>
       <Card className="diamondCard postBody">
-        <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} lassName="postName"> { this.props.mainComments.name } </CardTitle>
+      <Form onSubmit={ this.aboutUser }>
+        <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} className="postName">    <Button className="profile-button"
+          type="submit"
+          value={ this.props.mainComments.name }
+          onClick={e => this.setState({user: e.target.value})}>{ this.props.mainComments.name } </Button>
+        </CardTitle>
+      </Form>
 
 
         <CardBody className="cardTxt">
@@ -93,7 +110,8 @@ class MainPosts extends Component {
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    deleteMainComments
+    deleteMainComments,
+    fetchUser
 }, dispatch)
 
-export default connect(null, mapDispatchToProps)(MainPosts);
+export default withRouter(connect(null, mapDispatchToProps)(MainPosts));

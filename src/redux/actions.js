@@ -30,7 +30,7 @@ export const CREATE_USER_FAILED = 'CREATE_USER_FAILED'
 
   export const fetchUser = () => {
     return dispatch => {
-      axios.get('http://localhost:3000/api/v1/user')
+      axios.get('http://localhost:3000/api/v1/users')
       .then(res => dispatch({
         type: FETCH_USER_SUCCESS,
         payload: res.data.data
@@ -41,6 +41,3 @@ export const CREATE_USER_FAILED = 'CREATE_USER_FAILED'
       }))
     }
   }
-
-
-  
