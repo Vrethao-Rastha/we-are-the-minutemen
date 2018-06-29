@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import {deletePublikComments} from '../../redux/Actions/PublikActions'
+import { fetchUser } from '../../redux/Actions/UserActions'
 import renderIf from './util'
 import {
   Badge,
@@ -25,18 +26,32 @@ import {
   NavItem,
   NavLink,
   Navbar,
-  NavbarBrand
+  NavbarBrand,
+  Modal
 } from 'reactstrap'
 
 class PublikPosts extends Component {
 
-  state = {
-    id: ''
+  state ={
+    user: '',
+    modal: false,
+    pic: ''
   }
 
   handleSubmit = e => {
       // e.preventDefault()
       this.props.deletePublikComments(this.props.publikComment.id)
+    }
+
+    toggle = () => {
+       this.setState({
+        modal: !this.state.modal
+       });
+      }
+
+    aboutUser = e => {
+      e.preventDefault()
+      this.props.fetchUser(this.state.user, this.props.history)
     }
 
 
@@ -45,14 +60,22 @@ class PublikPosts extends Component {
 
     <div>
       <Card className="diamondCard postBody">
-        <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} lassName="postName"> <Link className="link" to="/Profile">{ this.props.publikComment.name } </Link> </CardTitle>
-
+        <Form onSubmit={ this.aboutUser }>
+        <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} lassName="postName"> <Button className="profile-button"
+          type="submit"
+          value={ this.props.publikComment.name }
+          onClick={e => this.setState({user: e.target.value})}
+          >{ this.props.publikComment.name } </Button> </CardTitle>
+        </Form>
 
         <CardBody className="cardTxt">
           <Row>
             <Col className="col-md-2">
-
-              <CardImg className="diamondCard postImg" top width="100%" src={this.props.publikComment.avatar} alt="Card image cap" />
+              <Button className="profile-button" value={this.props.publikComment.avatar}
+              onMouseEnter={e => this.setState({pic: e.target.value})}
+              onClick={this.toggle}>
+              <CardImg className="CardImg postImg" top width="100%" src={this.props.publikComment.avatar} alt="Card image cap" />
+            </Button>
             </Col>
             <Col>
 
@@ -70,6 +93,10 @@ class PublikPosts extends Component {
           )}
 
           </Row>
+
+          <Modal isOpen={this.state.modal} toggle={this.toggle}>
+              <img style={{height:"35em", width:"55em"}} src={process.env.PUBLIC_URL + this.state.pic}/>
+          </Modal>
 
 
             </CardBody>
@@ -98,7 +125,8 @@ class PublikPosts extends Component {
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    deletePublikComments
+    deletePublikComments,
+    fetchUser
 }, dispatch)
 
-export default connect(null, mapDispatchToProps)(PublikPosts);
+export default withRouter(connect(null, mapDispatchToProps)(PublikPosts));

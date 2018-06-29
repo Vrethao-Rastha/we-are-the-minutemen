@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { deleteDcrComments, editDcrComments } from '../../redux/Actions/DcrActions'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+import { fetchUser } from '../../redux/Actions/UserActions'
 import renderIf from './util'
 import {
   Badge,
@@ -25,13 +26,21 @@ import {
   NavItem,
   NavLink,
   Navbar,
-  NavbarBrand
+  NavbarBrand,
+  Modal
 } from 'reactstrap'
 
 class DcrPosts extends Component {
 
-  state = {
-    id: ''
+  state ={
+    user: '',
+    modal: false,
+    pic: ''
+  }
+
+  aboutUser = e => {
+    e.preventDefault()
+    this.props.fetchUser(this.state.user, this.props.history)
   }
 
   handleSubmit = e => {
@@ -44,20 +53,37 @@ class DcrPosts extends Component {
       this.props.fetchAbout(this.state)
   }
 
+  toggle = () => {
+     this.setState({
+      modal: !this.state.modal
+     });
+    }
+
   render(){
+    console.log('dcr state', this.state)
 
     return(
 
     <div>
       <Card className="diamondCard postBody">
-        <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} className="postName"> <Link className="link" to="/Profile"> { this.props.dcrComments.name } </Link></CardTitle>
+        <Form onSubmit={ this.aboutUser }>
+          <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} className="postName"> <Button className="profile-button"
+            type="submit"
+            value={ this.props.dcrComments.name }
+            onClick={e => this.setState({user: e.target.value})}
+            >{ this.props.dcrComments.name } </Button>
+          </CardTitle>
+        </Form>
 
 
         <CardBody className="cardTxt">
           <Row>
             <Col className="col-md-2">
-
-              <CardImg className="diamondCard postImg" top width="100%" src={process.env.PUBLIC_URL + this.props.dcrComments.avatar} />
+              <Button className="profile-button" value={this.props.dcrComments.avatar}
+              onMouseEnter={e => this.setState({pic: e.target.value})}
+              onClick={this.toggle}>
+              <CardImg className="CardImg postImg" top width="100%" src={process.env.PUBLIC_URL + this.props.dcrComments.avatar} />
+            </Button>
             </Col>
             <Col>
 
@@ -77,6 +103,10 @@ class DcrPosts extends Component {
 
           )}
           </Row>
+
+          <Modal isOpen={this.state.modal} toggle={this.toggle}>
+              <img style={{height:"35em", width:"55em"}} src={process.env.PUBLIC_URL + this.state.pic}/>
+          </Modal>
 
 
             </CardBody>
@@ -107,8 +137,9 @@ class DcrPosts extends Component {
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
     deleteDcrComments,
-    editDcrComments
+    editDcrComments,
+    fetchUser
 }, dispatch)
 
 
-export default connect(null, mapDispatchToProps)(DcrPosts);
+export default withRouter(connect(null, mapDispatchToProps)(DcrPosts));

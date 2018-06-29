@@ -26,13 +26,18 @@ import {
   NavItem,
   NavLink,
   Navbar,
-  NavbarBrand
+  NavbarBrand,
+  ModalBody,
+  ModalHeader,
+  Modal
 } from 'reactstrap'
 
 class MainPosts extends Component {
 
   state ={
-    user: ''
+    user: '',
+    modal: false,
+    pic: ''
   }
 
   handleSubmit = e => {
@@ -40,13 +45,19 @@ class MainPosts extends Component {
       this.props.deleteMainComments(this.props.mainComments.id)
     }
 
+  toggle = () => {
+     this.setState({
+      modal: !this.state.modal
+     });
+    }
+
   aboutUser = e => {
     e.preventDefault()
-    console.log('did i fire?')
     this.props.fetchUser(this.state.user, this.props.history)
   }
 
     render(){
+      console.log('state', this.state)
     return(
 
     <div>
@@ -55,7 +66,8 @@ class MainPosts extends Component {
         <CardTitle style={{marginTop:".5em", marginLeft:"2em"}} className="postName">    <Button className="profile-button"
           type="submit"
           value={ this.props.mainComments.name }
-          onClick={e => this.setState({user: e.target.value})}>{ this.props.mainComments.name } </Button>
+          onClick={e => this.setState({user: e.target.value})}
+          >{ this.props.mainComments.name } </Button>
         </CardTitle>
       </Form>
 
@@ -63,8 +75,11 @@ class MainPosts extends Component {
         <CardBody className="cardTxt">
           <Row>
             <Col className="col-md-2">
-
-              <CardImg className="diamondCard, postImg" top width="100%" src={process.env.PUBLIC_URL + this.props.mainComments.avatar} />
+             <Button className="profile-button" value={this.props.mainComments.avatar}
+             onMouseEnter={e => this.setState({pic: e.target.value})}
+             onClick={this.toggle}>
+               <CardImg className="diamondCard, postImg" top width="100%" src={process.env.PUBLIC_URL + this.props.mainComments.avatar} />
+             </Button>
             </Col>
             <Col>
 
@@ -81,6 +96,10 @@ class MainPosts extends Component {
               >Delete</Button>
           )}
           </Row>
+
+          <Modal isOpen={this.state.modal} toggle={this.toggle}>
+              <img style={{height:"35em", width:"55em"}} src={process.env.PUBLIC_URL + this.state.pic}/>
+          </Modal>
 
 
             </CardBody>

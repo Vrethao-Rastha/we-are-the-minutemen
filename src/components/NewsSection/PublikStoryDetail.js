@@ -76,7 +76,7 @@ componentDidMount(props) {
               <Card className="diamondCard">
                 <div className="phantom"></div>
                 <CardTitle className="text-center" style={{fontSize:"40pt"}}> {this.props.publikSingle.title}</CardTitle>
-            <CardImg  style={{marginTop:"1em"}}  className="diamondCard" top width="100%" src={ process.env.PUBLIC_URL + this.props.publikSingle.picture} alt="Card image cap" />
+            <CardImg  style={{marginTop:"1em"}}  className="CardImg" top width="100%" src={ process.env.PUBLIC_URL + this.props.publikSingle.picture} alt="Card image cap" />
             <CardBody>
               <CardText>{ this.props.publikSingle.body}</CardText>
               <Button style={{marginRight:"1em"}} onClick={this.toggle}>Post</Button>
