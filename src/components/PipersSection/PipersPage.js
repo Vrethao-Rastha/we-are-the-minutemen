@@ -51,7 +51,7 @@ class PipersPage extends Component {
       <div>
         <MainNav/>
         <div className="piperPage"></div>
-        <Container style={{color:"white", textShadow:"2px 2px black"}}>
+        <Container style={{color:"white", textShadow:"1px 1px 1px red", fontSize:"15pt"}}>
 
           Summer is failing, and Autumn is upon us. <br/>
           Strange, its been almost a year to the day since The Valkyrie wandered out of an abandoned Vault and set the Commonwealth on fire.<br/>
@@ -64,7 +64,10 @@ class PipersPage extends Component {
           The Railroad, with The Valkyrie at their head, fought the Institute on their own ground. And Won.<br/>
 
           I know most of my readers are aware of this woman, but I wanted to clear the air as far as who she is, what she represents, and let her tell her story in her own words. <br/>
-          What follows is my second interview with her, this one taken the day after the assault on the Institute.
+          What follows is my second interview with her, however she would only agree to speak in the hours after sunset when it was too difficult or dangerous to continue.
+          I've included pictures taken by me, or her second in command Heather, from the campsites we made on ruined overpasses, destroyed buildings, and once, on our first night, from a abaondoned car park with the ruins of Boston in the background.
+          I hope you find this as enlightening as I did!
+
           <div className="phantom"></div>
            { piperStory }
         </Container>

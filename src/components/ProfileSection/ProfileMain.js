@@ -13,35 +13,41 @@ class ProfileMain extends Component {
 
     if(this.props.about[0]){
       return (
-        <div>
+        <div className="profileBackground">
           <MainNav />
 
-          <Col style={{marginLeft:"2em"}}>
-            <Row>
+          <Col  md={{ size: 8, offset: 4 }}>
               <div className="profileHeader">{theUser[0].user}</div>
-
-              <Row style={{marginLeft:"10em", fontSize:"35pt"}}>About Me
-
-              </Row>
-
-            </Row>
-            <Row>
-              <img style={{height:"20em"}} src={process.env.PUBLIC_URL + theUser[0].avatar} />
-
-                <Col md="4" style={{marginLeft:"10em"}}>
-
-                  {theUser[0].about}
-                </Col>
-            </Row>
-            <div className="phantom"></div>
-
           </Col>
 
+          <Col  md={{ size: 8, offset: 2 }}>
 
 
-          <div className="bottom">
+
+
+              <img style={{height:"40em", border:"1px solid white"}} src={process.env.PUBLIC_URL + theUser[0].avatar} />
+
+            </Col>
+
+            <Col  md={{ size: 7, offset: 4 }}>
+              <div className="aboutHeader">About Me</div>
+            </Col>
+
+            <Col  md={{ size: 7, offset: 2 }}>
+                <div className="aboutBlurb">
+                  {theUser[0].about}
+
+                </div>
+
+          </Col>
+          <div className="phantom"></div>
+
+
+
+
+          <div className="bottom"></div>
+
             <Footer />
-          </div>
         </div>
       );
 

@@ -240,6 +240,12 @@ body {
   background-size: cover;
   background-image: url('./components/images/heather near goodneighbor.jpg');
 }
+.profileBackground {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url('./components/images/camp2.jpg');
+}
 
 .postComment {
   text-align: center;
@@ -271,8 +277,19 @@ body {
 }
 .profileHeader{
   font-family: 'Cinzel', serif;
+  font-size: 70pt;
+  text-shadow: 4px 4px red;
+-webkit-text-stroke: 2px white;
+}
+.aboutHeader{
+  font-family: 'Cinzel', serif;
   font-size: 40pt;
-  text-shadow: 2px 2px red;
+  text-shadow: 4px 4px red;
+-webkit-text-stroke: 1px white;
+}
+.aboutBlurb{
+  font-size: 15pt;
+  color: white;
 }
 .link {
   color: inherit;
