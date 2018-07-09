@@ -11,12 +11,6 @@ class ProfileMain extends Component {
 
     let theUser = this.props.about.filter(about => about.user === this.props.location.pathname.slice(9))
 
-    console.log('props', this.props)
-    console.log('the user', theUser)
-    if(this.props.about[0]){
-      console.log('test2', this.props.location.pathname.slice(9))
-      console.log('test', this.props.about[4].user.replace(/"/g,""))
-    }
     if(this.props.about[0]){
       return (
         <div>
@@ -26,7 +20,7 @@ class ProfileMain extends Component {
             <Row>
               <div className="profileHeader">{theUser[0].user}</div>
 
-              <Row style={{marginLeft:"15em", fontSize:"35pt"}}>About Me
+              <Row style={{marginLeft:"10em", fontSize:"35pt"}}>About Me
 
               </Row>
 
