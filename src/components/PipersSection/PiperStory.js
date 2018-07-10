@@ -35,8 +35,8 @@ const PiperStory = ({ piper }) => {
              </Col>
            )}
 
-           {renderIf(piper.id === 3,
-             <Col>
+           {renderIf(piper.id === 9,
+             <Col style={{fontSize:"30pt"}}>
                And that was, understandably, the end of our first evenings interview.
                The next evening we camped in an abandoned home and continued from where we left off.
              </Col>
@@ -45,10 +45,11 @@ const PiperStory = ({ piper }) => {
            <div className="phantom"></div>
 
 
-                <div style={{color:"white", textShadow:"2px 2px black"}}>{ piper.question }</div>
+                <div style={{color:"white", textShadow:"3px 3px black", fontSize:"20pt"}}>{ piper.question }</div>
                 <div className="phantom"></div>
-                <div style={{color:"white", textShadow:"2px 2px black"}}>{ piper.answer }</div>
-            <div className="phantom"></div>
+                <div style={{color:"white", textShadow:"3px 3px black", fontSize:"20pt", fontFamily:"Philosopher"}}>{ piper.answer }</div>
+
+                
 
     </Col>
     </div>

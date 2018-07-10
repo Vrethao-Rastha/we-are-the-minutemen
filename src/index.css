@@ -291,6 +291,18 @@ body {
   font-size: 15pt;
   color: white;
 }
+.piperPageComments {
+  color: white;
+  text-shadow: 1px 1px 1px red;
+  font-family: 'Cinzel', serif;
+  font-size: 15pt;
+}
+.piperInterview {
+  color: white;
+  text-shadow: 1px 1px 1px blue;
+  font-family: 'Exo2', serif;
+  font-size: 15pt;
+}
 .link {
   color: inherit;
 }

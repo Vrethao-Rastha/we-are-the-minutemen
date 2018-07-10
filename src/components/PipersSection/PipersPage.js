@@ -51,7 +51,7 @@ class PipersPage extends Component {
       <div>
         <MainNav/>
         <div className="piperPage"></div>
-        <Container style={{color:"white", textShadow:"1px 1px 1px red", fontSize:"15pt"}}>
+        <Container className="piperPageComments">
 
           Summer is failing, and Autumn is upon us. <br/>
           Strange, its been almost a year to the day since The Valkyrie wandered out of an abandoned Vault and set the Commonwealth on fire.<br/>
@@ -69,8 +69,19 @@ class PipersPage extends Component {
           I hope you find this as enlightening as I did!
 
           <div className="phantom"></div>
-           { piperStory }
+          <div className="piperInterview">
+            { piperStory }
+          </div>
+          <div className="phantom"></div>
+
         </Container>
+        <Col md={{size: 8, offset: 2}} className="piperPageComments">
+          And that is the end of this particular interview. At this point Valkyrie was called off to deal with some emergency or other and never returned to the camp.
+          I hope you found this interesting, and useful in understanding the Commonwealth's most interesting and misunderstood person!
+          <div className="phantom"></div>
+
+          <img style={{height:"40em"}} src={process.env.PUBLIC_URL + "/bridge.jpg"}/>
+        </Col>
 
 
 
