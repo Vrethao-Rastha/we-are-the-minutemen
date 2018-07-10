@@ -50,7 +50,7 @@ let picStyle = {
       </Container>
 
 
-      <div style={{marginBottom:"20vh"}} ></div>
+      <div style={{marginBottom:"25vh"}} ></div>
 
         <Navbar className="logNav" color="dark">
           <NavbarBrand className="navFooter" style={{color: "white"}}>&copy; 2018 Red Rocket Productions <i style={{color:"red"}} className="fa fa-rocket fa-2x"> </i>
