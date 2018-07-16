@@ -25,7 +25,8 @@ export const DCR_REDIRECT_PENDING = 'REDIRECT_PENDING'
 
 export const fetchDcrStories = () => {
   return dispatch => {
-    axios.get('http://localhost:3000/api/v1/dc_rnews/')
+    axios.get('http://arcane-mountain-10342
+/api/v1/dc_rnews/')
     .then(res => dispatch({
       type: FETCH_DCR_STORIES_SUCCESS,
       payload: res.data.data
@@ -41,7 +42,8 @@ export const fetchDcrSingle = (id, history) => {
   return async dispatch => {
     try{
       dispatch({type: DCR_REDIRECT_PENDING})
-    let res = await fetch(`http://localhost:3000/api/v1/dc_rnews/${id}`)
+    let res = await fetch(`http://arcane-mountain-10342
+/api/v1/dc_rnews/${id}`)
     let userObj = await res.json()
     dispatch({
       type: FETCH_DCR_SINGLE_SUCCESS,
@@ -59,7 +61,8 @@ export const fetchDcrSingle = (id, history) => {
 
 export const fetchDcrComments = () => {
   return dispatch => {
-    axios.get('http://localhost:3000/api/v1/dcr_comments/')
+    axios.get('http://arcane-mountain-10342
+/api/v1/dcr_comments/')
     .then(res => dispatch({
       type: FETCH_DCR_COMMENTS_SUCCESS,
       payload: res.data.data
@@ -73,7 +76,8 @@ export const fetchDcrComments = () => {
 
 export const deleteDcrComments = (id) => {
   return dispatch => {
-    axios.delete(`http://localhost:3000/api/v1/dcr_comments/${id}`)
+    axios.delete(`http://arcane-mountain-10342
+/api/v1/dcr_comments/${id}`)
     .then(res => dispatch({
       type: DELETE_DCR_COMMENTS_SUCCESS,
       payload: res.data.data
@@ -87,7 +91,8 @@ export const deleteDcrComments = (id) => {
 
 export const addDcrComments = (name, comment, avatar, storyId) => {
   return dispatch => {
-    axios.post('http://localhost:3000/api/v1/dcr_comments/', {name, comment, avatar, storyId})
+    axios.post('http://arcane-mountain-10342
+/api/v1/dcr_comments/', {name, comment, avatar, storyId})
     .then(res => dispatch({
       type: ADD_DCR_COMMENTS_SUCCESS,
       payload: res.data.data
@@ -101,7 +106,8 @@ export const addDcrComments = (name, comment, avatar, storyId) => {
 
 export const editDcrComments = (name, comment, avatar, storyId) => {
   return dispatch => {
-    axios.put('http://localhost:3000/api/v1/dcr_comments/', {name, comment, avatar, storyId})
+    axios.put('http://arcane-mountain-10342
+/api/v1/dcr_comments/', {name, comment, avatar, storyId})
     .then(res => dispatch({
       type: PUT_DCR_COMMENTS_SUCCESS,
       payload: res.data.data

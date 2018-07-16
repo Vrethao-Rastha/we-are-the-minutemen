@@ -15,7 +15,8 @@ export const fetchUser = (user, history) => {
     console.log('fire 2')
     try{
       dispatch({type: USER_REDIRECT_PENDING})
-    let res = await fetch(`http://localhost:3000/api/v1/about/`)
+    let res = await fetch(`http://arcane-mountain-10342
+/api/v1/about/`)
     let userObj = await res.json()
     dispatch({
       type: FETCH_USER_SUCCESS,
